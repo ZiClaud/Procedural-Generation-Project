@@ -1,0 +1,248 @@
+[gd_scene load_steps=62 format=3 uid="uid://cf338wwkkg65i"]
+
+[ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="1_xpeyw"]
+[ext_resource type="PackedScene" uid="uid://bm7w8g5yq7uu0" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass_bottom.gltf" id="2_dpmuy"]
+[ext_resource type="PackedScene" uid="uid://d18kb7vuvjuh3" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass_sloped_high.gltf" id="3_yww54"]
+[ext_resource type="PackedScene" uid="uid://b5k8udsigkifc" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass_sloped_low.gltf" id="4_j75vh"]
+[ext_resource type="PackedScene" uid="uid://dihr2c3hmp60i" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_water.gltf" id="5_rrpoi"]
+[ext_resource type="PackedScene" uid="uid://dnnu33klvmy0i" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_A_waterless.gltf" id="6_34fux"]
+[ext_resource type="PackedScene" uid="uid://cmv5jpmcebf1r" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_B_waterless.gltf" id="7_ppv7d"]
+[ext_resource type="PackedScene" uid="uid://dwthr4dxnxyvu" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_C_waterless.gltf" id="8_naet1"]
+[ext_resource type="PackedScene" uid="uid://crfevav3x5sam" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_D_waterless.gltf" id="9_6qlrc"]
+[ext_resource type="PackedScene" uid="uid://c2me683vbon7k" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_E_waterless.gltf" id="10_shobf"]
+[ext_resource type="PackedScene" uid="uid://cknjklb3tlape" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_A.gltf" id="11_lb1cv"]
+[ext_resource type="PackedScene" uid="uid://dft41mdbdmf84" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_B.gltf" id="12_2h37t"]
+[ext_resource type="PackedScene" uid="uid://c2jfjtknvt2bw" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_C.gltf" id="13_adp8l"]
+[ext_resource type="PackedScene" uid="uid://dgkg01h058gmf" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_D.gltf" id="14_dvnpp"]
+[ext_resource type="PackedScene" uid="uid://cys7wkh1xr1ql" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_E.gltf" id="15_ffwl0"]
+[ext_resource type="PackedScene" uid="uid://ce5qmu4u04br4" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_A.gltf" id="16_yg34o"]
+[ext_resource type="PackedScene" uid="uid://bcefsak1b4wys" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_A_curvy.gltf" id="17_21gct"]
+[ext_resource type="PackedScene" uid="uid://dalyvaxo638fm" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_B.gltf" id="18_svjfs"]
+[ext_resource type="PackedScene" uid="uid://dpxn5qe0llkf8" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_C.gltf" id="19_1f472"]
+[ext_resource type="PackedScene" uid="uid://dneh80t7w28uw" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_crossing_A.gltf" id="20_2kuyq"]
+[ext_resource type="PackedScene" uid="uid://3w4ca1schtmd" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_crossing_B.gltf" id="21_rlt3e"]
+[ext_resource type="PackedScene" uid="uid://dq2ncb20j8o1n" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_D.gltf" id="22_wxlvt"]
+[ext_resource type="PackedScene" uid="uid://ctif35miarafe" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_B.gltf" id="23_wy5de"]
+[ext_resource type="PackedScene" uid="uid://beqflqs4dmpoc" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_A_sloped_low.gltf" id="24_xbr6t"]
+[ext_resource type="PackedScene" uid="uid://by7t46urncysq" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_A.gltf" id="25_lmr7q"]
+[ext_resource type="PackedScene" uid="uid://bj8keabmtx8xx" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_C.gltf" id="26_kvqi2"]
+[ext_resource type="PackedScene" uid="uid://c2vktxqmlu8c3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A.gltf" id="27_4rsio"]
+[ext_resource type="PackedScene" uid="uid://bo22gxx1lsdnv" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A_trees.gltf" id="28_fsvon"]
+[ext_resource type="PackedScene" uid="uid://ddfcasg20f37k" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_B.gltf" id="29_tgt5t"]
+[ext_resource type="PackedScene" uid="uid://bv6hii2jqet4t" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_B_trees.gltf" id="30_avhts"]
+[ext_resource type="PackedScene" uid="uid://dmjfvlbrriysb" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_C.gltf" id="31_2325l"]
+[ext_resource type="PackedScene" uid="uid://bl21b25y4nuhs" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_C_trees.gltf" id="32_6i44o"]
+[ext_resource type="PackedScene" uid="uid://bpjfwp1w4cugp" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hill_single_A.gltf" id="33_tr02u"]
+[ext_resource type="PackedScene" uid="uid://bkfp0fol61jfr" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_A.gltf" id="34_a3ny2"]
+[ext_resource type="PackedScene" uid="uid://dackw0fdntaop" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_A_grass.gltf" id="35_i8phf"]
+[ext_resource type="PackedScene" uid="uid://du4rqiwd117qa" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_A.gltf" id="36_ojh8f"]
+[ext_resource type="PackedScene" uid="uid://ddloma18bpx2" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_cut.gltf" id="37_gojgw"]
+[ext_resource type="PackedScene" uid="uid://b0w4frhfctfg3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_large.gltf" id="38_yfnvw"]
+[ext_resource type="PackedScene" uid="uid://6b3h3mqipibb" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterlily_A.gltf" id="39_k13tm"]
+[ext_resource type="PackedScene" uid="uid://c6h8ygovinrs5" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterlily_B.gltf" id="40_t8wer"]
+[ext_resource type="PackedScene" uid="uid://bujl2onpbhm3m" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_A.gltf" id="41_yjwvy"]
+[ext_resource type="PackedScene" uid="uid://38iavs0rccjx" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_B.gltf" id="42_yj1vf"]
+[ext_resource type="PackedScene" uid="uid://csdhrtcf7xti8" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_C.gltf" id="43_rk3hb"]
+[ext_resource type="PackedScene" uid="uid://eaucvf4fqdmy" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/wheelbarrow.gltf" id="44_akds4"]
+[ext_resource type="PackedScene" uid="uid://c3l0yjl4rh07c" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/weaponrack.gltf" id="45_18ypg"]
+[ext_resource type="PackedScene" uid="uid://svfh2wk03tda" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/tent.gltf" id="46_aqqs7"]
+[ext_resource type="PackedScene" uid="uid://bhli0e337oy24" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/target.gltf" id="47_6k88s"]
+[ext_resource type="PackedScene" uid="uid://8fwqxbo41hk4" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/sack.gltf" id="48_fxayx"]
+[ext_resource type="PackedScene" uid="uid://gvipajvlpe47" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/resource_stone.gltf" id="49_0ydj0"]
+[ext_resource type="PackedScene" uid="uid://df8ldsqc0nah0" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/resource_lumber.gltf" id="50_jikdi"]
+[ext_resource type="PackedScene" uid="uid://b3vpgfb66yjwx" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/pallet.gltf" id="51_qosur"]
+[ext_resource type="PackedScene" uid="uid://da0aieeokq5wm" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/ladder.gltf" id="52_6605e"]
+[ext_resource type="PackedScene" uid="uid://l5m0x5kgrmg8" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/flag_yellow.gltf" id="53_cw7rx"]
+[ext_resource type="PackedScene" uid="uid://cvkm0roh6kjio" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/flag_red.gltf" id="54_7b81v"]
+[ext_resource type="PackedScene" uid="uid://dmdl4saw1e5o7" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/flag_green.gltf" id="55_5hv5n"]
+[ext_resource type="PackedScene" uid="uid://b64y7ojkhqc7x" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_long_B.gltf" id="56_notgg"]
+[ext_resource type="PackedScene" uid="uid://bmh3muut5wkhd" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_B_big.gltf" id="57_1qipx"]
+[ext_resource type="PackedScene" uid="uid://cfn2idhg8jx0n" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_A_small.gltf" id="58_hwxnc"]
+[ext_resource type="PackedScene" uid="uid://cgm5byfjjhakh" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_A_big.gltf" id="59_rrafa"]
+[ext_resource type="PackedScene" uid="uid://cjndtr0mtwqgf" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_B_small.gltf" id="60_ulucg"]
+[ext_resource type="PackedScene" uid="uid://di4jhfo4ergbi" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_long_A.gltf" id="61_4kxis"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="hex_grass2" parent="." instance=ExtResource("1_xpeyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062128186, -1.1920929e-07, -0.4347551)
+
+[node name="hex_grass_bottom2" parent="." instance=ExtResource("2_dpmuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.871006, 0, -0.1628685)
+
+[node name="hex_grass_sloped_high2" parent="." instance=ExtResource("3_yww54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30777586, 0, -2.9280267)
+
+[node name="hex_grass_sloped_low2" parent="." instance=ExtResource("4_j75vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.485089, -1.1920929e-07, -3.0161219)
+
+[node name="hex_water2" parent="." instance=ExtResource("5_rrpoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5970087, 0, -1.7181787)
+
+[node name="hex_coast_A_waterless2" parent="." instance=ExtResource("6_34fux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.372475, 0, -4.1685796)
+
+[node name="hex_coast_B_waterless2" parent="." instance=ExtResource("7_ppv7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.764581, 0, -3.238941)
+
+[node name="hex_coast_C_waterless2" parent="." instance=ExtResource("8_naet1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.804903, 0, -0.43820685)
+
+[node name="hex_coast_D_waterless2" parent="." instance=ExtResource("9_6qlrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.304788, 0, 0.401465)
+
+[node name="hex_coast_E_waterless2" parent="." instance=ExtResource("10_shobf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.21755, 0, 1.7723824)
+
+[node name="hex_coast_A2" parent="." instance=ExtResource("11_lb1cv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.17072, 0, -2.810715)
+
+[node name="hex_coast_B2" parent="." instance=ExtResource("12_2h37t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.215012, 0, -2.6393406)
+
+[node name="hex_coast_C2" parent="." instance=ExtResource("13_adp8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.647713, 0, -0.75371265)
+
+[node name="hex_coast_D2" parent="." instance=ExtResource("14_dvnpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.893637, 0, 3.7746255)
+
+[node name="hex_coast_E2" parent="." instance=ExtResource("15_ffwl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.341017, 0, 1.8413074)
+
+[node name="hex_river_A2" parent="." instance=ExtResource("16_yg34o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8278956, 0, -18.604645)
+
+[node name="hex_river_A_curvy2" parent="." instance=ExtResource("17_21gct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8007278, 0, -17.042103)
+
+[node name="hex_river_B2" parent="." instance=ExtResource("18_svjfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1250906, 0, -15.5872555)
+
+[node name="hex_river_C2" parent="." instance=ExtResource("19_1f472")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.236136, 0, -13.631397)
+
+[node name="hex_river_crossing_A2" parent="." instance=ExtResource("20_2kuyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0838785, 1.9073486e-06, -21.54743)
+
+[node name="hex_river_crossing_B2" parent="." instance=ExtResource("21_rlt3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8786106, -1.9073486e-06, -24.388746)
+
+[node name="hex_river_D2" parent="." instance=ExtResource("22_wxlvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.121682, 0, -17.835226)
+
+[node name="hex_road_B2" parent="." instance=ExtResource("23_wy5de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.927761, 0, -22.88297)
+
+[node name="hex_road_A_sloped_low2" parent="." instance=ExtResource("24_xbr6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.288055, 0, -20.192984)
+
+[node name="hex_road_A2" parent="." instance=ExtResource("25_lmr7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.782883, 0, -19.7664)
+
+[node name="hex_road_C2" parent="." instance=ExtResource("26_kvqi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.595762, 0, -16.176981)
+
+[node name="hills_A2" parent="." instance=ExtResource("27_4rsio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.849467, 0, -11.72085)
+
+[node name="hills_A_trees2" parent="." instance=ExtResource("28_fsvon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2771587, 0, -10.03844)
+
+[node name="hills_B2" parent="." instance=ExtResource("29_tgt5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.905769, 0, -8.7422695)
+
+[node name="hills_B_trees2" parent="." instance=ExtResource("30_avhts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9254527, 0, -7.539303)
+
+[node name="hills_C2" parent="." instance=ExtResource("31_2325l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3763485, 0, -8.18609)
+
+[node name="hills_C_trees2" parent="." instance=ExtResource("32_6i44o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5435393, 0, -5.8268213)
+
+[node name="hill_single_A2" parent="." instance=ExtResource("33_tr02u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.573968, 0, -9.8565445)
+
+[node name="mountain_A2" parent="." instance=ExtResource("34_a3ny2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.848087, 0, -5.328006)
+
+[node name="mountain_A_grass2" parent="." instance=ExtResource("35_i8phf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9825335, 0, -3.3185253)
+
+[node name="rock_single_A2" parent="." instance=ExtResource("36_ojh8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2972007, 0, -7.987063)
+
+[node name="trees_A_cut2" parent="." instance=ExtResource("37_gojgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.885867, 0, -6.2691073)
+
+[node name="trees_A_large2" parent="." instance=ExtResource("38_yfnvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.09498, 0, -6.719065)
+
+[node name="waterlily_A2" parent="." instance=ExtResource("39_k13tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5283747, 0, -2.0827992)
+
+[node name="waterlily_B2" parent="." instance=ExtResource("40_t8wer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3314204, 0, -1.7461727)
+
+[node name="waterplant_A2" parent="." instance=ExtResource("41_yjwvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.826652, 0, -1.8515964)
+
+[node name="waterplant_B2" parent="." instance=ExtResource("42_yj1vf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.115122, 0, -2.2230794)
+
+[node name="waterplant_C2" parent="." instance=ExtResource("43_rk3hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.118368, 0, -1.5119708)
+
+[node name="wheelbarrow2" parent="." instance=ExtResource("44_akds4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24974, 0, -1.4626276)
+
+[node name="weaponrack2" parent="." instance=ExtResource("45_18ypg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788128, 2.9802322e-08, -1.3568358)
+
+[node name="tent2" parent="." instance=ExtResource("46_aqqs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.935471, 0, -0.7260667)
+
+[node name="target2" parent="." instance=ExtResource("47_6k88s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.884183, 0, -1.7782192)
+
+[node name="sack2" parent="." instance=ExtResource("48_fxayx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5271163, 0, -1.8093183)
+
+[node name="resource_stone2" parent="." instance=ExtResource("49_0ydj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.463472, 0, 0.07131642)
+
+[node name="resource_lumber2" parent="." instance=ExtResource("50_jikdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.121492, 0, 0.33717048)
+
+[node name="pallet2" parent="." instance=ExtResource("51_qosur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.801156, 0, 0.18843746)
+
+[node name="ladder2" parent="." instance=ExtResource("52_6605e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.297089, 0, 0.8779719)
+
+[node name="flag_yellow2" parent="." instance=ExtResource("53_cw7rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1188936, 0, 1.2220366)
+
+[node name="flag_red2" parent="." instance=ExtResource("54_7b81v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7443194, 0, 1.0464811)
+
+[node name="flag_green2" parent="." instance=ExtResource("55_5hv5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.716746, 0, 0.67938733)
+
+[node name="crate_long_B2" parent="." instance=ExtResource("56_notgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3766503, 0, 1.3442242)
+
+[node name="crate_B_big2" parent="." instance=ExtResource("57_1qipx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.927273, 0, 1.7012845)
+
+[node name="crate_A_small2" parent="." instance=ExtResource("58_hwxnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.894597, 0, 1.2384429)
+
+[node name="crate_A_big2" parent="." instance=ExtResource("59_rrafa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6371646, 0, 1.1234443)
+
+[node name="crate_B_small2" parent="." instance=ExtResource("60_ulucg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7305307, 0, 1.715409)
+
+[node name="crate_long_A2" parent="." instance=ExtResource("61_4kxis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4558187, 0, -0.82787275)
