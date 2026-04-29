@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://scenes/water_tile.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bmm06ahmnn1aq" path="res://scenes/debug_tile.tscn" id="4_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -25,6 +26,8 @@ glow_enabled = true
 script = ExtResource("1_0wfyh")
 tile1_ps = ExtResource("1_o5qli")
 tile2_ps = ExtResource("3_sugp2")
+tile_debug1_ps = ExtResource("4_tefeu")
+tile_debug2_ps = ExtResource("4_tefeu")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
