@@ -1,0 +1,16 @@
+Assets:
+KayKit : Adventurers Character Pack (2.0)
+crediting "Kay Lousberg, www.kaylousberg.com" (this is not mandatory)
+
+KayKit Character Pack : Skeletons (1.1)
+crediting "Kay Lousberg, www.kaylousberg.com" (this is not mandatory)
+
+KayKit : Medieval Builder Pack (1.0)
+crediting "Kay Lousberg, www.kaylousberg.com" (this is not mandatory)
+
+
+Character with movement:
+Brackeys/brackeys-proto-controller
+Proto Controller - License: Creative Commons Legal Code, CC0 1.0 Universal
+
+
