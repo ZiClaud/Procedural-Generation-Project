@@ -29,9 +29,9 @@ Feature #2
 ## Credits
 
 Assets:
+- KayKit : Medieval Hexagon Pack - [Kay Lousberg](https://www.kaylousberg.com/)
 - KayKit : Adventurers Character Pack (2.0) - [Kay Lousberg](https://www.kaylousberg.com/)
 - KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
-- KayKit : Medieval Builder Pack (1.0) - [Kay Lousberg](https://www.kaylousberg.com/)
 
 Character with movement: 
 - Brackeys/brackeys-proto-controller [Proto Controller](https://github.com/Brackeys/brackeys-proto-controller)
