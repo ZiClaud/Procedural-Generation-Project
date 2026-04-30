@@ -2,31 +2,13 @@
 
 [ext_resource type="Script" uid="uid://drei3l7767ykj" path="res://classes/WorldGeneration.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cgt6sxhoqf1qv" path="res://tiles/grass_tile.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="2_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://tiles/water_tile.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="3_trceg"]
-[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="4_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bmm06ahmnn1aq" path="res://tiles/debug_tile.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://elpbqyg8meht" path="res://tiles/road_a_tile.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dvuv6un7ucpyx" path="res://tiles/road_b_tile.tscn" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dnmwpniy6rhlm" path="res://tiles/road_c_tile.tscn" id="12_muem4"]
-
-[sub_resource type="PackedScene" id="PackedScene_dp3eg"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [],
-"names": PackedStringArray("BaseTile", "script", "tile_id", "Node3D", "grass", "StaticBody3D"),
-"node_count": 3,
-"node_ids": PackedInt32Array(457582317, 255999741, 826713353),
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 3, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 2147483647, 4, 2, 0, 0, 0, 0, 2147483647, 5, 3, 0, 0),
-"variants": [ExtResource("2_eb6dy"), Array[int]([0, 0, 0, 0, 0, 0]), ExtResource("3_trceg"), ExtResource("4_a8y0u")],
-"version": 3
-}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -45,10 +27,8 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_0wfyh")
-tile1_ps = SubResource("PackedScene_dp3eg")
-tile2_ps = ExtResource("3_sugp2")
-tile_debug1_ps = ExtResource("4_tefeu")
-tile_debug2_ps = ExtResource("4_tefeu")
+all_tiles_ps = Array[PackedScene]([ExtResource("4_tefeu"), ExtResource("1_o5qli"), ExtResource("3_sugp2")])
+tiles_weight = Array[int]([0, 1, 1])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
@@ -57,33 +37,25 @@ script = ExtResource("4_tbgi4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249673964]
 transform = Transform3D(1, 0, 0, 0, 0.52682227, 0.84997547, 0, -0.84997547, 0.52682227, 0, 3.3119364, 0)
 
-[node name="BaseTile" parent="." unique_id=1696720154 instance=ExtResource("1_o5qli")]
-
-[node name="BaseTile2" parent="." unique_id=433736425 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
-
-[node name="BaseTile3" parent="." unique_id=559130342 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.75)
-
-[node name="BaseTile4" parent="." unique_id=248698139 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.75)
-
 [node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("4_jyhfs")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.0080118, 0)
 can_sprint = true
 can_freefly = true
 
-[node name="BaseTile5" parent="." unique_id=457582317 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9009185, 0, -0.114621155)
+[node name="DebugTile" parent="." unique_id=457582317 instance=ExtResource("4_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.8617997)
 
-[node name="BaseTile6" parent="." unique_id=1834714224 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83495283, 0, -1.8555359)
+[node name="GrassTile" parent="." unique_id=1938583467 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.203995)
 
-[node name="BaseTile7" parent="." unique_id=343088383 instance=ExtResource("10_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063502, 0, 3.6231256)
+[node name="WaterTile" parent="." unique_id=212868937 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.938246)
 
-[node name="BaseTile8" parent="." unique_id=1726250843 instance=ExtResource("11_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0821548, 0, 1.7768065)
+[node name="RoadATile" parent="." unique_id=1388537676 instance=ExtResource("10_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3617997)
 
-[node name="BaseTile9" parent="." unique_id=1489665552 instance=ExtResource("12_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0355687, 0, 0.002955757)
+[node name="RoadBTile" parent="." unique_id=1324241575 instance=ExtResource("11_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4.1117997)
+
+[node name="RoadCTile" parent="." unique_id=809844032 instance=ExtResource("12_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4.1117997)

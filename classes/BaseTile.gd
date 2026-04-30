@@ -1,5 +1,5 @@
 class_name BaseTile
-extends Node
+extends Node3D
 
 # @export var terrain_mesh: Array[PackedScene]
 @export var tile_id: Array[int] = [-1, -1, -1, -1, -1, -1]
