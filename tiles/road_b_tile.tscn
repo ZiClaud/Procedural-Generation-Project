@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvuv6un7ucpyx"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_3t7us"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_qjxwf"]
+[ext_resource type="PackedScene" uid="uid://ctif35miarafe" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_B.gltf" id="3_3t7us"]
+
+[node name="RoadBTile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_3t7us")
+tile_id = Array[int]([0, 0, 0, 2, 0, 2])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_qjxwf")]
+
+[node name="hex_road_B2" parent="." unique_id=1037884493 instance=ExtResource("3_3t7us")]

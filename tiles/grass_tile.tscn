@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="2_aftev"]
 [ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="3_f4edi"]
 
-[node name="BaseTile" type="Node3D" unique_id=457582317]
+[node name="GrassTile" type="Node3D" unique_id=457582317]
 script = ExtResource("1_quhsi")
 tile_id = Array[int]([0, 0, 0, 0, 0, 0])
 

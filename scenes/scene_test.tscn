@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cmv5jpmcebf1r" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_B_waterless.gltf" id="7_ppv7d"]
 [ext_resource type="PackedScene" uid="uid://dwthr4dxnxyvu" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_C_waterless.gltf" id="8_naet1"]
 [ext_resource type="PackedScene" uid="uid://crfevav3x5sam" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_D_waterless.gltf" id="9_6qlrc"]
+[ext_resource type="PackedScene" uid="uid://dkgaftmfb8wco" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_D.gltf" id="9_ohqh8"]
+[ext_resource type="PackedScene" uid="uid://u1nwp6ca0rly" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_E.gltf" id="10_0lsmr"]
 [ext_resource type="PackedScene" uid="uid://c2me683vbon7k" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_E_waterless.gltf" id="10_shobf"]
+[ext_resource type="PackedScene" uid="uid://bns5b3ifetkv3" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_L.gltf" id="11_24cyf"]
 [ext_resource type="PackedScene" uid="uid://cknjklb3tlape" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_A.gltf" id="11_lb1cv"]
 [ext_resource type="PackedScene" uid="uid://dft41mdbdmf84" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_B.gltf" id="12_2h37t"]
 [ext_resource type="PackedScene" uid="uid://c2jfjtknvt2bw" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_C.gltf" id="13_adp8l"]
@@ -23,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://3w4ca1schtmd" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_crossing_B.gltf" id="21_rlt3e"]
 [ext_resource type="PackedScene" uid="uid://dq2ncb20j8o1n" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_D.gltf" id="22_wxlvt"]
 [ext_resource type="PackedScene" uid="uid://ctif35miarafe" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_B.gltf" id="23_wy5de"]
-[ext_resource type="PackedScene" uid="uid://beqflqs4dmpoc" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_A_sloped_low.gltf" id="24_xbr6t"]
 [ext_resource type="PackedScene" uid="uid://by7t46urncysq" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_A.gltf" id="25_lmr7q"]
 [ext_resource type="PackedScene" uid="uid://bj8keabmtx8xx" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_C.gltf" id="26_kvqi2"]
 [ext_resource type="PackedScene" uid="uid://c2vktxqmlu8c3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A.gltf" id="27_4rsio"]
@@ -95,17 +97,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.539513, 0, -0.15150023)
 
 [node name="Road2" type="Node" parent="." unique_id=1343004956]
 
-[node name="hex_road_B2" parent="Road2" unique_id=590774319 instance=ExtResource("23_wy5de")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45292282, 0, -15)
+[node name="hex_road_A2" parent="Road2" unique_id=1370957256 instance=ExtResource("25_lmr7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1301093, 9.536743e-07, -14)
 
-[node name="hex_road_A_sloped_low2" parent="Road2" unique_id=965133845 instance=ExtResource("24_xbr6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2471104, 0, -15)
+[node name="hex_road_B2" parent="Road2" unique_id=1103548644 instance=ExtResource("23_wy5de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1013846, 0, -14)
 
-[node name="hex_road_A2" parent="Road2" unique_id=58268604 instance=ExtResource("25_lmr7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.818413, 0, -15)
+[node name="hex_road_C2" parent="Road2" unique_id=984232013 instance=ExtResource("26_kvqi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5769024, 0, -14)
 
-[node name="hex_road_C2" parent="Road2" unique_id=1541931939 instance=ExtResource("26_kvqi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.048435, 0, -15)
+[node name="hex_road_D2" parent="Road2" unique_id=1971659279 instance=ExtResource("9_ohqh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.862536, 0, -14)
+
+[node name="hex_road_E2" parent="Road2" unique_id=1096270159 instance=ExtResource("10_0lsmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.677892, 0, -14)
+
+[node name="hex_road_L2" parent="Road2" unique_id=479380023 instance=ExtResource("11_24cyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.280891, 0, -14)
 
 [node name="River3" type="Node" parent="." unique_id=2070845028]
 

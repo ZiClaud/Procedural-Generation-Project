@@ -54,3 +54,11 @@ Tiles system: (Read Clock-Wise, starting from 12)
 - 2 = road
 - 3 = river
 - 4 = coast
+
+### Example: [0, 0, 0, 2, 2, 0]
+
+<div align="center">
+
+<img alt="Example" src="assets/tile-example.png?raw=true">
+
+</div>
