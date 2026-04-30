@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crrwfbqjm2eq6"]
 
 [ext_resource type="Script" uid="uid://drei3l7767ykj" path="res://classes/WorldGeneration.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://rbgsqf0dfo8o" path="res://scenes/base_tile.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://rbgsqf0dfo8o" path="res://scenes/grass_tile.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://scenes/water_tile.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
@@ -48,6 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.75)
 
 [node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5997047, 10.70516)
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.0080118, 0)
 can_sprint = true
 can_freefly = true
+
+[node name="BaseTile5" parent="." unique_id=457582317 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9009185, 0, -0.114621155)
+
+[node name="BaseTile6" parent="." unique_id=1834714224 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83495283, 0, -1.8555359)

@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://rbgsqf0dfo8o"]
 
-[ext_resource type="Script" uid="uid://drukvxj655he6" path="res://files/base_tile.gd" id="1_qq5sh"]
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_quhsi"]
 [ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="2_aftev"]
-[ext_resource type="PackedScene" uid="uid://dihr2c3hmp60i" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_water.gltf" id="3_hb517"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qq5sh"]
 size = Vector3(2, 1.002, 1.25)
 
 [node name="BaseTile" type="Node3D" unique_id=457582317]
-script = ExtResource("1_qq5sh")
-terrain_mesh = Array[PackedScene]([ExtResource("2_aftev"), ExtResource("3_hb517")])
+script = ExtResource("1_quhsi")
+tile_id = Array[int]([0, 0, 0, 0, 0, 0])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1758542546]
 

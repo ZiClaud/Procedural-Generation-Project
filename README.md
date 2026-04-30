@@ -44,3 +44,10 @@ Character with movement:
 TODO
 ```
 
+---
+
+## Info
+
+Tiles system: (Read Clock-Wise, starting from 12)
+- 0 = grass
+- 1 = water
