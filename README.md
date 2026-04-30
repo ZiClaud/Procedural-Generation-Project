@@ -14,37 +14,18 @@
 
 ---
 
-## TODO Features
-
-### TODO
-
-Feature #1
-
-### TODO
-
-Feature #2
-
----
-
 ## Credits
 
-Assets:
+### Assets:
 - KayKit : Medieval Hexagon Pack - [Kay Lousberg](https://www.kaylousberg.com/)
 - KayKit : Adventurers Character Pack (2.0) - [Kay Lousberg](https://www.kaylousberg.com/)
 - KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
 
-Character with movement: 
+### Character with movement: 
 - Brackeys/brackeys-proto-controller [Proto Controller](https://github.com/Brackeys/brackeys-proto-controller)
 
 ---
 
-## Build TODO
-
-```bash
-TODO
-```
-
----
 
 ## Tiles system
 

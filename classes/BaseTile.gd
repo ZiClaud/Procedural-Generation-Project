@@ -3,6 +3,7 @@ extends Node3D
 
 # @export var terrain_mesh: Array[PackedScene]
 @export var tile_id: Array[int] = [-1, -1, -1, -1, -1, -1]
+@export var debug_mode: bool = false
 
 func _create_3d_label() -> Label3D:
 	var label: Label3D = Label3D.new()
@@ -42,9 +43,10 @@ func _add_ui():
 		var label: Label3D = _create_3d_label()
 		label.text = String.num_int64(id)
 		
-		_place_id(label, i)
-		i += 1
-		self.add_child(label)
+		if(debug_mode):
+			_place_id(label, i)
+			i += 1
+			self.add_child(label)
 
 
 # Called when the node enters the scene tree for the first time.

@@ -27,8 +27,8 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_0wfyh")
-all_tiles_ps = Array[PackedScene]([ExtResource("4_tefeu"), ExtResource("1_o5qli"), ExtResource("3_sugp2")])
-tiles_weight = Array[int]([0, 1, 1])
+all_tiles_ps = Array[PackedScene]([ExtResource("4_tefeu"), ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4")])
+tiles_weight = Array[int]([0, 1, 1, 1, 1, 1])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
@@ -38,24 +38,25 @@ script = ExtResource("4_tbgi4")
 transform = Transform3D(1, 0, 0, 0, 0.52682227, 0.84997547, 0, -0.84997547, 0.52682227, 0, 3.3119364, 0)
 
 [node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("4_jyhfs")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 0, 1.0080118, 0)
+unique_name_in_owner = true
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 1.0080118, 0)
 can_sprint = true
 can_freefly = true
 
 [node name="DebugTile" parent="." unique_id=457582317 instance=ExtResource("4_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.8617997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.75)
 
 [node name="GrassTile" parent="." unique_id=1938583467 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.203995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6.5)
 
 [node name="WaterTile" parent="." unique_id=212868937 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.938246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -6.5)
 
 [node name="RoadATile" parent="." unique_id=1388537676 instance=ExtResource("10_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3617997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25)
 
 [node name="RoadBTile" parent="." unique_id=1324241575 instance=ExtResource("11_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4.1117997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
 
 [node name="RoadCTile" parent="." unique_id=809844032 instance=ExtResource("12_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4.1117997)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)

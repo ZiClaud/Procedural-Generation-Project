@@ -4,14 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://dq2ncb20j8o1n" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_D.gltf" id="2_4sauo"]
 [ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_gxh3d"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_gxh3d"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+
 [node name="DebugTile" type="Node3D" unique_id=457582317]
 script = ExtResource("1_bqugs")
 
 [node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_gxh3d")]
 
-[node name="hex_river_D2" parent="." unique_id=429756566 instance=ExtResource("2_4sauo")]
-
 [node name="Label3D" type="Label3D" parent="." unique_id=286349319]
 unique_name_in_owner = true
 transform = Transform3D(7.54979e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, -7.54979e-08, -3.300118e-15, 0, 0.1, 0)
 text = "Text"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2144994529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5717227, 0)
+mesh = SubResource("CylinderMesh_gxh3d")
+
+[node name="hex_river_D2" parent="." unique_id=429756566 instance=ExtResource("2_4sauo")]
+visible = false
