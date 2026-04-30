@@ -5,6 +5,8 @@ extends Node3D
 
 @export var world_size: int = 32
 
+# var matrix: Array[Array[BaseTile]]
+
 func _add_ui_debug_tile(tile: BaseTile, row: int, col: int):
 	# TODO assert(tile.is_class("DebugTile"))
 	tile.pos_x = row
@@ -17,12 +19,12 @@ func _add_ui_debug_tile(tile: BaseTile, row: int, col: int):
 		String.num_int64(tile.position.y),
 		", z = ",
 		String.num_int64(tile.position.z),
-		"row = ",
-		String.num_int64(row),
+		#"row = ",
+		#String.num_int64(row),
 	])
 
 
-func _generation_base():
+func _fill_world_with_debug():
 	var x: int = 0
 	var z: int = 0
 	var flip: bool = true;
@@ -40,6 +42,10 @@ func _generation_base():
 			
 			flip = !flip
 			self.add_child(tile)
+
+
+func _generation_base():
+	_fill_world_with_debug()
 
 
 func _ready():
