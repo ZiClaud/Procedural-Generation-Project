@@ -74,20 +74,80 @@
 
 [node name="Node3D" type="Node3D" unique_id=1112670612]
 
-[node name="hex_grass2" parent="." unique_id=1755507693 instance=ExtResource("1_xpeyw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062128186, -1.1920929e-07, -0.4347551)
+[node name="Grass0" type="Node" parent="." unique_id=889956279]
 
-[node name="hex_grass_bottom2" parent="." unique_id=2126841457 instance=ExtResource("2_dpmuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.871006, 0, -0.1628685)
+[node name="hex_grass2" parent="Grass0" unique_id=1755507693 instance=ExtResource("1_xpeyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.865401, -1.1920929e-07, -0.4347551)
 
-[node name="hex_grass_sloped_high2" parent="." unique_id=483941610 instance=ExtResource("3_yww54")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30777586, 0, -2.9280267)
+[node name="hex_grass_bottom2" parent="Grass0" unique_id=2126841457 instance=ExtResource("2_dpmuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.674278, 0, -0.1628685)
 
-[node name="hex_grass_sloped_low2" parent="." unique_id=610458406 instance=ExtResource("4_j75vh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.485089, -1.1920929e-07, -3.0161219)
+[node name="hex_grass_sloped_high2" parent="Grass0" unique_id=483941610 instance=ExtResource("3_yww54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.111049, 0, -2.9280267)
 
-[node name="hex_water2" parent="." unique_id=606495115 instance=ExtResource("5_rrpoi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5970087, 0, -1.7181787)
+[node name="hex_grass_sloped_low2" parent="Grass0" unique_id=610458406 instance=ExtResource("4_j75vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.288363, -1.1920929e-07, -3.0161219)
+
+[node name="Water1" type="Node" parent="." unique_id=933499682]
+
+[node name="hex_water2" parent="Water1" unique_id=606495115 instance=ExtResource("5_rrpoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.539513, 0, -0.15150023)
+
+[node name="Road2" type="Node" parent="." unique_id=1343004956]
+
+[node name="hex_road_B2" parent="Road2" unique_id=590774319 instance=ExtResource("23_wy5de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45292282, 0, -15)
+
+[node name="hex_road_A_sloped_low2" parent="Road2" unique_id=965133845 instance=ExtResource("24_xbr6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2471104, 0, -15)
+
+[node name="hex_road_A2" parent="Road2" unique_id=58268604 instance=ExtResource("25_lmr7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.818413, 0, -15)
+
+[node name="hex_road_C2" parent="Road2" unique_id=1541931939 instance=ExtResource("26_kvqi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.048435, 0, -15)
+
+[node name="River3" type="Node" parent="." unique_id=2070845028]
+
+[node name="hex_river_A2" parent="River3" unique_id=976843887 instance=ExtResource("16_yg34o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90836525, 0, -8.539022)
+
+[node name="hex_river_A_curvy2" parent="River3" unique_id=892015305 instance=ExtResource("17_21gct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.378751, 0, -8.539022)
+
+[node name="hex_river_B2" parent="River3" unique_id=663533178 instance=ExtResource("18_svjfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3550406, 0, -8.539022)
+
+[node name="hex_river_C2" parent="River3" unique_id=1906869800 instance=ExtResource("19_1f472")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.41575, 0, -8.539022)
+
+[node name="hex_river_D2" parent="River3" unique_id=941366778 instance=ExtResource("22_wxlvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0691805, 0, -8.539022)
+
+[node name="RoadRiver" type="Node" parent="." unique_id=1225668301]
+
+[node name="hex_river_crossing_A2" parent="RoadRiver" unique_id=1435145502 instance=ExtResource("20_2kuyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3744535, 0, -4.3106766)
+
+[node name="hex_river_crossing_B2" parent="RoadRiver" unique_id=2048980342 instance=ExtResource("21_rlt3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9376316, 0, -4.3106766)
+
+[node name="Coast4" type="Node" parent="." unique_id=1915850101]
+
+[node name="hex_coast_A2" parent="Coast4" unique_id=726287220 instance=ExtResource("11_lb1cv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.525866, 0, 4.955431)
+
+[node name="hex_coast_B2" parent="Coast4" unique_id=603711141 instance=ExtResource("12_2h37t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.302109, 0, 4.955431)
+
+[node name="hex_coast_C2" parent="Coast4" unique_id=762135852 instance=ExtResource("13_adp8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.806778, 0, 4.955431)
+
+[node name="hex_coast_D2" parent="Coast4" unique_id=1513248521 instance=ExtResource("14_dvnpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.820175, 0, 4.955431)
+
+[node name="hex_coast_E2" parent="Coast4" unique_id=629387662 instance=ExtResource("15_ffwl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.526926, 0, 4.955431)
 
 [node name="hex_coast_A_waterless2" parent="." unique_id=686524041 instance=ExtResource("6_34fux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.372475, 0, -4.1685796)
@@ -103,54 +163,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.304788, 0, 0.401465)
 
 [node name="hex_coast_E_waterless2" parent="." unique_id=1616170359 instance=ExtResource("10_shobf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.21755, 0, 1.7723824)
-
-[node name="hex_coast_A2" parent="." unique_id=726287220 instance=ExtResource("11_lb1cv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.17072, 0, -2.810715)
-
-[node name="hex_coast_B2" parent="." unique_id=603711141 instance=ExtResource("12_2h37t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.215012, 0, -2.6393406)
-
-[node name="hex_coast_C2" parent="." unique_id=762135852 instance=ExtResource("13_adp8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.647713, 0, -0.75371265)
-
-[node name="hex_coast_D2" parent="." unique_id=1513248521 instance=ExtResource("14_dvnpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.893637, 0, 3.7746255)
-
-[node name="hex_coast_E2" parent="." unique_id=629387662 instance=ExtResource("15_ffwl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.341017, 0, 1.8413074)
-
-[node name="hex_river_A2" parent="." unique_id=976843887 instance=ExtResource("16_yg34o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8278956, 0, -18.604645)
-
-[node name="hex_river_A_curvy2" parent="." unique_id=892015305 instance=ExtResource("17_21gct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8007278, 0, -17.042103)
-
-[node name="hex_river_B2" parent="." unique_id=663533178 instance=ExtResource("18_svjfs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1250906, 0, -15.5872555)
-
-[node name="hex_river_C2" parent="." unique_id=1906869800 instance=ExtResource("19_1f472")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.236136, 0, -13.631397)
-
-[node name="hex_river_crossing_A2" parent="." unique_id=1435145502 instance=ExtResource("20_2kuyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0838785, 1.9073486e-06, -21.54743)
-
-[node name="hex_river_crossing_B2" parent="." unique_id=2048980342 instance=ExtResource("21_rlt3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8786106, -1.9073486e-06, -24.388746)
-
-[node name="hex_river_D2" parent="." unique_id=941366778 instance=ExtResource("22_wxlvt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.121682, 0, -17.835226)
-
-[node name="hex_road_B2" parent="." unique_id=590774319 instance=ExtResource("23_wy5de")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.927761, 0, -22.88297)
-
-[node name="hex_road_A_sloped_low2" parent="." unique_id=965133845 instance=ExtResource("24_xbr6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.288055, 0, -20.192984)
-
-[node name="hex_road_A2" parent="." unique_id=58268604 instance=ExtResource("25_lmr7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.782883, 0, -19.7664)
-
-[node name="hex_road_C2" parent="." unique_id=1541931939 instance=ExtResource("26_kvqi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.595762, 0, -16.176981)
 
 [node name="hills_A2" parent="." unique_id=952049212 instance=ExtResource("27_4rsio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.849467, 0, -11.72085)

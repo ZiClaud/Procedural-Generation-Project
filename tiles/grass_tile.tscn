@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cgt6sxhoqf1qv"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_quhsi"]
+[ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="2_aftev"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="3_f4edi"]
+
+[node name="BaseTile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_quhsi")
+tile_id = Array[int]([0, 0, 0, 0, 0, 0])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("3_f4edi")]
+
+[node name="grass" parent="." unique_id=255999741 instance=ExtResource("2_aftev")]

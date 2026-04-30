@@ -51,3 +51,6 @@ TODO
 Tiles system: (Read Clock-Wise, starting from 12)
 - 0 = grass
 - 1 = water
+- 2 = road
+- 3 = river
+- 4 = coast
