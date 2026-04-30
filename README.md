@@ -46,9 +46,9 @@ TODO
 
 ---
 
-## Info
+## Tiles system
 
-Tiles system: (Read Clock-Wise, starting from 12)
+### IDs, read clock-wise, starting from 12
 - 0 = grass
 - 1 = water
 - 2 = road
