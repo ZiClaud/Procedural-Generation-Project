@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
-   sodipodi:docname="little-wars-l1.svg"
+   sodipodi:docname="icon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,31 +23,34 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="1.1503906"
-     inkscape:cx="194.71647"
-     inkscape:cy="249.04584"
+     inkscape:zoom="0.81344901"
+     inkscape:cx="173.336"
+     inkscape:cy="220.66534"
      inkscape:window-width="1536"
      inkscape:window-height="798"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g3" />
   <defs
      id="defs1" />
-  <rect
-     style="opacity:1;fill:#181825;fill-opacity:1;stroke:#1e1e2e;stroke-width:5;stroke-linecap:round;stroke-opacity:1"
-     id="rect1"
-     width="512"
-     height="512"
-     x="0"
-     y="0" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="opacity:1;fill:#313244;fill-opacity:1;stroke:#45475a;stroke-width:6.37984;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 135.4399,348.77638 90.39995,80.28409 -3.0644,-141.3 -49.03048,-28.90225 -1.5322,-19.26821 66.6508,21.67671 -0.76611,61.01593 21.45086,18.46533 19.91864,-19.26818 -0.76611,-61.01592 65.8847,-20.87387 -2.29832,16.85967 -53.62707,32.11365 1.53219,140.49714 88.86776,-81.08694 -12.25763,-89.91817 11.49153,-13.64828 -1.53221,-42.55058 -13.78981,-14.45113 c 0,0 -13.78984,-101.157956 -105.72198,-101.960796 C 165.31787,84.641734 153.82634,186.60253 153.82634,186.60253 l -6.89491,13.64828 -8.42712,4.01423 v 44.15623 l 11.49152,11.23979 z"
-       id="path1" />
+    <g
+       id="g3"
+       inkscape:label="Hexagons">
+      <path
+         style="display:inline;opacity:0.99;fill:#45475a;stroke:#313244;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         d="M 256.00066,56 422.66733,156 V 356 L 256.00066,456 89.334,356 V 156 L 256.00066,56"
+         id="path2"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         style="display:inline;opacity:0.99;fill:#45475a;stroke:#313244;stroke-width:16;stroke-linecap:round;stroke-linejoin:round"
+         d="m 159.99993,96 h 192.0001 l 96.00008,160.00008 -96.00008,160.00009 H 159.99993 L 63.999867,256.00008 159.99993,96"
+         id="path3"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
   </g>
 </svg>
