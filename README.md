@@ -42,7 +42,8 @@
 - 1 = water
 - 2 = road
 - 3 = river
-- 4 = coast
+- 4 = coast (grass - coast)
+- 4 = coast (coast - grass)
 
 ### Example: [0, 0, 0, 2, 2, 0]
 

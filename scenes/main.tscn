@@ -6,9 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bmm06ahmnn1aq" path="res://tiles/debug_tile.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c8octxi7cablf" path="res://tiles/coast_a_tile.tscn" id="8_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://b5owj7wq4ytwg" path="res://tiles/coast_b_tile.tscn" id="9_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://8r5uj8hsk66l" path="res://tiles/coast_c_tile.tscn" id="10_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://elpbqyg8meht" path="res://tiles/road_a_tile.tscn" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dvuv6un7ucpyx" path="res://tiles/road_b_tile.tscn" id="11_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://b16h0flt7aagv" path="res://tiles/coast_d_tile.tscn" id="11_muem4"]
+[ext_resource type="PackedScene" uid="uid://dsvm7a8v5d5yu" path="res://tiles/coast_e_tile.tscn" id="12_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bvj5y3f1kd6o4" path="res://tiles/road_river_a_tile.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dnmwpniy6rhlm" path="res://tiles/road_c_tile.tscn" id="12_muem4"]
+[ext_resource type="PackedScene" uid="uid://fng5rdpuk62k" path="res://tiles/road_river_b_tile.tscn" id="13_muem4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -27,8 +34,8 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_0wfyh")
-all_tiles_ps = Array[PackedScene]([ExtResource("4_tefeu"), ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4")])
-tiles_weight = Array[int]([0, 1, 1, 1, 1, 1])
+all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4")])
+tiles_weight = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")

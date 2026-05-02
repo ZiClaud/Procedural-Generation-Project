@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bvj5y3f1kd6o4"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_gtpyl"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_lw8aq"]
+[ext_resource type="PackedScene" uid="uid://dneh80t7w28uw" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_crossing_A.gltf" id="3_gtpyl"]
+
+[node name="RoadRiverATile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_gtpyl")
+tile_edges_ids = Array[int]([3, 2, 0, 3, 2, 0])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_lw8aq")]
+
+[node name="hex_river_crossing_A2" parent="." unique_id=1198125749 instance=ExtResource("3_gtpyl")]

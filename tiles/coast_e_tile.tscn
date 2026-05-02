@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dsvm7a8v5d5yu"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_g5puu"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_n3i0v"]
+[ext_resource type="PackedScene" uid="uid://cys7wkh1xr1ql" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_E.gltf" id="3_g5puu"]
+
+[node name="CoastETile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_g5puu")
+tile_edges_ids = Array[int]([0, 4, 4, 0, 0, 0])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_n3i0v")]
+
+[node name="hex_coast_E2" parent="." unique_id=981895036 instance=ExtResource("3_g5puu")]
