@@ -3,15 +3,23 @@ extends Node3D
 @export var all_tiles_ps: Array[PackedScene] = []
 @export var tiles_weight: Array[int] = []
 
-@export var world_size: int = 32
+@export var world_size: int = 16
 var world_middle: int = world_size / 2
 
 var placed: Array[BaseTile] = []
 
 @onready var player: CharacterBody3D = %ProtoController
 
+var reset_key: String = "F1"
+
+func _reset_generation():
+	for tile in placed:
+		tile.queue_free()
+	placed = []
+	_generation_base()
+
 func _add_on_map(tile: BaseTile) -> void:
-	await get_tree().create_timer(0.01).timeout
+	await get_tree().create_timer(0.001).timeout
 	self.add_child(tile)
 	#print("Placed: ", placed.size(), "/", world_size * world_size)
 
@@ -164,3 +172,8 @@ func _ready():
 	player.position.z = world_middle * 1.75
 	player.position.y = world_size
 	_generation_base()
+
+
+func _process(delta):
+	if(Input.is_action_just_pressed(reset_key)):
+		_reset_generation()

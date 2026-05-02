@@ -44,19 +44,19 @@ can_sprint = true
 can_freefly = true
 
 [node name="DebugTile" parent="." unique_id=457582317 instance=ExtResource("4_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -68.75)
 
 [node name="GrassTile" parent="." unique_id=1938583467 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, -70.5)
 
 [node name="WaterTile" parent="." unique_id=212868937 instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0, -70.5)
 
 [node name="RoadATile" parent="." unique_id=1388537676 instance=ExtResource("10_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -65.25)
 
 [node name="RoadBTile" parent="." unique_id=1324241575 instance=ExtResource("11_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, -67)
 
 [node name="RoadCTile" parent="." unique_id=809844032 instance=ExtResource("12_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0, -67)
