@@ -6,7 +6,7 @@
 
 [node name="RoadCTile" type="Node3D" unique_id=457582317]
 script = ExtResource("1_hmcfu")
-tile_id = Array[int]([0, 0, 0, 2, 2, 0])
+tile_edges_ids = Array[int]([0, 0, 0, 2, 2, 0])
 
 [node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_1y5r3")]
 

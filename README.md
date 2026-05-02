@@ -10,7 +10,15 @@
 
 ---
 
-## TODO Screenshots
+## Types of generation
+
+### Fill World With Debug:
+
+
+### Fill World Random:
+
+
+### Fill World Random With Rules:
 
 ---
 
