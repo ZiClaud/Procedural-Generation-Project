@@ -13,5 +13,4 @@ func _add_ui_info():
 
 func _ready() -> void:
 	_add_ui_info()
-	self.debug_mode = true
-	_add_ui()
+	self.toggle_debug_mode()

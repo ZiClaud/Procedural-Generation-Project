@@ -1,5 +1,7 @@
 extends Node3D
 
+var generation_time: float = 0.1
+
 @export var all_tiles_ps: Array[PackedScene] = []
 @export var tiles_weight: Array[int] = []
 
@@ -11,6 +13,7 @@ var placed: Array[BaseTile] = []
 @onready var player: CharacterBody3D = %ProtoController
 
 var reset_key: String = "F1"
+var debug_key: String = "F3"
 
 func _reset_generation():
 	for tile in placed:
@@ -18,8 +21,12 @@ func _reset_generation():
 	placed = []
 	_generation_base()
 
+func _toggle_debug_mode():
+	for tile in placed:
+		tile.toggle_debug_mode()
+
 func _add_on_map(tile: BaseTile) -> void:
-	await get_tree().create_timer(0.001).timeout
+	await get_tree().create_timer(generation_time).timeout
 	self.add_child(tile)
 	#print("Placed: ", placed.size(), "/", world_size * world_size)
 
@@ -131,7 +138,6 @@ func _fill_world_with_rules():
 				var tile: BaseTile = get_random_time()
 				_set_tile_pos(tile, Vector2i(row,col))
 				if (_can_tile_be_placed(placed, tile)):
-					# tile.debug_mode = true # TODO change
 					placed.append(tile)
 					await _add_on_map(tile)
 					break
@@ -148,7 +154,6 @@ func _fill_world_random_with_rules():
 		var tile: BaseTile = get_random_time()
 		_set_tile_pos(tile, rand_pos)
 		if (_can_tile_be_placed(placed, tile)):
-			# tile.debug_mode = true # TODO change
 			# DEBUG TILE tile.txt = String.num_int64(i)
 			placed.append(tile)
 			await _add_on_map(tile)
@@ -174,6 +179,8 @@ func _ready():
 	_generation_base()
 
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_just_pressed(reset_key)):
 		_reset_generation()
+	if(Input.is_action_just_pressed(debug_key)):
+		_toggle_debug_mode()

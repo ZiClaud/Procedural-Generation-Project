@@ -3,11 +3,14 @@ extends Node3D
 
 # @export var terrain_mesh: Array[PackedScene]
 @export var tile_edges_ids: Array[int] = [-1, -1, -1, -1, -1, -1]
-@export var debug_mode: bool = false
+@export var _debug_mode: bool = false
 
 var matrix_pos: Vector2i
 # my_rotation = 0-5, 0 remains the same, 1 rotates all tile_edges_ids by one step, etc
-var my_rotation: int = 0
+var _my_rotation: int = 0
+
+var _placed_labels: Array[Label3D] = []
+
 
 func _create_3d_label() -> Label3D:
 	var label: Label3D = Label3D.new()
@@ -49,10 +52,16 @@ func _add_ui():
 		_place_id(label, i)
 		i += 1
 		self.add_child(label)
+		_placed_labels.append(label)
+
+func _remove_ui():
+	for label in _placed_labels:
+		label.queue_free()
+	_placed_labels = []
 
 
 func _rotate(): # TODO Fix
-	match my_rotation:
+	match _my_rotation:
 		0:
 			self.rotation.y = 0
 		1:
@@ -67,11 +76,31 @@ func _rotate(): # TODO Fix
 			self.rotation.y = 300
 
 
+#func _update_tile_edges_ids(curr_rotation: int, new_rotation: int):
+	#var move = new_rotation - curr_rotation
+
+
+func set_my_rotation(num: int):
+	assert(num >= 0 && num <= 5)
+	#_update_tile_edges_ids(_my_rotation, num)
+	_my_rotation = num
+	_rotate()
+
+
+func toggle_debug_mode():
+	_debug_mode = !_debug_mode
+	
+	if(_debug_mode):
+		_add_ui()
+	else:
+		_remove_ui()
+
+
 func _ready() -> void:
 	assert(tile_edges_ids.size() == 6)
-	assert(my_rotation >= 0 && my_rotation <= 5)
+	assert(_my_rotation >= 0 && _my_rotation <= 5)
 	_rotate()
-	if(debug_mode):
+	if(_debug_mode):
 		_add_ui()
 
 

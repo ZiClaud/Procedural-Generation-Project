@@ -71,16 +71,6 @@
 [ext_resource type="PackedScene" uid="uid://cgm5byfjjhakh" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_A_big.gltf" id="59_rrafa"]
 [ext_resource type="PackedScene" uid="uid://cjndtr0mtwqgf" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_B_small.gltf" id="60_ulucg"]
 [ext_resource type="PackedScene" uid="uid://di4jhfo4ergbi" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_long_A.gltf" id="61_4kxis"]
-[ext_resource type="PackedScene" uid="uid://ds64ru46fogbo" path="res://assets/KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Minion.glb" id="62_rv3qv"]
-[ext_resource type="PackedScene" uid="uid://4c2txdwlg8br" path="res://assets/KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Rogue.glb" id="63_dsvod"]
-[ext_resource type="PackedScene" uid="uid://c7ap88c51ibfw" path="res://assets/KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Mage.glb" id="64_seyfv"]
-[ext_resource type="PackedScene" uid="uid://dc6k4557b6tgb" path="res://assets/KayKit_Skeletons_1.1_FREE/characters/gltf/Skeleton_Warrior.glb" id="65_xeayp"]
-[ext_resource type="PackedScene" uid="uid://81qo4rk0xo6x" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb" id="66_2gg7d"]
-[ext_resource type="PackedScene" uid="uid://djrxssy6rvrq2" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb" id="67_8d4ta"]
-[ext_resource type="PackedScene" uid="uid://cyjebi5d1uvun" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Mage.glb" id="68_ohqh8"]
-[ext_resource type="PackedScene" uid="uid://c5gn46x64t7cq" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Ranger.glb" id="69_0lsmr"]
-[ext_resource type="PackedScene" uid="uid://cox2cbg6eldwu" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb" id="70_24cyf"]
-[ext_resource type="PackedScene" uid="uid://b8q3kh8uh2wyk" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue.glb" id="71_ho2lc"]
 
 [node name="Node3D" type="Node3D" unique_id=1112670612]
 
@@ -309,32 +299,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7305307, 0, 1.715409)
 [node name="crate_long_A2" parent="." unique_id=461864874 instance=ExtResource("61_4kxis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4558187, 0, -0.82787275)
 
-[node name="Skeleton_Minion" parent="." unique_id=821040359 instance=ExtResource("62_rv3qv")]
+[node name="Skeleton_Minion" parent="." unique_id=821040359]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 5)
 
-[node name="Skeleton_Rogue" parent="." unique_id=235549416 instance=ExtResource("63_dsvod")]
+[node name="Skeleton_Rogue" parent="." unique_id=235549416]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1, 0, 5)
 
-[node name="Skeleton_Mage" parent="." unique_id=1493147153 instance=ExtResource("64_seyfv")]
+[node name="Skeleton_Mage" parent="." unique_id=1493147153]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2, 0, 5)
 
-[node name="Skeleton_Warrior" parent="." unique_id=1310596177 instance=ExtResource("65_xeayp")]
+[node name="Skeleton_Warrior" parent="." unique_id=1310596177]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3, 0, 5)
 
-[node name="Barbarian" parent="." unique_id=1961070973 instance=ExtResource("66_2gg7d")]
+[node name="Barbarian" parent="." unique_id=1961070973]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 6)
 
-[node name="Knight" parent="." unique_id=761644363 instance=ExtResource("67_8d4ta")]
+[node name="Knight" parent="." unique_id=761644363]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1, 0, 6)
 
-[node name="Mage" parent="." unique_id=14492485 instance=ExtResource("68_ohqh8")]
+[node name="Mage" parent="." unique_id=14492485]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2, 0, 6)
 
-[node name="Ranger" parent="." unique_id=1752456788 instance=ExtResource("69_0lsmr")]
+[node name="Ranger" parent="." unique_id=1752456788]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3, 0, 6)
 
-[node name="Rogue_Hooded" parent="." unique_id=1718790992 instance=ExtResource("70_24cyf")]
+[node name="Rogue_Hooded" parent="." unique_id=1718790992]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, 0, 6)
 
-[node name="Rogue" parent="." unique_id=468374128 instance=ExtResource("71_ho2lc")]
+[node name="Rogue" parent="." unique_id=468374128]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 0, 6)

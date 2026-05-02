@@ -22,22 +22,9 @@
 
 ---
 
-## Credits
-
-### Assets:
-- KayKit : Medieval Hexagon Pack - [Kay Lousberg](https://www.kaylousberg.com/)
-- KayKit : Adventurers Character Pack (2.0) - [Kay Lousberg](https://www.kaylousberg.com/)
-- KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
-
-### Character with movement: 
-- Brackeys/brackeys-proto-controller [Proto Controller](https://github.com/Brackeys/brackeys-proto-controller)
-
----
-
-
 ## Tiles system
 
-### IDs, read clock-wise, starting from 12
+### Tile Edges IDs, read clock-wise, starting from 12
 - 0 = grass
 - 1 = water
 - 2 = road
@@ -52,3 +39,17 @@
 <img alt="Example" src="assets/tile-example.png?raw=true">
 
 </div>
+
+---
+
+## Credits
+
+### Assets:
+- KayKit : Medieval Hexagon Pack - [Kay Lousberg](https://www.kaylousberg.com/)
+<!--
+- KayKit : Adventurers Character Pack (2.0) - [Kay Lousberg](https://www.kaylousberg.com/)
+- KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
+-->
+
+### Character with movement - Used for testing:
+- Brackeys/brackeys-proto-controller [Proto Controller](https://github.com/Brackeys/brackeys-proto-controller)
