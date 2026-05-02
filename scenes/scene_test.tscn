@@ -298,33 +298,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7305307, 0, 1.715409)
 
 [node name="crate_long_A2" parent="." unique_id=461864874 instance=ExtResource("61_4kxis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4558187, 0, -0.82787275)
-
-[node name="Skeleton_Minion" parent="." unique_id=821040359]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 5)
-
-[node name="Skeleton_Rogue" parent="." unique_id=235549416]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1, 0, 5)
-
-[node name="Skeleton_Mage" parent="." unique_id=1493147153]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2, 0, 5)
-
-[node name="Skeleton_Warrior" parent="." unique_id=1310596177]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3, 0, 5)
-
-[node name="Barbarian" parent="." unique_id=1961070973]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 6)
-
-[node name="Knight" parent="." unique_id=761644363]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1, 0, 6)
-
-[node name="Mage" parent="." unique_id=14492485]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2, 0, 6)
-
-[node name="Ranger" parent="." unique_id=1752456788]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3, 0, 6)
-
-[node name="Rogue_Hooded" parent="." unique_id=1718790992]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4, 0, 6)
-
-[node name="Rogue" parent="." unique_id=468374128]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5, 0, 6)

@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Procedural-Generation-Project"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.21176471, 0.22745098, 0.30980393, 1)
 config/icon="res://icon.svg"
 
 [filesystem]

@@ -61,19 +61,20 @@ func _remove_ui():
 
 
 func _rotate(): # TODO Fix?
-	match _my_rotation:
-		0:
-			self.rotation.y = 0
-		1:
-			self.rotation.y = 60
-		2:
-			self.rotation.y = 120
-		3:
-			self.rotation.y = 180
-		4:
-			self.rotation.y = 240
-		5:
-			self.rotation.y = 300
+	self.rotation.y = _my_rotation * 60
+	#match _my_rotation:
+		#0:
+			#self.rotation.y = 0
+		#1:
+			#self.rotation.y = 60
+		#2:
+			#self.rotation.y = 120
+		#3:
+			#self.rotation.y = 180
+		#4:
+			#self.rotation.y = 240
+		#5:
+			#self.rotation.y = 300
 
 
 #func _update_tile_edges_ids(curr_rotation: int, new_rotation: int):
