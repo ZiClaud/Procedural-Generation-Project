@@ -60,7 +60,7 @@ func _remove_ui():
 	_placed_labels = []
 
 
-func _rotate(): # TODO Fix
+func _rotate(): # TODO Fix?
 	match _my_rotation:
 		0:
 			self.rotation.y = 0
@@ -80,11 +80,27 @@ func _rotate(): # TODO Fix
 	#var move = new_rotation - curr_rotation
 
 
-func set_my_rotation(num: int):
-	assert(num >= 0 && num <= 5)
-	#_update_tile_edges_ids(_my_rotation, num)
-	_my_rotation = num
+#func set_my_rotation(num: int): # TODO
+	#assert(num >= 0 && num <= 5)
+	##_update_tile_edges_ids(_my_rotation, num)
+	#_my_rotation = num
+	#_rotate()
+
+
+func increase_my_rotation(): # TODO
+	_my_rotation += 1
+	assert(_my_rotation >= 0 && _my_rotation <= 5)
 	_rotate()
+	
+	## _update_tile_edges_ids
+	var new_tile_edges_ids: Array[int] = []
+	new_tile_edges_ids.append(tile_edges_ids[5])
+	#new_tile_edges_ids.append(tile_edges_ids[tile_edges_ids.size() - 1]) # = 5
+	#for i in tile_edges_ids.size() - 2: # = 4
+	for i in 5:
+		new_tile_edges_ids.append(tile_edges_ids[i])
+	
+	tile_edges_ids = new_tile_edges_ids
 
 
 func toggle_debug_mode():

@@ -129,12 +129,10 @@ func _can_tile_be_placed(tiles: Array[BaseTile], tile: BaseTile) -> bool:
 	return true
 
 
-func _fill_world_with_rules():
+func _fill_world_with_rules(n_iterations: int):
 	for col in world_size:
 		for row in world_size:
-			for n_iterations in 10:
-				#var tile: DebugTile = all_tiles_ps[0].instantiate()
-				#var tile: BaseTile = all_tiles_ps[1].instantiate()
+			for curr_iteration in n_iterations:
 				var tile: BaseTile = get_random_time()
 				_set_tile_pos(tile, Vector2i(row,col))
 				if (_can_tile_be_placed(placed, tile)):
@@ -159,16 +157,31 @@ func _fill_world_random_with_rules():
 			await _add_on_map(tile)
 
 
+
+func _fill_world_with_rules_and_rotation():
+	for col in world_size:
+		for row in world_size:
+			var tile: BaseTile = get_random_time()
+			for curr_rotation in 5: # 1 for each hexagon side
+				_set_tile_pos(tile, Vector2i(row,col))
+				if (_can_tile_be_placed(placed, tile)):
+					placed.append(tile)
+					await _add_on_map(tile)
+					break
+				tile.increase_my_rotation()
+
+
 func get_random_time() -> BaseTile:
 	var rand_id = randi() % all_tiles_ps.size()
 	return all_tiles_ps[rand_id].instantiate()
 
 
 func _generation_base():
-	#_fill_world_with_debug()
+	# _fill_world_with_debug()
 	# _fill_world_random()
-	_fill_world_with_rules()
-	#_fill_world_random_with_rules()
+	# _fill_world_with_rules(10)	# Best
+	# _fill_world_random_with_rules()
+	_fill_world_with_rules_and_rotation()
 
 
 func _ready():
