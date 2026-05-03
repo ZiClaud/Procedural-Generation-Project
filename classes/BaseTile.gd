@@ -16,8 +16,8 @@ func _create_3d_label() -> Label3D:
 	var label: Label3D = Label3D.new()
 	label.position.y = 0.1
 	
-	label.rotation.x = -90
-	label.rotation.y = -90
+	label.rotation.x = deg_to_rad(-90)
+	label.rotation.y = deg_to_rad(-90)
 	return label
 
 
@@ -61,7 +61,7 @@ func _remove_ui():
 
 
 func _rotate(): # TODO Fix?
-	self.rotation.y = _my_rotation * 60
+	self.rotation.y = _my_rotation * deg_to_rad(60)
 	#match _my_rotation:
 		#0:
 			#self.rotation.y = 0

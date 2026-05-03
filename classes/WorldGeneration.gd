@@ -5,7 +5,7 @@ var generation_time: float = 0.1
 @export var all_tiles_ps: Array[PackedScene] = []
 @export var tiles_weight: Array[int] = []
 
-@export var world_size: int = 16
+@export var world_size: int = 8
 var world_middle: int = world_size / 2
 
 var placed: Array[BaseTile] = []
@@ -157,7 +157,6 @@ func _fill_world_random_with_rules():
 			await _add_on_map(tile)
 
 
-
 func _fill_world_with_rules_and_rotation():
 	for col in world_size:
 		for row in world_size:
@@ -171,6 +170,25 @@ func _fill_world_with_rules_and_rotation():
 				tile.increase_my_rotation()
 
 
+func _fill_world_with_rules_and_rotation_2(n_iterations: int):
+	var is_placed: bool
+	for col in world_size:
+		for row in world_size:
+			is_placed = false
+			for curr_iteration in n_iterations:
+				var tile: BaseTile = get_random_time()
+				for curr_rotation in 5: # 1 for each hexagon side
+					_set_tile_pos(tile, Vector2i(row,col))
+					if (_can_tile_be_placed(placed, tile)):
+						placed.append(tile)
+						await _add_on_map(tile)
+						is_placed = true
+						break
+					tile.increase_my_rotation()
+				if(is_placed):
+					break
+
+
 func get_random_time() -> BaseTile:
 	var rand_id = randi() % all_tiles_ps.size()
 	return all_tiles_ps[rand_id].instantiate()
@@ -179,9 +197,10 @@ func get_random_time() -> BaseTile:
 func _generation_base():
 	# _fill_world_with_debug()
 	# _fill_world_random()
-	# _fill_world_with_rules(10)	# Best
+	#_fill_world_with_rules(10)	# Best
 	# _fill_world_random_with_rules()
-	_fill_world_with_rules_and_rotation()
+	#_fill_world_with_rules_and_rotation()
+	_fill_world_with_rules_and_rotation_2(10)
 
 
 func _ready():
