@@ -17,12 +17,13 @@ func _create_3d_label() -> Label3D:
 	label.position.y = 0.1
 	
 	label.rotation.x = deg_to_rad(-90)
-	label.rotation.y = deg_to_rad(-90)
+	label.rotation.y = deg_to_rad(-90) + _my_rotation * deg_to_rad(60)
 	return label
 
 
 func _place_id(label: Label3D, i: int) -> Label3D:
-	match i:
+	assert(i >= 0 && i <= 5)
+	match (i + _my_rotation) % 6:
 		0:
 			label.position.x = 0.75
 		1:
@@ -48,11 +49,17 @@ func _add_ui():
 	for id in tile_edges_ids:
 		var label: Label3D = _create_3d_label()
 		label.text = String.num_int64(id)
-		
 		_place_id(label, i)
 		i += 1
 		self.add_child(label)
 		_placed_labels.append(label)
+	_toggle_ui_visibility() # TODO remove
+
+
+func _toggle_ui_visibility():
+	for label in _placed_labels:
+		label.visible = !label.visible
+
 
 func _remove_ui():
 	for label in _placed_labels:
@@ -60,43 +67,14 @@ func _remove_ui():
 	_placed_labels = []
 
 
-func _rotate(): # TODO Fix?
-	self.rotation.y = _my_rotation * deg_to_rad(60)
-	#match _my_rotation:
-		#0:
-			#self.rotation.y = 0
-		#1:
-			#self.rotation.y = 60
-		#2:
-			#self.rotation.y = 120
-		#3:
-			#self.rotation.y = 180
-		#4:
-			#self.rotation.y = 240
-		#5:
-			#self.rotation.y = 300
+func _rotate():
+	self.rotation.y = _my_rotation * deg_to_rad(-60)
 
 
-#func _update_tile_edges_ids(curr_rotation: int, new_rotation: int):
-	#var move = new_rotation - curr_rotation
-
-
-#func set_my_rotation(num: int): # TODO
-	#assert(num >= 0 && num <= 5)
-	##_update_tile_edges_ids(_my_rotation, num)
-	#_my_rotation = num
-	#_rotate()
-
-
-func increase_my_rotation(): # TODO
-	_my_rotation += 1
-	assert(_my_rotation >= 0 && _my_rotation <= 5)
-	_rotate()
-	
-	## _update_tile_edges_ids
+func _increase_tile_edges_ids():
 	var new_tile_edges_ids: Array[int] = []
-	new_tile_edges_ids.append(tile_edges_ids[5])
 	#new_tile_edges_ids.append(tile_edges_ids[tile_edges_ids.size() - 1]) # = 5
+	new_tile_edges_ids.append(tile_edges_ids[5])
 	#for i in tile_edges_ids.size() - 2: # = 4
 	for i in 5:
 		new_tile_edges_ids.append(tile_edges_ids[i])
@@ -104,12 +82,22 @@ func increase_my_rotation(): # TODO
 	tile_edges_ids = new_tile_edges_ids
 
 
+func increase_my_rotation():
+	_my_rotation += 1
+	assert(_my_rotation >= 0 && _my_rotation <= 5)
+	_rotate()
+	
+	_increase_tile_edges_ids()
+
+
 func toggle_debug_mode():
 	_debug_mode = !_debug_mode
 	
 	if(_debug_mode):
-		_add_ui()
+		#_add_ui() # TODO re-add in future
+		_toggle_ui_visibility() # TODO remove in future
 	else:
+		return # TODO remove
 		_remove_ui()
 
 
@@ -117,8 +105,10 @@ func _ready() -> void:
 	assert(tile_edges_ids.size() == 6)
 	assert(_my_rotation >= 0 && _my_rotation <= 5)
 	_rotate()
+	_add_ui() # TODO remove in future
 	if(_debug_mode):
-		_add_ui()
+		#_add_ui() # TODO re-add in future
+		_toggle_ui_visibility() # TODO remove in future
 
 
 func print() -> void:

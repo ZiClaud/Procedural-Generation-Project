@@ -3,7 +3,7 @@ extends Node3D
 var generation_time: float = 0.1
 
 @export var all_tiles_ps: Array[PackedScene] = []
-@export var tiles_weight: Array[int] = []
+#@export var tiles_weight: Array[int] = []
 
 @export var world_size: int = 8
 var world_middle: int = world_size / 2
@@ -177,8 +177,8 @@ func _fill_world_with_rules_and_rotation_2(n_iterations: int):
 			is_placed = false
 			for curr_iteration in n_iterations:
 				var tile: BaseTile = get_random_time()
+				_set_tile_pos(tile, Vector2i(row,col))
 				for curr_rotation in 5: # 1 for each hexagon side
-					_set_tile_pos(tile, Vector2i(row,col))
 					if (_can_tile_be_placed(placed, tile)):
 						placed.append(tile)
 						await _add_on_map(tile)
@@ -204,7 +204,7 @@ func _generation_base():
 
 
 func _ready():
-	assert(all_tiles_ps.size() == tiles_weight.size())
+	# assert(all_tiles_ps.size() == tiles_weight.size()) # TODO: remove when weights work
 	player.position.x = world_middle * 2
 	player.position.z = world_middle * 1.75
 	player.position.y = world_size

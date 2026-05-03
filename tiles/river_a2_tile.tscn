@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ckxbxvplmaf2v"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_3amwy"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_ppic6"]
+[ext_resource type="PackedScene" uid="uid://bcefsak1b4wys" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_A_curvy.gltf" id="3_3amwy"]
+
+[node name="RiverA2Tile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_3amwy")
+tile_edges_ids = Array[int]([3, 0, 0, 3, 0, 0])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_ppic6")]
+
+[node name="hex_river_A_curvy2" parent="." unique_id=377017332 instance=ExtResource("3_3amwy")]

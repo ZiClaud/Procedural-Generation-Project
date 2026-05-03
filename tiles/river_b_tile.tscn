@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://i5hunvhi477"]
+
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_g1kux"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_nnrgp"]
+[ext_resource type="PackedScene" uid="uid://dalyvaxo638fm" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_B.gltf" id="3_g1kux"]
+
+[node name="RiverBTile" type="Node3D" unique_id=457582317]
+script = ExtResource("1_g1kux")
+tile_edges_ids = Array[int]([0, 0, 0, 3, 0, 3])
+
+[node name="TileStaticBody3D" parent="." unique_id=826713353 instance=ExtResource("2_nnrgp")]
+
+[node name="hex_river_B2" parent="." unique_id=236687949 instance=ExtResource("3_g1kux")]

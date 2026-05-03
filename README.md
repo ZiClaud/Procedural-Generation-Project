@@ -36,7 +36,7 @@
 
 <div align="center">
 
-<img alt="Example" src="assets/tile-example.png?raw=true">
+<img alt="Example1" src="assets/tile-example.png?raw=true">
 
 </div>
 

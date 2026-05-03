@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://bvj5y3f1kd6o4" path="res://tiles/road_river_a_tile.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://dnmwpniy6rhlm" path="res://tiles/road_c_tile.tscn" id="12_muem4"]
 [ext_resource type="PackedScene" uid="uid://fng5rdpuk62k" path="res://tiles/road_river_b_tile.tscn" id="13_muem4"]
+[ext_resource type="PackedScene" uid="uid://bxqd01l3gbw5l" path="res://tiles/river_a_tile.tscn" id="14_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://ckxbxvplmaf2v" path="res://tiles/river_a2_tile.tscn" id="15_yc10j"]
+[ext_resource type="PackedScene" uid="uid://i5hunvhi477" path="res://tiles/river_b_tile.tscn" id="16_jscy8"]
+[ext_resource type="PackedScene" uid="uid://bdb01b0mt7k0u" path="res://tiles/river_c_tile.tscn" id="17_pm3ni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -34,8 +38,7 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_0wfyh")
-all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4")])
-tiles_weight = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4"), ExtResource("14_gqmmt"), ExtResource("15_yc10j"), ExtResource("16_jscy8"), ExtResource("17_pm3ni")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
