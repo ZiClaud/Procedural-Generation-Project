@@ -42,6 +42,15 @@
 
 ---
 
+## Key Bindings:
+
+- WASD: Movement
+- F: Enable FreeFly
+- F1: Generate World again
+- F3: Toggle Debug Mode
+
+---
+
 ## Credits
 
 ### Assets:
@@ -50,6 +59,9 @@
 - KayKit : Adventurers Character Pack (2.0) - [Kay Lousberg](https://www.kaylousberg.com/)
 - KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
 -->
+
+### Theme used for the assets:
+- [Catppuccin Mocha](https://catppuccin.com/)
 
 ### Character with movement - Used for testing:
 - Brackeys/brackeys-proto-controller [Proto Controller](https://github.com/Brackeys/brackeys-proto-controller)
