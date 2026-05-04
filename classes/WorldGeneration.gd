@@ -1,11 +1,11 @@
 extends Node3D
 
-var generation_time: float = 0.1
+var generation_time: float = 0
 
 @export var all_tiles_ps: Array[PackedScene] = []
 #@export var tiles_weight: Array[int] = []
 
-@export var world_size: int = 8
+@export var world_size: int = 16
 var world_middle: int = world_size / 2
 
 var placed: Array[BaseTile] = []
@@ -201,6 +201,7 @@ func _generation_base():
 	# _fill_world_random_with_rules()
 	#_fill_world_with_rules_and_rotation()
 	_fill_world_with_rules_and_rotation_2(10)
+	#_fill_world_with_rules_and_rotation_2(50)
 
 
 func _ready():

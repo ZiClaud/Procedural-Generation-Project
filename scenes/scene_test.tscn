@@ -99,19 +99,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.539513, 0, -0.15150023)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1301093, 9.536743e-07, -14)
 
 [node name="hex_road_B2" parent="Road2" unique_id=1103548644 instance=ExtResource("23_wy5de")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1013846, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6454897, 0, -14)
 
 [node name="hex_road_C2" parent="Road2" unique_id=984232013 instance=ExtResource("26_kvqi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5769024, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.121008, 0, -14)
 
 [node name="hex_road_D2" parent="Road2" unique_id=1971659279 instance=ExtResource("9_ohqh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.862536, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.406641, 0, -14)
 
 [node name="hex_road_E2" parent="Road2" unique_id=1096270159 instance=ExtResource("10_0lsmr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.677892, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.221996, 0, -14)
 
 [node name="hex_road_L2" parent="Road2" unique_id=479380023 instance=ExtResource("11_24cyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.280891, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.799038, 0, -14)
 
 [node name="River3" type="Node" parent="." unique_id=2070845028]
 

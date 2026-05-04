@@ -21,9 +21,9 @@ func _create_3d_label() -> Label3D:
 	return label
 
 
-func _place_id(label: Label3D, i: int) -> Label3D:
+func _place_id_on_label(label: Label3D, i: int) -> Label3D:
 	assert(i >= 0 && i <= 5)
-	match (i + _my_rotation) % 6:
+	match (6 + i - _my_rotation) % 6:
 		0:
 			label.position.x = 0.75
 		1:
@@ -49,11 +49,10 @@ func _add_ui():
 	for id in tile_edges_ids:
 		var label: Label3D = _create_3d_label()
 		label.text = String.num_int64(id)
-		_place_id(label, i)
+		_place_id_on_label(label, i)
 		i += 1
 		self.add_child(label)
 		_placed_labels.append(label)
-	_toggle_ui_visibility() # TODO remove
 
 
 func _toggle_ui_visibility():
@@ -94,10 +93,9 @@ func toggle_debug_mode():
 	_debug_mode = !_debug_mode
 	
 	if(_debug_mode):
-		#_add_ui() # TODO re-add in future
-		_toggle_ui_visibility() # TODO remove in future
+		_add_ui()
 	else:
-		return # TODO remove
+	
 		_remove_ui()
 
 
@@ -105,10 +103,8 @@ func _ready() -> void:
 	assert(tile_edges_ids.size() == 6)
 	assert(_my_rotation >= 0 && _my_rotation <= 5)
 	_rotate()
-	_add_ui() # TODO remove in future
 	if(_debug_mode):
-		#_add_ui() # TODO re-add in future
-		_toggle_ui_visibility() # TODO remove in future
+		_add_ui()
 
 
 func print() -> void:
