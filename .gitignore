@@ -15,3 +15,5 @@ data_*/
 mono_crash.*.json
 assets/idea.png
 assets/*.import
+*.import
+assets/kaykit_medieval_hexagon_gltf/tiles/base/hexagons_medieval-v2.png

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bf17cutj56pc1"]
+
+[ext_resource type="Script" uid="uid://drei3l7767ykj" path="res://classes/WorldGeneration.gd" id="1_xcxwb"]
+[ext_resource type="PackedScene" uid="uid://bsbhpuawiufow" path="res://tiles/decoration_tile.tscn" id="3_gggte"]
+[ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="19_lljks"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="20_kuuh7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
+sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
+sky_horizon_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
+ground_bottom_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
+ground_horizon_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("ProceduralSkyMaterial_jyhfs")
+
+[sub_resource type="Environment" id="Environment_tefeu"]
+background_mode = 2
+sky = SubResource("Sky_tbgi4")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1093720550]
+script = ExtResource("1_xcxwb")
+all_tiles_ps = Array[PackedScene]([ExtResource("3_gggte")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
+environment = SubResource("Environment_tefeu")
+script = ExtResource("19_lljks")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249673964]
+transform = Transform3D(1, 0, 0, 0, 0.52682227, 0.84997547, 0, -0.84997547, 0.52682227, 0, 3.3119364, 0)
+
+[node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("20_kuuh7")]
+unique_name_in_owner = true
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 1.0080118, 0)
+can_sprint = true
+can_freefly = true

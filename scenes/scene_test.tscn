@@ -5,13 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://d18kb7vuvjuh3" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass_sloped_high.gltf" id="3_yww54"]
 [ext_resource type="PackedScene" uid="uid://b5k8udsigkifc" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass_sloped_low.gltf" id="4_j75vh"]
 [ext_resource type="PackedScene" uid="uid://dihr2c3hmp60i" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_water.gltf" id="5_rrpoi"]
-[ext_resource type="PackedScene" uid="uid://dnnu33klvmy0i" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_A_waterless.gltf" id="6_34fux"]
-[ext_resource type="PackedScene" uid="uid://cmv5jpmcebf1r" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_B_waterless.gltf" id="7_ppv7d"]
-[ext_resource type="PackedScene" uid="uid://dwthr4dxnxyvu" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_C_waterless.gltf" id="8_naet1"]
-[ext_resource type="PackedScene" uid="uid://crfevav3x5sam" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_D_waterless.gltf" id="9_6qlrc"]
 [ext_resource type="PackedScene" uid="uid://dkgaftmfb8wco" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_D.gltf" id="9_ohqh8"]
 [ext_resource type="PackedScene" uid="uid://u1nwp6ca0rly" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_E.gltf" id="10_0lsmr"]
-[ext_resource type="PackedScene" uid="uid://c2me683vbon7k" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/waterless/hex_coast_E_waterless.gltf" id="10_shobf"]
 [ext_resource type="PackedScene" uid="uid://bns5b3ifetkv3" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_L.gltf" id="11_24cyf"]
 [ext_resource type="PackedScene" uid="uid://cknjklb3tlape" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_A.gltf" id="11_lb1cv"]
 [ext_resource type="PackedScene" uid="uid://dft41mdbdmf84" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_B.gltf" id="12_2h37t"]
@@ -178,21 +173,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.820175, 0, 4.955431)
 
 [node name="hex_coast_E2" parent="Coast4" unique_id=629387662 instance=ExtResource("15_ffwl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.526926, 0, 4.955431)
-
-[node name="hex_coast_A_waterless2" parent="." unique_id=686524041 instance=ExtResource("6_34fux")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.372475, 0, -4.1685796)
-
-[node name="hex_coast_B_waterless2" parent="." unique_id=715739392 instance=ExtResource("7_ppv7d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.764581, 0, -3.238941)
-
-[node name="hex_coast_C_waterless2" parent="." unique_id=886430347 instance=ExtResource("8_naet1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.804903, 0, -0.43820685)
-
-[node name="hex_coast_D_waterless2" parent="." unique_id=1248988971 instance=ExtResource("9_6qlrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.304788, 0, 0.401465)
-
-[node name="hex_coast_E_waterless2" parent="." unique_id=1616170359 instance=ExtResource("10_shobf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.21755, 0, 1.7723824)
 
 [node name="hills_A2" parent="." unique_id=952049212 instance=ExtResource("27_4rsio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.849467, 0, -11.72085)

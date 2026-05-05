@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://bekjs354ryqkt"]
+
+[ext_resource type="Script" uid="uid://c6opiuu0aejc4" path="res://classes/Decoration.gd" id="1_8cab5"]
+[ext_resource type="PackedScene" uid="uid://c2vktxqmlu8c3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A.gltf" id="2_x4qut"]
+[ext_resource type="PackedScene" uid="uid://bo22gxx1lsdnv" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A_trees.gltf" id="3_2vr1r"]
+[ext_resource type="PackedScene" uid="uid://ddfcasg20f37k" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_B.gltf" id="4_k1x4e"]
+[ext_resource type="PackedScene" uid="uid://bv6hii2jqet4t" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_B_trees.gltf" id="5_62tqm"]
+[ext_resource type="PackedScene" uid="uid://dmjfvlbrriysb" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_C.gltf" id="6_h0udb"]
+[ext_resource type="PackedScene" uid="uid://bl21b25y4nuhs" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_C_trees.gltf" id="7_asujk"]
+[ext_resource type="PackedScene" uid="uid://bpjfwp1w4cugp" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hill_single_A.gltf" id="8_lisxc"]
+[ext_resource type="PackedScene" uid="uid://dpxs4uis52kry" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hill_single_B.gltf" id="9_0racx"]
+[ext_resource type="PackedScene" uid="uid://dd380i5534p31" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hill_single_C.gltf" id="10_kcsvp"]
+[ext_resource type="PackedScene" uid="uid://bkfp0fol61jfr" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_A.gltf" id="11_1dif5"]
+[ext_resource type="PackedScene" uid="uid://dackw0fdntaop" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_A_grass.gltf" id="12_nq1bp"]
+[ext_resource type="PackedScene" uid="uid://bpow2m1jm232k" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_A_grass_trees.gltf" id="13_cnrp6"]
+[ext_resource type="PackedScene" uid="uid://0m30j1gh3yue" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_B.gltf" id="14_5oqyx"]
+[ext_resource type="PackedScene" uid="uid://5qswjkirsvxn" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_B_grass.gltf" id="15_o466g"]
+[ext_resource type="PackedScene" uid="uid://c0mv0rtbwwvcr" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_B_grass_trees.gltf" id="16_bkmms"]
+[ext_resource type="PackedScene" uid="uid://b0l7ut23m76v5" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_C.gltf" id="17_qgxk1"]
+[ext_resource type="PackedScene" uid="uid://dn5ww1eandbv2" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_C_grass.gltf" id="18_g1f61"]
+[ext_resource type="PackedScene" uid="uid://b56ejjuom08cl" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/mountain_C_grass_trees.gltf" id="19_a1y6a"]
+[ext_resource type="PackedScene" uid="uid://du4rqiwd117qa" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_A.gltf" id="20_eerrt"]
+[ext_resource type="PackedScene" uid="uid://d3o0x7b0b74et" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_B.gltf" id="21_ce4wi"]
+[ext_resource type="PackedScene" uid="uid://d15rkfs70x4y7" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_C.gltf" id="22_pcmrb"]
+[ext_resource type="PackedScene" uid="uid://dacf36aqwge02" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_D.gltf" id="23_0o7u5"]
+[ext_resource type="PackedScene" uid="uid://cvm26han85ie2" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/rock_single_E.gltf" id="24_m7py6"]
+[ext_resource type="PackedScene" uid="uid://ddloma18bpx2" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_cut.gltf" id="25_aw31a"]
+[ext_resource type="PackedScene" uid="uid://b0w4frhfctfg3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_large.gltf" id="26_qx0w4"]
+[ext_resource type="PackedScene" uid="uid://7ramt5mcmn0b" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_medium.gltf" id="27_7tfkw"]
+[ext_resource type="PackedScene" uid="uid://rm058qhtlg4f" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_A_small.gltf" id="28_kqghr"]
+[ext_resource type="PackedScene" uid="uid://bgd45ggmqobha" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_B_cut.gltf" id="29_6pptp"]
+[ext_resource type="PackedScene" uid="uid://d05o5cfq4uni" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_B_large.gltf" id="30_4y434"]
+[ext_resource type="PackedScene" uid="uid://we76uo3ipjl7" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_B_medium.gltf" id="31_xukgb"]
+[ext_resource type="PackedScene" uid="uid://c84khovkvfmlb" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/trees_B_small.gltf" id="32_p86n3"]
+[ext_resource type="PackedScene" uid="uid://bmlpi4u1i83ue" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/tree_single_A.gltf" id="33_i0q3n"]
+[ext_resource type="PackedScene" uid="uid://hhld884sglow" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/tree_single_A_cut.gltf" id="34_rd0nb"]
+[ext_resource type="PackedScene" uid="uid://co8fgnsulq71" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/tree_single_B.gltf" id="35_mdtde"]
+[ext_resource type="PackedScene" uid="uid://vu0pvyfsxfu4" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/tree_single_B_cut.gltf" id="36_uvp7p"]
+[ext_resource type="PackedScene" uid="uid://6b3h3mqipibb" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterlily_A.gltf" id="37_ep2ab"]
+[ext_resource type="PackedScene" uid="uid://c6h8ygovinrs5" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterlily_B.gltf" id="38_ukdf2"]
+[ext_resource type="PackedScene" uid="uid://bujl2onpbhm3m" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_A.gltf" id="39_sebyb"]
+[ext_resource type="PackedScene" uid="uid://38iavs0rccjx" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_B.gltf" id="40_54brr"]
+[ext_resource type="PackedScene" uid="uid://csdhrtcf7xti8" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/waterplant_C.gltf" id="41_lr3q6"]
+
+[node name="Decorations" type="Node3D" unique_id=1294322059]
+script = ExtResource("1_8cab5")
+
+[node name="hills_A2" parent="." unique_id=1194761712 instance=ExtResource("2_x4qut")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hills_A_trees2" parent="." unique_id=1832686595 instance=ExtResource("3_2vr1r")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hills_B2" parent="." unique_id=124035490 instance=ExtResource("4_k1x4e")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hills_B_trees2" parent="." unique_id=1983193523 instance=ExtResource("5_62tqm")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hills_C2" parent="." unique_id=413600363 instance=ExtResource("6_h0udb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hills_C_trees2" parent="." unique_id=71811011 instance=ExtResource("7_asujk")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hill_single_A2" parent="." unique_id=1761399901 instance=ExtResource("8_lisxc")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hill_single_B2" parent="." unique_id=1163780944 instance=ExtResource("9_0racx")]
+unique_name_in_owner = true
+visible = false
+
+[node name="hill_single_C2" parent="." unique_id=922406910 instance=ExtResource("10_kcsvp")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_A2" parent="." unique_id=1523161821 instance=ExtResource("11_1dif5")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_A_grass2" parent="." unique_id=688496659 instance=ExtResource("12_nq1bp")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_A_grass_trees2" parent="." unique_id=1409221974 instance=ExtResource("13_cnrp6")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_B2" parent="." unique_id=1832140805 instance=ExtResource("14_5oqyx")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_B_grass2" parent="." unique_id=2055629009 instance=ExtResource("15_o466g")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_B_grass_trees2" parent="." unique_id=1549322899 instance=ExtResource("16_bkmms")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_C2" parent="." unique_id=1869544050 instance=ExtResource("17_qgxk1")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_C_grass2" parent="." unique_id=297709411 instance=ExtResource("18_g1f61")]
+unique_name_in_owner = true
+visible = false
+
+[node name="mountain_C_grass_trees2" parent="." unique_id=1406905817 instance=ExtResource("19_a1y6a")]
+unique_name_in_owner = true
+visible = false
+
+[node name="rock_single_A2" parent="." unique_id=896525289 instance=ExtResource("20_eerrt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="rock_single_B2" parent="." unique_id=263157349 instance=ExtResource("21_ce4wi")]
+unique_name_in_owner = true
+visible = false
+
+[node name="rock_single_C2" parent="." unique_id=1847059783 instance=ExtResource("22_pcmrb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="rock_single_D2" parent="." unique_id=508583939 instance=ExtResource("23_0o7u5")]
+unique_name_in_owner = true
+visible = false
+
+[node name="rock_single_E2" parent="." unique_id=1266236136 instance=ExtResource("24_m7py6")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_A_cut2" parent="." unique_id=911853729 instance=ExtResource("25_aw31a")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_A_large2" parent="." unique_id=284212321 instance=ExtResource("26_qx0w4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_A_medium2" parent="." unique_id=1694074749 instance=ExtResource("27_7tfkw")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_A_small2" parent="." unique_id=1484898448 instance=ExtResource("28_kqghr")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_B_cut2" parent="." unique_id=1123452120 instance=ExtResource("29_6pptp")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_B_large2" parent="." unique_id=1102516925 instance=ExtResource("30_4y434")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_B_medium2" parent="." unique_id=1009507560 instance=ExtResource("31_xukgb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="trees_B_small2" parent="." unique_id=1616412064 instance=ExtResource("32_p86n3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="tree_single_A2" parent="." unique_id=967290291 instance=ExtResource("33_i0q3n")]
+unique_name_in_owner = true
+visible = false
+
+[node name="tree_single_A_cut2" parent="." unique_id=1492988730 instance=ExtResource("34_rd0nb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="tree_single_B2" parent="." unique_id=213698484 instance=ExtResource("35_mdtde")]
+unique_name_in_owner = true
+visible = false
+
+[node name="tree_single_B_cut2" parent="." unique_id=1431358257 instance=ExtResource("36_uvp7p")]
+unique_name_in_owner = true
+visible = false
+
+[node name="waterlily_A2" parent="." unique_id=975718899 instance=ExtResource("37_ep2ab")]
+unique_name_in_owner = true
+visible = false
+
+[node name="waterlily_B2" parent="." unique_id=696686028 instance=ExtResource("38_ukdf2")]
+unique_name_in_owner = true
+visible = false
+
+[node name="waterplant_A2" parent="." unique_id=877157644 instance=ExtResource("39_sebyb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="waterplant_B2" parent="." unique_id=1677902340 instance=ExtResource("40_54brr")]
+unique_name_in_owner = true
+visible = false
+
+[node name="waterplant_C2" parent="." unique_id=587574127 instance=ExtResource("41_lr3q6")]
+unique_name_in_owner = true
+visible = false
