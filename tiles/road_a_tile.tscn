@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://elpbqyg8meht"]
 
-[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_wdwpf"]
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/tiles/BaseTile.gd" id="1_wdwpf"]
 [ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_sslvf"]
 [ext_resource type="PackedScene" uid="uid://by7t46urncysq" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/roads/hex_road_A.gltf" id="3_wdwpf"]
 

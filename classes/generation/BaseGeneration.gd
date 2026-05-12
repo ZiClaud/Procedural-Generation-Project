@@ -1,12 +1,14 @@
-extends Node3D
+class_name BaseGeneration
+extends MyGeneration
 
-var generation_time: float = 0
+var generation_time: float = 0 # TODO: Change in settings UI
+var generation_mode: GenerationMode # TODO: Change in settings UI
 
 @export var all_tiles_ps: Array[PackedScene] = []
 #@export var tiles_weight: Array[int] = []
 
-@export var world_size: int = 16
-var world_middle: int = world_size / 2
+@export var world_size: int = 8
+var world_middle: float = world_size / 2
 
 var placed: Array[BaseTile] = []
 
@@ -19,14 +21,16 @@ func _reset_generation():
 	for tile in placed:
 		tile.queue_free()
 	placed = []
-	_generation_base()
+	generation(generation_mode)
+
 
 func _toggle_debug_mode():
 	for tile in placed:
 		tile.toggle_debug_mode()
 
 func _add_on_map(tile: BaseTile) -> void:
-	await get_tree().create_timer(generation_time).timeout
+	if (generation_time > 0):
+		await get_tree().create_timer(generation_time).timeout
 	self.add_child(tile)
 	#print("Placed: ", placed.size(), "/", world_size * world_size)
 
@@ -55,32 +59,6 @@ func _set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 		tile.position.x = col * 2 + 1
 		tile.position.z = row * 1.75
 	return tile
-
-
-func _fill_world_with_debug():
-	for col in world_size:
-		for row in world_size:
-			var tile: DebugTile = all_tiles_ps[0].instantiate()
-			
-			_set_tile_pos(tile, Vector2i(row, col))
-			
-			_add_ui_debug_tile(tile, "")
-			
-			await _add_on_map(tile)
-
-
-func _fill_world_random():
-	var used: Array[Vector2] = []
-	var max_tiles: int = world_size * world_size
-	for i in max_tiles:
-		var rand_pos: Vector2i = Vector2i(randi() % world_size, randi() % world_size)
-		if (used.has(rand_pos)):
-			continue
-		
-		var tile: BaseTile = get_random_time()
-		_set_tile_pos(tile, rand_pos)
-		used.append(rand_pos)
-		self.add_child(tile)
 
 
 ### Returns the tile if it was found, null otherwise
@@ -129,87 +107,25 @@ func _can_tile_be_placed(tiles: Array[BaseTile], tile: BaseTile) -> bool:
 	return true
 
 
-func _fill_world_with_rules(n_iterations: int):
-	for col in world_size:
-		for row in world_size:
-			for curr_iteration in n_iterations:
-				var tile: BaseTile = get_random_time()
-				_set_tile_pos(tile, Vector2i(row,col))
-				if (_can_tile_be_placed(placed, tile)):
-					placed.append(tile)
-					await _add_on_map(tile)
-					break
-
-
-func _fill_world_random_with_rules():
-	var num_iterations: int = world_size * world_size
-	for i in num_iterations:
-		var rand_pos: Vector2i = Vector2i(randi() % world_size, randi() % world_size)
-		
-		if (_does_list_have_pos(placed, rand_pos) != null):
-			continue
-		
-		var tile: BaseTile = get_random_time()
-		_set_tile_pos(tile, rand_pos)
-		if (_can_tile_be_placed(placed, tile)):
-			# DEBUG TILE tile.txt = String.num_int64(i)
-			placed.append(tile)
-			await _add_on_map(tile)
-
-
-func _fill_world_with_rules_and_rotation():
-	for col in world_size:
-		for row in world_size:
-			var tile: BaseTile = get_random_time()
-			for curr_rotation in 5: # 1 for each hexagon side
-				_set_tile_pos(tile, Vector2i(row,col))
-				if (_can_tile_be_placed(placed, tile)):
-					placed.append(tile)
-					await _add_on_map(tile)
-					break
-				tile.increase_my_rotation()
-
-
-func _fill_world_with_rules_and_rotation_2(n_iterations: int):
-	var is_placed: bool
-	for col in world_size:
-		for row in world_size:
-			is_placed = false
-			for curr_iteration in n_iterations:
-				var tile: BaseTile = get_random_time()
-				_set_tile_pos(tile, Vector2i(row,col))
-				for curr_rotation in 5: # 1 for each hexagon side
-					if (_can_tile_be_placed(placed, tile)):
-						placed.append(tile)
-						await _add_on_map(tile)
-						is_placed = true
-						break
-					tile.increase_my_rotation()
-				if(is_placed):
-					break
-
-
-func get_random_time() -> BaseTile:
+func get_random_tile() -> BaseTile:
 	var rand_id = randi() % all_tiles_ps.size()
 	return all_tiles_ps[rand_id].instantiate()
 
 
-func _generation_base():
-	# _fill_world_with_debug()
-	# _fill_world_random()
-	#_fill_world_with_rules(10)	# Best
-	# _fill_world_random_with_rules()
-	#_fill_world_with_rules_and_rotation()
-	_fill_world_with_rules_and_rotation_2(10)
-	#_fill_world_with_rules_and_rotation_2(50)
 
-
-func _ready():
-	# assert(all_tiles_ps.size() == tiles_weight.size()) # TODO: remove when weights work
+func place_player():
 	player.position.x = world_middle * 2
 	player.position.z = world_middle * 1.75
 	player.position.y = world_size
-	_generation_base()
+
+
+func generation(gen_mode: GenerationMode) -> void:
+	generation_mode = gen_mode
+
+
+func _ready():
+	# assert(all_tiles_ps.size() == tiles_weight.size()) # TODO: re-add when weights work
+	place_player()
 
 
 func _process(_delta):

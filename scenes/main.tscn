@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crrwfbqjm2eq6"]
 
-[ext_resource type="Script" uid="uid://drei3l7767ykj" path="res://classes/WorldGeneration.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://ccn0o87ags2uc" path="res://classes/generation/ProceduralGeneration.gd" id="1_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://cgt6sxhoqf1qv" path="res://tiles/grass_tile.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bsbhpuawiufow" path="res://tiles/decoration_tile.tscn" id="3_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://tiles/water_tile.tscn" id="3_sugp2"]
@@ -37,8 +37,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
-script = ExtResource("1_0wfyh")
-all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_gqmmt"), ExtResource("3_sugp2"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4"), ExtResource("14_gqmmt"), ExtResource("15_yc10j"), ExtResource("16_jscy8"), ExtResource("17_pm3ni")])
+script = ExtResource("1_gqmmt")
+all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("3_gqmmt"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4"), ExtResource("14_gqmmt"), ExtResource("15_yc10j"), ExtResource("16_jscy8"), ExtResource("17_pm3ni")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")

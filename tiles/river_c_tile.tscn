@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdb01b0mt7k0u"]
 
-[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/BaseTile.gd" id="1_wwun4"]
+[ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/tiles/BaseTile.gd" id="1_wwun4"]
 [ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_7pnqt"]
 [ext_resource type="PackedScene" uid="uid://dpxn5qe0llkf8" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_C.gltf" id="3_wwun4"]
 

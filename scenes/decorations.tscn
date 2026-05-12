@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bekjs354ryqkt"]
 
-[ext_resource type="Script" uid="uid://c6opiuu0aejc4" path="res://classes/Decoration.gd" id="1_8cab5"]
+[ext_resource type="Script" uid="uid://c6opiuu0aejc4" path="res://classes/tiles/Decoration.gd" id="1_8cab5"]
 [ext_resource type="PackedScene" uid="uid://c2vktxqmlu8c3" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A.gltf" id="2_x4qut"]
 [ext_resource type="PackedScene" uid="uid://bo22gxx1lsdnv" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_A_trees.gltf" id="3_2vr1r"]
 [ext_resource type="PackedScene" uid="uid://ddfcasg20f37k" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/nature/hills_B.gltf" id="4_k1x4e"]
