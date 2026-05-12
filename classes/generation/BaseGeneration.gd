@@ -4,10 +4,20 @@ extends MyGeneration
 var generation_time: float = 0 # TODO: Change in settings UI
 var generation_mode: GenerationMode # TODO: Change in settings UI
 
-@export var all_tiles_ps: Array[PackedScene] = []
+#@export var all_tiles_ps: Array[PackedScene] = []
 #@export var tiles_weight: Array[int] = []
 
-@export var world_size: int = 8
+const GRASS_TILE_SCENE: PackedScene = preload("res://tiles/grass_tile.tscn")
+const WATER_TILE_SCENE: PackedScene = preload("res://tiles/water_tile.tscn")
+const DECORATION_TILE_SCENE: PackedScene = preload("res://tiles/decoration_tile.tscn")
+const ROADS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/road_a_tile.tscn"), preload("res://tiles/road_b_tile.tscn"), preload("res://tiles/road_c_tile.tscn")]
+const COASTS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/coast_a_tile.tscn"), preload("res://tiles/coast_b_tile.tscn"), preload("res://tiles/coast_c_tile.tscn"), preload("res://tiles/coast_d_tile.tscn"), preload("res://tiles/coast_e_tile.tscn")]
+const RIVERS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/river_a_tile.tscn"), preload("res://tiles/river_a2_tile.tscn"), preload("res://tiles/river_b_tile.tscn"), preload("res://tiles/river_c_tile.tscn")]
+const ROADS_RIVERS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/road_river_a_tile.tscn"), preload("res://tiles/road_river_b_tile.tscn")]
+
+var all_tiles_ps: Array[PackedScene] = []
+
+@export var world_size: int = 16
 var world_middle: float = world_size / 2
 
 var placed: Array[BaseTile] = []
@@ -123,8 +133,17 @@ func generation(gen_mode: GenerationMode) -> void:
 	generation_mode = gen_mode
 
 
+func _fill_all_tiles_ps():
+	all_tiles_ps.append_array([GRASS_TILE_SCENE, WATER_TILE_SCENE, DECORATION_TILE_SCENE])
+	all_tiles_ps.append_array(ROADS_TILES_SCENE)
+	all_tiles_ps.append_array(COASTS_TILES_SCENE)
+	all_tiles_ps.append_array(RIVERS_TILES_SCENE)
+	all_tiles_ps.append_array(ROADS_RIVERS_TILES_SCENE)
+
+
 func _ready():
 	# assert(all_tiles_ps.size() == tiles_weight.size()) # TODO: re-add when weights work
+	_fill_all_tiles_ps()
 	place_player()
 
 

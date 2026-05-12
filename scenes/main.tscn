@@ -39,6 +39,7 @@ glow_enabled = true
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_gqmmt")
 all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("3_gqmmt"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4"), ExtResource("14_gqmmt"), ExtResource("15_yc10j"), ExtResource("16_jscy8"), ExtResource("17_pm3ni")])
+world_size = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")

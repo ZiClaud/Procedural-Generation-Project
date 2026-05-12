@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://bf17cutj56pc1"]
 
 [ext_resource type="Script" uid="uid://dfkhm1iq54jlf" path="res://classes/generation/RandomGeneration.gd" id="1_2jdy8"]
-[ext_resource type="PackedScene" uid="uid://cgt6sxhoqf1qv" path="res://tiles/grass_tile.tscn" id="2_2jdy8"]
-[ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://tiles/water_tile.tscn" id="3_xo0e3"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="19_lljks"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="20_kuuh7"]
 
@@ -23,7 +21,6 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_2jdy8")
-all_tiles_ps = Array[PackedScene]([ExtResource("2_2jdy8"), ExtResource("3_xo0e3")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
