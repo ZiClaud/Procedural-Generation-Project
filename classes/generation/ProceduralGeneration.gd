@@ -30,9 +30,9 @@ func _fill_world_not_perlin_noise() -> void:
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_random_tile()
-			_set_tile_pos(tile, Vector2i(row, col))
+			set_tile_pos(tile, Vector2i(row, col))
 			placed.append(tile)
-			await _add_on_map(tile)
+			await add_on_map(tile)
 
 
 func _fill_world_perlin_noise() -> void:
@@ -40,15 +40,15 @@ func _fill_world_perlin_noise() -> void:
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_perlin_tile(row, col)
-			_set_tile_pos(tile, Vector2i(row, col))
+			set_tile_pos(tile, Vector2i(row, col))
 			placed.append(tile)
-			await _add_on_map(tile)
+			await add_on_map(tile)
 
 
 func _try_to_place_coast(pos: Vector2i) -> bool:
 	for tile in COASTS_TILES_SCENE:
 		var t: BaseTile = tile.instantiate()
-		if (await _add_tile_or_rotate_it(t, pos)):
+		if (await add_tile_or_rotate_it(t, pos)):
 			return true
 	return false
 
@@ -65,10 +65,10 @@ func _fill_world_perlin_noise_ruled() -> void:
 		for row in world_size:
 			var tile: BaseTile = get_perlin_tile(row, col)
 			# Checking if we can place the water tile next to the grass tile
-			_set_tile_pos(tile, Vector2i(row, col))
-			if (_can_tile_be_placed(placed, tile)):
+			set_tile_pos(tile, Vector2i(row, col))
+			if (can_tile_be_placed(placed, tile)):
 				placed.append(tile)
-				await _add_on_map(tile)
+				await add_on_map(tile)
 	_try_to_place_coast_in_world()
 
 

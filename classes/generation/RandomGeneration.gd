@@ -1,19 +1,17 @@
 class_name RandomGeneration
 extends BaseGeneration
 
-# @export var all_tiles_ps: Array[PackedScene] = []
-
-
 func _fill_world_with_debug():
 	for col in world_size:
 		for row in world_size:
-			var tile: DebugTile = all_tiles_ps[0].instantiate() #TODO fix
+			var tile: DebugTile = DEBUG_TILE_SCENE.instantiate()
 			
-			_set_tile_pos(tile, Vector2i(row, col))
+			set_tile_pos(tile, Vector2i(row, col))
 			
+			# DEBUG TILE tile.txt = String.num_int64(i)
 			_add_ui_debug_tile(tile, "")
 			
-			await _add_on_map(tile)
+			await add_on_map(tile)
 
 
 func _fill_world_random():
@@ -25,7 +23,7 @@ func _fill_world_random():
 			continue
 		
 		var tile: BaseTile = get_random_tile()
-		_set_tile_pos(tile, rand_pos)
+		set_tile_pos(tile, rand_pos)
 		used.append(rand_pos)
 		self.add_child(tile)
 
@@ -35,10 +33,10 @@ func _fill_world_with_rules(n_iterations: int):
 		for row in world_size:
 			for curr_iteration in n_iterations:
 				var tile: BaseTile = get_random_tile()
-				_set_tile_pos(tile, Vector2i(row,col))
-				if (_can_tile_be_placed(placed, tile)):
+				set_tile_pos(tile, Vector2i(row,col))
+				if (can_tile_be_placed(placed, tile)):
 					placed.append(tile)
-					await _add_on_map(tile)
+					await add_on_map(tile)
 					break
 
 
@@ -51,18 +49,17 @@ func _fill_world_random_with_rules():
 			continue
 		
 		var tile: BaseTile = get_random_tile()
-		_set_tile_pos(tile, rand_pos)
-		if (_can_tile_be_placed(placed, tile)):
-			# DEBUG TILE tile.txt = String.num_int64(i)
+		set_tile_pos(tile, rand_pos)
+		if (can_tile_be_placed(placed, tile)):
 			placed.append(tile)
-			await _add_on_map(tile)
+			await add_on_map(tile)
 
 
 func _fill_world_with_rules_and_rotation():
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_random_tile()
-			_add_tile_or_rotate_it(tile, Vector2i(row, col))
+			add_tile_or_rotate_it(tile, Vector2i(row, col))
 
 
 func _fill_world_with_rules_and_rotation_2(n_iterations: int):
@@ -72,8 +69,8 @@ func _fill_world_with_rules_and_rotation_2(n_iterations: int):
 			is_placed = false
 			for curr_iteration in n_iterations:
 				var tile: BaseTile = get_random_tile()
-				_set_tile_pos(tile, Vector2i(row,col))
-				is_placed = await _add_tile_or_rotate_it(tile, Vector2i(row, col))
+				set_tile_pos(tile, Vector2i(row,col))
+				is_placed = await add_tile_or_rotate_it(tile, Vector2i(row, col))
 				if(is_placed):
 					break
 
@@ -100,6 +97,5 @@ func generation(gen_mode: GenerationMode) -> void:
 
 
 func _ready():
-	#var all_tiles_ps: Array[PackedScene] = []
 	super._ready()
 	generation(GenerationMode.BETTER_RULED_RANDOM_ROTATION)
