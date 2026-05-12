@@ -21,6 +21,7 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_2jdy8")
+world_size = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")

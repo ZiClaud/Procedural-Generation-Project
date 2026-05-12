@@ -9,7 +9,7 @@ var generation_mode: GenerationMode # TODO: Change in settings UI
 
 var all_tiles_ps: Array[PackedScene] = []
 
-@export var world_size: int = 16
+@export var world_size: int = 8
 var world_middle: float = world_size / 2
 
 var placed: Array[BaseTile] = []
@@ -34,7 +34,7 @@ func _add_on_map(tile: BaseTile) -> void:
 	if (generation_time > 0):
 		await get_tree().create_timer(generation_time).timeout
 	self.add_child(tile)
-	#print("Placed: ", placed.size(), "/", world_size * world_size)
+	print("Placed: ", placed.size(), "/", world_size * world_size)
 
 
 func _add_ui_debug_tile(tile: DebugTile, text: String):
@@ -63,6 +63,17 @@ func _set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 	return tile
 
 
+func _add_tile_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
+	for curr_rotation in 5: # 1 for each hexagon side
+		_set_tile_pos(tile, pos)
+		if (_can_tile_be_placed(placed, tile)):
+			placed.append(tile)
+			await _add_on_map(tile)
+			return true
+		tile.increase_my_rotation()
+	return false
+
+
 ### Returns the tile if it was found, null otherwise
 func _does_list_have_pos(tiles: Array[BaseTile], pos: Vector2i) -> BaseTile:
 	for tile in tiles:
@@ -70,7 +81,7 @@ func _does_list_have_pos(tiles: Array[BaseTile], pos: Vector2i) -> BaseTile:
 			return tile
 	return null
 
-func _can_tile_be_placed(tiles: Array[BaseTile], tile: BaseTile) -> bool:
+func _can_tile_be_placed(placed_tiles: Array[BaseTile], tile: BaseTile) -> bool:
 	var tile5: BaseTile
 	var tile0: BaseTile
 	var tile1: BaseTile
@@ -79,31 +90,43 @@ func _can_tile_be_placed(tiles: Array[BaseTile], tile: BaseTile) -> bool:
 	var tile4: BaseTile
 	
 	if (tile.matrix_pos.x % 2):
-		tile5 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(-1, 0))
-		tile0 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(0, 1))
-		tile1 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(1, 0))
-		tile2 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(1, -1))
-		tile3 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(0, -1))
-		tile4 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(-1, -1))
+		tile5 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(-1, 0))
+		tile0 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(0, 1))
+		tile1 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(1, 0))
+		tile2 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(1, -1))
+		tile3 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(0, -1))
+		tile4 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(-1, -1))
 	else:
-		tile5 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(-1, 1))
-		tile0 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(0, 1))
-		tile1 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(1, 1))
-		tile2 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(1, 0))
-		tile3 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(0, -1))
-		tile4 = _does_list_have_pos(tiles, tile.matrix_pos + Vector2i(-1, 0))
+		tile5 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(-1, 1))
+		tile0 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(0, 1))
+		tile1 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(1, 1))
+		tile2 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(1, 0))
+		tile3 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(0, -1))
+		tile4 = _does_list_have_pos(placed_tiles, tile.matrix_pos + Vector2i(-1, 0))
 	
 	if (tile0 != null && tile.tile_edges_ids[0] != tile0.tile_edges_ids[3]):
+		tile0.print()
+		print("tile0")
 		return false
 	if (tile1 != null && tile.tile_edges_ids[1] != tile1.tile_edges_ids[4]):
+		tile1.print()
+		print("tile1")
 		return false
 	if (tile2 != null && tile.tile_edges_ids[2] != tile2.tile_edges_ids[5]):
+		tile2.print()
+		print("tile2")
 		return false
 	if (tile3 != null && tile.tile_edges_ids[3] != tile3.tile_edges_ids[0]):
+		tile3.print()
+		print("tile3")
 		return false
 	if (tile4 != null && tile.tile_edges_ids[4] != tile4.tile_edges_ids[1]):
+		tile4.print()
+		print("tile4")
 		return false
 	if (tile5 != null && tile.tile_edges_ids[5] != tile5.tile_edges_ids[2]):
+		tile5.print()
+		print("tile5")
 		return false
 	
 	return true
@@ -122,7 +145,8 @@ func place_player():
 
 
 func generation(gen_mode: GenerationMode) -> void:
-	generation_mode = gen_mode
+	assert(false, "Function 'generation' not implemented")
+	#generation_mode = gen_mode
 
 
 func _fill_all_tiles_ps():

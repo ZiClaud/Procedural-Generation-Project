@@ -21,12 +21,12 @@ func get_perlin_tile(row: int, col: int) -> BaseTile:
 	var noise_val := noise.get_noise_2d(row, col)
 	
 	if (noise_val >= 0):
-		return all_tiles_ps[0].instantiate()
+		return GRASS_TILE_SCENE.instantiate()
 	else:
-		return all_tiles_ps[1].instantiate()
+		return WATER_TILE_SCENE.instantiate()
 
 
-func _fill_world_not_using_perlin_noise() -> void:
+func _fill_world_not_perlin_noise() -> void:
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_random_tile()
@@ -35,7 +35,7 @@ func _fill_world_not_using_perlin_noise() -> void:
 			await _add_on_map(tile)
 
 
-func _fill_world_using_perlin_noise() -> void:
+func _fill_world_perlin_noise() -> void:
 	setup_noise()
 	for col in world_size:
 		for row in world_size:
@@ -45,16 +45,46 @@ func _fill_world_using_perlin_noise() -> void:
 			await _add_on_map(tile)
 
 
-func procedural_generation(gen_mode: GenerationMode) -> void:
-	#super.generation(gen_mode)
-	#pass
+func _try_to_place_coast(pos: Vector2i) -> bool:
+	for tile in COASTS_TILES_SCENE:
+		var t: BaseTile = tile.instantiate()
+		if (await _add_tile_or_rotate_it(t, pos)):
+			return true
+	return false
+
+
+func _try_to_place_coast_in_world() -> void:
+	for col in world_size:
+		for row in world_size:
+			_try_to_place_coast(Vector2i(row, col))
+
+
+func _fill_world_perlin_noise_ruled() -> void:
+	setup_noise()
+	for col in world_size:
+		for row in world_size:
+			var tile: BaseTile = get_perlin_tile(row, col)
+			# Checking if we can place the water tile next to the grass tile
+			_set_tile_pos(tile, Vector2i(row, col))
+			if (_can_tile_be_placed(placed, tile)):
+				placed.append(tile)
+				await _add_on_map(tile)
+	_try_to_place_coast_in_world()
+
+
+func generation(gen_mode: GenerationMode) -> void:
+	generation_mode = gen_mode
 	
 	if (gen_mode == GenerationMode.PERLIN):
-		_fill_world_using_perlin_noise()
+		_fill_world_perlin_noise() # Best
+	elif (gen_mode == GenerationMode.PERLIN_RULED):
+		_fill_world_perlin_noise_ruled()
+	elif (gen_mode == GenerationMode.ERROR):
+		assert(false, "GenerationMode.ERROR")
 	elif (gen_mode != GenerationMode.PERLIN):
-		_fill_world_not_using_perlin_noise()
+		_fill_world_not_perlin_noise()
 
 
 func _ready():
 	super._ready()
-	procedural_generation(GenerationMode.PERLIN)
+	generation(GenerationMode.PERLIN_RULED)

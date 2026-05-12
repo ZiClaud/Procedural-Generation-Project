@@ -62,13 +62,7 @@ func _fill_world_with_rules_and_rotation():
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_random_tile()
-			for curr_rotation in 5: # 1 for each hexagon side
-				_set_tile_pos(tile, Vector2i(row,col))
-				if (_can_tile_be_placed(placed, tile)):
-					placed.append(tile)
-					await _add_on_map(tile)
-					break
-				tile.increase_my_rotation()
+			_add_tile_or_rotate_it(tile, Vector2i(row, col))
 
 
 func _fill_world_with_rules_and_rotation_2(n_iterations: int):
@@ -79,19 +73,14 @@ func _fill_world_with_rules_and_rotation_2(n_iterations: int):
 			for curr_iteration in n_iterations:
 				var tile: BaseTile = get_random_tile()
 				_set_tile_pos(tile, Vector2i(row,col))
-				for curr_rotation in 5: # 1 for each hexagon side
-					if (_can_tile_be_placed(placed, tile)):
-						placed.append(tile)
-						await _add_on_map(tile)
-						is_placed = true
-						break
-					tile.increase_my_rotation()
+				is_placed = await _add_tile_or_rotate_it(tile, Vector2i(row, col))
 				if(is_placed):
 					break
 
 
 func generation(gen_mode: GenerationMode) -> void:
-	super.generation(gen_mode)
+	generation_mode = gen_mode
+	
 	if (gen_mode == GenerationMode.DEBUG):
 		_fill_world_with_debug()
 	elif (gen_mode == GenerationMode.RANDOM):
@@ -104,6 +93,8 @@ func generation(gen_mode: GenerationMode) -> void:
 		_fill_world_with_rules_and_rotation()
 	elif (gen_mode == GenerationMode.BETTER_RULED_RANDOM_ROTATION):
 		_fill_world_with_rules_and_rotation_2(10) # New Best
+	elif (gen_mode == GenerationMode.ERROR):
+		assert(false, "GenerationMode.ERROR")
 	else:
 		assert(false, "Generation random type not found")
 

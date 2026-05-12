@@ -10,6 +10,7 @@ const RIVERS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/river_a_til
 const ROADS_RIVERS_TILES_SCENE: Array[PackedScene] = [preload("res://tiles/road_river_a_tile.tscn"), preload("res://tiles/road_river_b_tile.tscn")]
 
 enum GenerationMode {
+	ERROR,
 	DEBUG,
 	RANDOM,
 	RULED,
@@ -17,4 +18,5 @@ enum GenerationMode {
 	RULED_RANDOM_ROTATION,
 	BETTER_RULED_RANDOM_ROTATION,
 	PERLIN,
+	PERLIN_RULED,
 }
