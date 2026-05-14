@@ -6,7 +6,7 @@ var generation_mode: GenerationMode # TODO: Change in settings UI
 
 var all_tiles_ps: Array[PackedScene] = []
 
-@export var world_size: int = 8
+@export var world_size: int = 32 # TODO: Change in settings UI
 var world_middle: float = world_size / 2
 
 var placed: Array[BaseTile] = []

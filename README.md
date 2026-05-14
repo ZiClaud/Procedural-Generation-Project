@@ -12,13 +12,13 @@
 
 ## Types of generation
 
-### Fill World With Debug:
+### Fill World "Perlin Noise":
+<img alt="PerlinNoiseGeneration" src="https://i.imgur.com/iHPWJNv.png?raw=true">
+
+### Fill World "Ruled":
 
 
-### Fill World Random:
-
-
-### Fill World Random With Rules:
+### Fill World "Better Ruled Random Rotation":
 
 ---
 
@@ -36,7 +36,7 @@
 
 <div align="center">
 
-<img alt="Example1" src="assets/tile-example.png?raw=true">
+<img alt="Example1" src="https://i.imgur.com/ylU33Dl.png?raw=true">
 
 </div>
 

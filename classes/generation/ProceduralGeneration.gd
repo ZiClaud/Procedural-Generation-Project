@@ -48,15 +48,19 @@ func _fill_world_perlin_noise() -> void:
 func _try_to_place_coast(pos: Vector2i) -> bool:
 	for tile in COASTS_TILES_SCENE:
 		var t: BaseTile = tile.instantiate()
-		if (await add_tile_or_rotate_it(t, pos)):
+		var was_placed: bool = await add_tile_or_rotate_it(t, pos)
+		if (was_placed):
 			return true
+	var grass_tile: BaseTile = GRASS_TILE_SCENE.instantiate()
+	set_tile_pos(grass_tile, pos)
 	return false
 
 
 func _try_to_place_coast_in_world() -> void:
 	for col in world_size:
 		for row in world_size:
-			_try_to_place_coast(Vector2i(row, col))
+			if (_does_list_have_pos(placed, Vector2i(row, col)) == null):
+				_try_to_place_coast(Vector2i(row, col))
 
 
 func _fill_world_perlin_noise_ruled() -> void:
@@ -69,7 +73,9 @@ func _fill_world_perlin_noise_ruled() -> void:
 			if (can_tile_be_placed(placed, tile)):
 				placed.append(tile)
 				await add_on_map(tile)
+	print_total_palced()
 	_try_to_place_coast_in_world()
+	print_total_palced()
 
 
 func generation(gen_mode: GenerationMode) -> void:
@@ -87,4 +93,4 @@ func generation(gen_mode: GenerationMode) -> void:
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.PERLIN_RULED)
+	generation(GenerationMode.PERLIN)
