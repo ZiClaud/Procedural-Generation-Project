@@ -38,10 +38,10 @@
 
 ## Key Bindings:
 
-- WASD: Movement
-- F: Enable FreeFly
-- F1: Generate World again
-- F3: Toggle Debug Mode
+- Movement: `WASD`
+- Enable FreeFly: `F`
+- Re-Generate World: `F1`
+- Toggle Debug Mode: `F3`
 
 ---
 
