@@ -4,8 +4,8 @@ extends BaseGeneration
 var noise: FastNoiseLite
 
 func setup_noise():
-	var seed: int = randi()
-	print("Seed: ", seed)
+	var world_seed: int = randi()
+	print("Seed: ", world_seed)
 	
 	var freq: float = 1 / world_middle
 	print("Freq: ", freq)
@@ -14,7 +14,7 @@ func setup_noise():
 
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	noise.fractal_type = FastNoiseLite.FRACTAL_FBM
-	noise.seed = seed
+	noise.seed = world_seed
 	noise.frequency = freq
 
 
@@ -50,15 +50,17 @@ func _fill_world_perlin_noise() -> void:
 
 
 func _try_to_place_coast(pos: Vector2i) -> bool:
+	var t: BaseTile
+	var was_placed: bool
 	for tile in COASTS_TILES_SCENE:
-		var t: BaseTile = tile.instantiate()
-		var was_placed: bool = await add_tile_to_map_or_rotate_it(t, pos)
+		t = tile.instantiate()
+		was_placed = await add_tile_to_map_or_rotate_it(t, pos)
 		if (was_placed):
 			return true
 	
 	# Try to place water/grass if no coast was found
-	var t: BaseTile = GRASS_TILE_SCENE.instantiate()
-	var was_placed: bool = await add_tile_to_map_or_rotate_it(t, pos)
+	t = GRASS_TILE_SCENE.instantiate()
+	was_placed = await add_tile_to_map_or_rotate_it(t, pos)
 	if (was_placed):
 		return true
 	t = WATER_TILE_SCENE.instantiate()

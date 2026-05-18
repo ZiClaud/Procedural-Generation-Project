@@ -148,7 +148,7 @@ func place_player():
 	player.position.y = world_size
 
 
-func generation(gen_mode: GenerationMode) -> void:
+func generation(_gen_mode: GenerationMode) -> void:
 	assert(false, "Function 'generation' not implemented")
 
 
