@@ -128,8 +128,8 @@ func generation(gen_mode: GenerationMode) -> void:
 		_fill_world_perlin_noise_ruled()
 	elif (gen_mode == GenerationMode.PERLIN_ALL_HEIGHTS):
 		_fill_world_perlin_noise_heights(2.5)
-	elif (gen_mode == GenerationMode.PERLIN_GRASS_HEIGHTS):
-		_fill_world_perlin_noise_positive_heights(5)
+	elif (gen_mode == GenerationMode.PERLIN_POSITIVE_HEIGHTS):
+		_fill_world_perlin_noise_positive_heights(5) # New best
 	elif (gen_mode == GenerationMode.ERROR):
 		assert(false, "GenerationMode.ERROR")
 	elif (gen_mode != GenerationMode.PERLIN):
@@ -138,4 +138,4 @@ func generation(gen_mode: GenerationMode) -> void:
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.PERLIN_GRASS_HEIGHTS)
+	generation(GenerationMode.PERLIN_POSITIVE_HEIGHTS)

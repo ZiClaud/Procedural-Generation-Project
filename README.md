@@ -12,19 +12,23 @@
 
 ## Types of generation
 
+### Fill World "Perlin Positive Heights":
+<img alt="PerlinPositiveHeightsGeneration" width="500" src="https://i.imgur.com/BVKoLgH.png?raw=true">
+
 ### Fill World "Perlin Noise":
-<img alt="PerlinNoiseGeneration" src="https://i.imgur.com/iHPWJNv.png?raw=true">
+<img alt="PerlinNoiseGeneration" width="500" src="https://i.imgur.com/iHPWJNv.png?raw=true">
 
 ### Fill World "Ruled":
 
 
 ### Fill World "Better Ruled Random Rotation":
 
+
 ---
 
 ## Tiles system
 
-### Tile Edges IDs, read clock-wise, starting from 12
+### Tile Edges IDs, read clock-wise, starting from the top (12 o'clock)
 - 0 = grass
 - 1 = water
 - 2 = road
@@ -34,11 +38,7 @@
 
 ### Example: [0, 0, 0, 2, 2, 0]
 
-<div align="center">
-
-<img alt="Example1" src="https://i.imgur.com/ylU33Dl.png?raw=true">
-
-</div>
+<img alt="Example1" width="500" src="https://i.imgur.com/ylU33Dl.png?raw=true">
 
 ---
 
