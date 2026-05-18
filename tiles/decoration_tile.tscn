@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bsbhpuawiufow"]
 
 [ext_resource type="Script" uid="uid://dhouwdnuupqce" path="res://classes/tiles/DecorationTile.gd" id="1_3vu1y"]
-[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_3vu1y"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://tiles/utils/tile_static_body.tscn" id="2_3vu1y"]
 [ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="3_55rnl"]
-[ext_resource type="PackedScene" uid="uid://bekjs354ryqkt" path="res://scenes/decorations.tscn" id="4_3vu1y"]
+[ext_resource type="PackedScene" uid="uid://bekjs354ryqkt" path="res://tiles/utils/decorations.tscn" id="4_3vu1y"]
 
 [node name="DecorationTile" type="Node3D" unique_id=457582317]
 script = ExtResource("1_3vu1y")

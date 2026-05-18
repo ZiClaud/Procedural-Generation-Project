@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/tiles/BaseTile.gd" id="1_quhsi"]
 [ext_resource type="PackedScene" uid="uid://ba2gbo744mr7d" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/base/hex_grass.gltf" id="2_aftev"]
-[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="3_f4edi"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://tiles/utils/tile_static_body.tscn" id="3_f4edi"]
 
 [node name="GrassTile" type="Node3D" unique_id=457582317]
 script = ExtResource("1_quhsi")

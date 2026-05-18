@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxqd01l3gbw5l"]
 
 [ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/tiles/BaseTile.gd" id="1_73rfv"]
-[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_sgdk4"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://tiles/utils/tile_static_body.tscn" id="2_sgdk4"]
 [ext_resource type="PackedScene" uid="uid://ce5qmu4u04br4" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/rivers/hex_river_A.gltf" id="3_73rfv"]
 
 [node name="RiverATile" type="Node3D" unique_id=457582317]

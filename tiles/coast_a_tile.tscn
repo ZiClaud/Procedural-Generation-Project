@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8octxi7cablf"]
 
 [ext_resource type="Script" uid="uid://bssdku7x2hvhw" path="res://classes/tiles/BaseTile.gd" id="1_8s3me"]
-[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://scenes/tile_static_body.tscn" id="2_v4o8d"]
+[ext_resource type="PackedScene" uid="uid://d0lv486bkwf28" path="res://tiles/utils/tile_static_body.tscn" id="2_v4o8d"]
 [ext_resource type="PackedScene" uid="uid://cknjklb3tlape" path="res://assets/kaykit_medieval_hexagon_gltf/tiles/coast/hex_coast_A.gltf" id="3_8s3me"]
 
 [node name="CoastATile" type="Node3D" unique_id=457582317]
