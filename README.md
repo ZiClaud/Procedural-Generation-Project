@@ -54,7 +54,7 @@
 - KayKit : Character Pack : Skeletons (1.1) - [Kay Lousberg](https://www.kaylousberg.com/)
 -->
 
-### Theme used for the assets:
+### Theme used for the assets and UI:
 - [Catppuccin Mocha](https://catppuccin.com/)
 
 ### Character with movement - Used for testing:
