@@ -12,9 +12,9 @@ extends CharacterBody3D
 ## Can we press to jump?
 @export var can_jump: bool = true
 ## Can we hold to run?
-@export var can_sprint: bool = false
+@export var can_sprint: bool = true
 ## Can we press to enter freefly mode (noclip)?
-@export var can_freefly: bool = false
+@export var can_freefly: bool = true
 
 @export_group("Speeds")
 ## Look around rotation speed.
@@ -47,16 +47,16 @@ extends CharacterBody3D
 var mouse_captured: bool = false
 var look_rotation: Vector2
 var move_speed: float = 0.0
-var freeflying: bool = false
+var freeflying: bool = true
 
 ## IMPORTANT REFERENCES
-@onready var head: Node3D = $Head
+@onready var camera: Camera3D = %Camera3D
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
-	look_rotation.x = head.rotation.x
+	look_rotation.x = camera.rotation.x
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
@@ -80,7 +80,8 @@ func _physics_process(delta: float) -> void:
 	# If freeflying, handle freefly and nothing else
 	if can_freefly and freeflying:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
-		var motion := (head.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var motion := (camera.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		#var motion := (1 * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		motion *= freefly_speed * delta
 		move_and_collide(motion)
 		return
@@ -120,7 +121,7 @@ func _physics_process(delta: float) -> void:
 
 
 ## Rotate us to look around.
-## Base of controller rotates around y (left/right). Head rotates around x (up/down).
+## Base of controller rotates around y (left/right). camera rotates around x (up/down).
 ## Modifies look_rotation based on rot_input, then resets basis and rotates by look_rotation.
 func rotate_look(rot_input: Vector2):
 	look_rotation.x -= rot_input.y * look_speed
@@ -128,8 +129,8 @@ func rotate_look(rot_input: Vector2):
 	look_rotation.y -= rot_input.x * look_speed
 	transform.basis = Basis()
 	rotate_y(look_rotation.y)
-	head.transform.basis = Basis()
-	head.rotate_x(look_rotation.x)
+	camera.transform.basis = Basis()
+	camera.rotate_x(look_rotation.x)
 
 
 func enable_freefly():
