@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bjs76xxaoe36v"]
+
+[sub_resource type="SystemFont" id="SystemFont_aqjl8"]
+
+[resource]
+font = SubResource("SystemFont_aqjl8")
+font_size = 82
+font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)

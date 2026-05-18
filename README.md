@@ -12,17 +12,11 @@
 
 ## Types of generation
 
-### Fill World "Perlin Positive Heights":
+### Perlin Positive Heights:
 <img alt="PerlinPositiveHeightsGeneration" width="500" src="https://i.imgur.com/BVKoLgH.png?raw=true">
 
-### Fill World "Perlin Noise":
+### Perlin Noise:
 <img alt="PerlinNoiseGeneration" width="500" src="https://i.imgur.com/iHPWJNv.png?raw=true">
-
-### Fill World "Ruled":
-
-
-### Fill World "Better Ruled Random Rotation":
-
 
 ---
 

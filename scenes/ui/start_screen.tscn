@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://ias6q80t12um"]
+
+[ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_aqjl8"]
+[ext_resource type="Script" uid="uid://dvnc61m4affbl" path="res://files/ui_script/start_screen.gd" id="2_ihgl4"]
+[ext_resource type="LabelSettings" uid="uid://bjs76xxaoe36v" path="res://theme/title_label_settings.tres" id="2_m7t1o"]
+
+[node name="StartScreenControl" type="Control" unique_id=1826215842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_aqjl8")
+script = ExtResource("2_ihgl4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1358403172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.09411765, 0.14509805, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1705091720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=776308350]
+layout_mode = 2
+alignment = 1
+
+[node name="BigSeparator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=803297541]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1778760080]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Procedural Generation Project"
+label_settings = ExtResource("2_m7t1o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=360976504]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=652906716]
+layout_mode = 2
+alignment = 1
+
+[node name="PGButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1495501347]
+custom_minimum_size = Vector2(450, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Procedural Generation"
+
+[node name="SmallSeparator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=262328152]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="RGButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=352546206]
+custom_minimum_size = Vector2(450, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Random Generation"
+
+[node name="BigSeparator2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=281559846]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditsLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=283920063]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "Made by ZiClaud"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PGButton" to="." method="_on_pg_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RGButton" to="." method="_on_rg_button_pressed"]

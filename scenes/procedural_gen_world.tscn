@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://crrwfbqjm2eq6"]
 
-[ext_resource type="Script" uid="uid://ccn0o87ags2uc" path="res://classes/generation/ProceduralGeneration.gd" id="1_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
-[ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://ccn0o87ags2uc" path="res://classes/generation/ProceduralGeneration.gd" id="1_dhv0i"]
+[ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="2_gthmh"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="3_85n2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -19,18 +19,17 @@ sky = SubResource("Sky_tbgi4")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="World" type="Node3D" unique_id=1093720550]
-script = ExtResource("1_gqmmt")
-world_size = null
+[node name="ProceduralGenWorld" type="Node3D" unique_id=1093720550]
+script = ExtResource("1_dhv0i")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
-script = ExtResource("4_tbgi4")
+script = ExtResource("2_gthmh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=249673964]
 transform = Transform3D(1, 0, 0, 0, 0.52682227, 0.84997547, 0, -0.84997547, 0.52682227, 0, 3.3119364, 0)
 
-[node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("4_jyhfs")]
+[node name="ProtoController" parent="." unique_id=1753046169 instance=ExtResource("3_85n2m")]
 unique_name_in_owner = true
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 1.0080118, 0)
 can_sprint = true

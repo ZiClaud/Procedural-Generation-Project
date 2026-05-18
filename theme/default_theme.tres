@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://b78afd2d1w4r0"]
+
+[sub_resource type="SystemFont" id="SystemFont_ag65a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ag65a"]
+bg_color = Color(0.11764706, 0.11764706, 0.18039216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni34w"]
+bg_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="SystemFont" id="SystemFont_0ref1"]
+
+[sub_resource type="SystemFont" id="SystemFont_lcjcl"]
+
+[resource]
+default_font = SubResource("SystemFont_lcjcl")
+default_font_size = 24
+Button/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/font_focus_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/font_hover_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/font_hover_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/font_outline_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+Button/colors/font_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/icon_focus_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/icon_hover_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/icon_hover_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/icon_normal_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/icon_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = SubResource("SystemFont_ag65a")
+Button/styles/hover = SubResource("StyleBoxFlat_ag65a")
+Button/styles/normal = SubResource("StyleBoxFlat_ni34w")
+Button/styles/pressed = SubResource("StyleBoxFlat_ni34w")
+Label/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Label/colors/font_outline_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = SubResource("SystemFont_0ref1")
+MarginContainer/constants/margin_bottom = 25
+MarginContainer/constants/margin_left = 25
+MarginContainer/constants/margin_right = 25
+MarginContainer/constants/margin_top = 25
