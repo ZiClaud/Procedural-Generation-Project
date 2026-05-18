@@ -63,7 +63,7 @@ func set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 	return tile
 
 
-func add_tile_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
+func add_tile_to_map_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
 	for curr_rotation in 5: # 1 for each hexagon side
 		set_tile_pos(tile, pos)
 		if (can_tile_be_placed(placed, tile)):

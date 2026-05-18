@@ -1,25 +1,8 @@
 [gd_scene format=3 uid="uid://crrwfbqjm2eq6"]
 
 [ext_resource type="Script" uid="uid://ccn0o87ags2uc" path="res://classes/generation/ProceduralGeneration.gd" id="1_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://cgt6sxhoqf1qv" path="res://tiles/grass_tile.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://bsbhpuawiufow" path="res://tiles/decoration_tile.tscn" id="3_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://cbwg0q53foo31" path="res://tiles/water_tile.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://c8octxi7cablf" path="res://tiles/coast_a_tile.tscn" id="8_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://b5owj7wq4ytwg" path="res://tiles/coast_b_tile.tscn" id="9_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://8r5uj8hsk66l" path="res://tiles/coast_c_tile.tscn" id="10_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://elpbqyg8meht" path="res://tiles/road_a_tile.tscn" id="10_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://dvuv6un7ucpyx" path="res://tiles/road_b_tile.tscn" id="11_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://b16h0flt7aagv" path="res://tiles/coast_d_tile.tscn" id="11_muem4"]
-[ext_resource type="PackedScene" uid="uid://dsvm7a8v5d5yu" path="res://tiles/coast_e_tile.tscn" id="12_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bvj5y3f1kd6o4" path="res://tiles/road_river_a_tile.tscn" id="12_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://dnmwpniy6rhlm" path="res://tiles/road_c_tile.tscn" id="12_muem4"]
-[ext_resource type="PackedScene" uid="uid://fng5rdpuk62k" path="res://tiles/road_river_b_tile.tscn" id="13_muem4"]
-[ext_resource type="PackedScene" uid="uid://bxqd01l3gbw5l" path="res://tiles/river_a_tile.tscn" id="14_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://ckxbxvplmaf2v" path="res://tiles/river_a2_tile.tscn" id="15_yc10j"]
-[ext_resource type="PackedScene" uid="uid://i5hunvhi477" path="res://tiles/river_b_tile.tscn" id="16_jscy8"]
-[ext_resource type="PackedScene" uid="uid://bdb01b0mt7k0u" path="res://tiles/river_c_tile.tscn" id="17_pm3ni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -38,8 +21,6 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_gqmmt")
-all_tiles_ps = Array[PackedScene]([ExtResource("1_o5qli"), ExtResource("3_sugp2"), ExtResource("3_gqmmt"), ExtResource("10_jkv2x"), ExtResource("11_jbj1t"), ExtResource("12_muem4"), ExtResource("8_a8y0u"), ExtResource("9_jkv2x"), ExtResource("10_jbj1t"), ExtResource("11_muem4"), ExtResource("12_dp3eg"), ExtResource("12_jbj1t"), ExtResource("13_muem4"), ExtResource("14_gqmmt"), ExtResource("15_yc10j"), ExtResource("16_jscy8"), ExtResource("17_pm3ni")])
-world_size = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
