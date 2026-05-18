@@ -17,8 +17,12 @@ func setup_noise():
 	noise.seed = seed
 	noise.frequency = freq
 
+
+func get_perlin_height(pos: Vector2i) -> float:
+	return noise.get_noise_2dv(pos)
+
 func get_perlin_tile(row: int, col: int) -> BaseTile:
-	var noise_val := noise.get_noise_2d(row, col)
+	var noise_val : float = get_perlin_height(Vector2i(row, col))
 	
 	if (noise_val >= 0):
 		return GRASS_TILE_SCENE.instantiate()
@@ -69,6 +73,30 @@ func _try_to_place_coast(pos: Vector2i) -> bool:
 	return false
 
 
+func _fill_world_perlin_noise_heights(height_multiplier: float) -> void:
+	setup_noise()
+	for col in world_size:
+		for row in world_size:
+			var tile: BaseTile = get_perlin_tile(row, col)
+			var height: float = get_perlin_height(Vector2i(row, col)) * height_multiplier
+			set_tile_pos_3d(tile, Vector2i(row, col), height)
+			placed.append(tile)
+			await add_on_map(tile)
+
+
+func _fill_world_perlin_noise_positive_heights(height_multiplier: float) -> void:
+	setup_noise()
+	for col in world_size:
+		for row in world_size:
+			var tile: BaseTile = get_perlin_tile(row, col)
+			var height: float = get_perlin_height(Vector2i(row, col)) * height_multiplier
+			if (height < 0):
+				height = 0
+			set_tile_pos_3d(tile, Vector2i(row, col), height)
+			placed.append(tile)
+			await add_on_map(tile)
+
+
 func _try_to_place_coast_in_world() -> void:
 	for col in world_size:
 		for row in world_size:
@@ -98,6 +126,10 @@ func generation(gen_mode: GenerationMode) -> void:
 		_fill_world_perlin_noise() # Best
 	elif (gen_mode == GenerationMode.PERLIN_RULED):
 		_fill_world_perlin_noise_ruled()
+	elif (gen_mode == GenerationMode.PERLIN_ALL_HEIGHTS):
+		_fill_world_perlin_noise_heights(2.5)
+	elif (gen_mode == GenerationMode.PERLIN_GRASS_HEIGHTS):
+		_fill_world_perlin_noise_positive_heights(5)
 	elif (gen_mode == GenerationMode.ERROR):
 		assert(false, "GenerationMode.ERROR")
 	elif (gen_mode != GenerationMode.PERLIN):
@@ -106,4 +138,4 @@ func generation(gen_mode: GenerationMode) -> void:
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.PERLIN_RULED)
+	generation(GenerationMode.PERLIN_GRASS_HEIGHTS)

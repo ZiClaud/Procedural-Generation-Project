@@ -63,6 +63,22 @@ func set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 	return tile
 
 
+func set_tile_pos_3d(tile: BaseTile, pos: Vector2i, height: float) -> BaseTile:
+	tile.matrix_pos = pos
+	
+	var row: int = pos.x
+	var col: int = pos.y
+	
+	if (row % 2):
+		tile.position.x = col * 2
+		tile.position.z = row * 1.75
+	else:
+		tile.position.x = col * 2 + 1
+		tile.position.z = row * 1.75
+	tile.position.y = height
+	return tile
+
+
 func add_tile_to_map_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
 	for curr_rotation in 5: # 1 for each hexagon side
 		set_tile_pos(tile, pos)
