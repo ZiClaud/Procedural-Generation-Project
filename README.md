@@ -39,6 +39,8 @@
 ## Key Bindings:
 
 - Movement: `WASD`
+- Sprint: `Shift`
+- Get Cursor: `Esc`
 - Enable FreeFly: `F`
 - Re-Generate World: `F1`
 - Toggle Debug Mode: `F3`
