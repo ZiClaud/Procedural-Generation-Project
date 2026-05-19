@@ -20,11 +20,11 @@ extends CharacterBody3D
 ## Look around rotation speed.
 @export var look_speed: float = 0.002
 ## Normal speed.
-@export var base_speed: float = 7.0
+@export var base_speed: float = 15.0
 ## Speed of jump.
 @export var jump_velocity: float = 4.5
 ## How fast do we run?
-@export var sprint_speed: float = 10.0
+@export var sprint_speed: float = 50.0
 ## How fast do we freefly?
 @export var freefly_speed: float = 25.0
 
@@ -43,6 +43,8 @@ extends CharacterBody3D
 @export var input_sprint: String = "sprint"
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly: String = "freefly"
+## Name of Input Action to Sprint.
+@export var input_crouch: String = "crouch"
 
 var mouse_captured: bool = false
 var look_rotation: Vector2
@@ -92,13 +94,19 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 
 	# Apply jumping
-	if can_jump:
-		if Input.is_action_just_pressed(input_jump) and is_on_floor():
-			velocity.y = jump_velocity
+	#if can_jump:
+		#if Input.is_action_just_pressed(input_jump) and is_on_floor():
+			#velocity.y = jump_velocity
+	
+	if Input.is_action_pressed(input_jump) && camera.position.y < 75:
+		camera.position.y += 1
+
+	if Input.is_action_pressed(input_crouch) && camera.position.y > 0:
+		camera.position.y -= 1
 
 	# Modify speed based on sprinting
 	if can_sprint and Input.is_action_pressed(input_sprint):
-			move_speed = sprint_speed
+		move_speed = sprint_speed
 	else:
 		move_speed = base_speed
 
