@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://ias6q80t12um"]
+[gd_scene format=3 uid="uid://dfdw88s0qf7u4"]
 
-[ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_aqjl8"]
-[ext_resource type="Script" uid="uid://dvnc61m4affbl" path="res://files/ui_script/start_screen.gd" id="2_ihgl4"]
-[ext_resource type="LabelSettings" uid="uid://bjs76xxaoe36v" path="res://theme/title_label_settings.tres" id="2_m7t1o"]
+[ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_mq2t8"]
+[ext_resource type="Script" uid="uid://dvnc61m4affbl" path="res://files/ui_script/start_screen.gd" id="2_tsdpv"]
+[ext_resource type="LabelSettings" uid="uid://bjs76xxaoe36v" path="res://theme/title_label_settings.tres" id="3_1t1qp"]
 
 [node name="StartScreenControl" type="Control" unique_id=1826215842]
 layout_mode = 3
@@ -13,8 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_aqjl8")
-script = ExtResource("2_ihgl4")
+theme = ExtResource("1_mq2t8")
+script = ExtResource("2_tsdpv")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1358403172]
 layout_mode = 1
@@ -46,7 +46,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Procedural Generation Project"
-label_settings = ExtResource("2_m7t1o")
+label_settings = ExtResource("3_1t1qp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -74,6 +74,7 @@ custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+disabled = true
 text = "Random Generation"
 
 [node name="BigSeparator2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=281559846]

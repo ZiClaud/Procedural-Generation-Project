@@ -145,7 +145,7 @@ func get_random_tile() -> BaseTile:
 func place_player():
 	player.position.x = world_middle * 2
 	player.position.z = world_middle * 1.75
-	player.position.y = world_size
+	#player.position.y = world_size
 
 
 func generation(_gen_mode: GenerationMode) -> void:

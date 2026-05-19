@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://ias6q80t12um"]
+
+[ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_aqjl8"]
+
+[node name="SetupScreenControl" type="Control" unique_id=1826215842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_aqjl8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1358403172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.09411765, 0.14509805, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1705091720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=776308350]
+layout_mode = 2
+alignment = 1
+
+[node name="BigSeparator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=803297541]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1269374687]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=799398579]
+layout_mode = 2
+text = "Seed"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=255171942]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1578494637]
+layout_mode = 2
+placeholder_text = " Seeed"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2013860722]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1090255438]
+layout_mode = 2
+text = "Freq"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1635101898]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=256938721]
+layout_mode = 2
+text = "1/world size = x"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=443128665]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=518697782]
+layout_mode = 2
+text = "generation_time
+"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=582393592]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1167307268]
+layout_mode = 2
+placeholder_text = " Seeed"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=89213344]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=690160223]
+layout_mode = 2
+text = "
+generation_mode
+"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=535421299]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1526302395]
+layout_mode = 2
+placeholder_text = " Seeed"
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=360976504]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="BigSeparator2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=60766656]
+layout_mode = 2
+size_flags_vertical = 3

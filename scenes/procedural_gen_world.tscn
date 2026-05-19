@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crrwfbqjm2eq6"]
 
 [ext_resource type="Script" uid="uid://ccn0o87ags2uc" path="res://classes/generation/ProceduralGeneration.gd" id="1_dhv0i"]
+[ext_resource type="PackedScene" uid="uid://d273xdj6j7jld" path="res://scenes/ui/game_canvas_ui.tscn" id="2_85n2m"]
 [ext_resource type="Script" uid="uid://tyjp53535rqs" path="res://files/world_environment.gd" id="2_gthmh"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="3_85n2m"]
 
@@ -22,6 +23,8 @@ glow_enabled = true
 [node name="ProceduralGenWorld" type="Node3D" unique_id=1093720550]
 script = ExtResource("1_dhv0i")
 
+[node name="GameControl" parent="." unique_id=2129763881 instance=ExtResource("2_85n2m")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=823928160]
 environment = SubResource("Environment_tefeu")
 script = ExtResource("2_gthmh")
@@ -33,4 +36,3 @@ transform = Transform3D(1, 0, 0, 0, 0.52682227, 0.84997547, 0, -0.84997547, 0.52
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 can_sprint = true
-can_freefly = true

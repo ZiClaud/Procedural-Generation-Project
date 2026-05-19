@@ -40,9 +40,11 @@
 ## Key Bindings:
 
 - Movement: `WASD`
-- Sprint: `Shift`
+- Sprint: `Ctrl`
 - Get Cursor: `Esc`
-- Enable FreeFly: `F`
+- Move camera Up: `Spacebar`
+- Move camera down: `Shift`
+<!-- - Enable FreeFly: `F` -->
 - Re-Generate World: `F1`
 - Toggle Debug Mode: `F3`
 
