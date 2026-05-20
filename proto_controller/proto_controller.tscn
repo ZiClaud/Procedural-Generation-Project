@@ -15,7 +15,6 @@ can_sprint = false
 can_freefly = false
 
 [node name="GameControl" parent="." unique_id=1966679783 instance=ExtResource("2_pwkxi")]
-visible = false
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=787462784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
