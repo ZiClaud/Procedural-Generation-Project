@@ -9,6 +9,8 @@
 
 [sub_resource type="SystemFont" id="SystemFont_ni34w"]
 
+[sub_resource type="SystemFont" id="SystemFont_xul1n"]
+
 [sub_resource type="SystemFont" id="SystemFont_lcjcl"]
 
 [resource]
@@ -49,4 +51,18 @@ MarginContainer/constants/margin_bottom = 25
 MarginContainer/constants/margin_left = 25
 MarginContainer/constants/margin_right = 25
 MarginContainer/constants/margin_top = 25
+OptionButton/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+OptionButton/colors/font_focus_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+OptionButton/colors/font_hover_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+OptionButton/colors/font_outline_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/font_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+OptionButton/colors/icon_disabled_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/icon_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/icon_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/icon_hover_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/icon_normal_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/colors/icon_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+OptionButton/font_sizes/font_size = 24
+OptionButton/fonts/font = SubResource("SystemFont_xul1n")
 Panel/styles/panel = ExtResource("2_xul1n")

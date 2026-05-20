@@ -7,6 +7,7 @@ const PROCEDURAL_SCENE = preload("res://scenes/procedural_gen_world.tscn")
 @onready var gen_mode_ob: OptionButton = %GenModeOptionButton
 @onready var seed_le: LineEdit = %SeedLineEdit
 @onready var slow_gen_cb: CheckBox = %SlowGenCheckBox
+@onready var start_btn: Button = %StartButton
 
 #region Setup and update UI
 func _setup_world_size(ws: int):
@@ -30,6 +31,11 @@ func _update_freq_text():
 
 func _update_gen_mode(gm: GenerationMode.Mode):
 	Global.generation_mode = gm
+	
+	if (gm < 7):
+		start_btn.disabled = true
+	else:
+		start_btn.disabled = false
 
 func _setup_gen_mode(gm: GenerationMode.Mode):
 	for gen in GenerationMode.Mode:
@@ -72,6 +78,8 @@ func _on_slow_gen_check_box_pressed() -> void:
 func _on_seed_line_edit_text_changed(new_text: String) -> void:
 	_update_seed(int(new_text))
 
+func _on_gen_mode_option_button_item_selected(index: int) -> void:
+	_update_gen_mode(index)
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(PROCEDURAL_SCENE)

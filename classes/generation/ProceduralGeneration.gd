@@ -138,7 +138,8 @@ func generation() -> void:
 	elif (gen_mode == GenerationMode.Mode.ERROR):
 		assert(false, "GenerationMode.ERROR")
 	elif (gen_mode != GenerationMode.Mode.PERLIN):
-		_fill_world_not_perlin_noise()
+		assert(false, "gen_mode not perlin type")
+		#_fill_world_not_perlin_noise()
 
 
 func _ready():
