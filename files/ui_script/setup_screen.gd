@@ -17,6 +17,7 @@ func _setup_world_size(ws: int):
 func _update_world_size(num: int):
 	Global.world_size = num
 	_update_freq_text()
+	_fix_slow_gen_button(num)
 
 func _update_freq_text():
 	var freq: float = 1.0 / Global.world_size
@@ -33,9 +34,17 @@ func _setup_gen_mode(gm: GenerationMode.Mode):
 	gen_mode_ob.select(Global.generation_mode)
 
 
-func _update_seed():
-	pass
+func _update_seed(num: int):
+	Global.world_seed = num
 
+
+func _fix_slow_gen_button(num: int):
+	if (num > 16): # If it's lower than 16, the player will fall off the map
+		slow_gen_cb.disabled = true
+		slow_gen_cb.button_pressed = false
+		_toggle_slow_gen(slow_gen_cb.button_pressed)
+	else:
+		slow_gen_cb.disabled = false
 
 func _toggle_slow_gen(is_active: bool):
 	Global.is_slow_generation = is_active
@@ -53,7 +62,11 @@ func _on_world_size_line_edit_text_changed(new_text: String) -> void:
 
 
 func _on_slow_gen_check_box_pressed() -> void:
-	_toggle_slow_gen(slow_gen_cb.toggle_mode)
+	_toggle_slow_gen(slow_gen_cb.button_pressed)
+
+
+func _on_seed_line_edit_text_changed(new_text: String) -> void:
+	_update_seed(int(new_text))
 
 
 func _on_start_button_pressed() -> void:

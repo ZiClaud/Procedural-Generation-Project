@@ -5,6 +5,9 @@ var noise: FastNoiseLite
 
 func setup_noise():
 	var world_seed: int = randi()
+	if (Global.world_seed > 0):
+		world_seed = Global.world_seed
+
 	print("Seed: ", world_seed)
 	
 	var freq: float = 1 / world_middle

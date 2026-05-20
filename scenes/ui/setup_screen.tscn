@@ -195,5 +195,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer2/WorldSizeLineEdit" to="." method="_on_world_size_line_edit_text_changed"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/SeedHBoxContainer/MarginContainer2/SeedLineEdit" to="." method="_on_seed_line_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GenSpeedHBoxContainer/MarginContainer2/SlowGenCheckBox" to="." method="_on_slow_gen_check_box_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
