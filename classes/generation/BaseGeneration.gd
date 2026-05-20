@@ -1,15 +1,15 @@
 class_name BaseGeneration
 extends MyGeneration
 
-var generation_time: float = 0 # TODO: Change in settings UI
-var generation_mode: GenerationMode # TODO: Change in settings UI
 
 var all_tiles_ps: Array[PackedScene] = []
 
-@export var world_size: int = 32 # TODO: Change in settings UI
+var placed: Array[BaseTile] = []
+
+var world_size = Global.world_size
 var world_middle: float = world_size / 2
 
-var placed: Array[BaseTile] = []
+var generation_time = Global.generation_time
 
 @onready var player: CharacterBody3D = %ProtoController
 
@@ -40,7 +40,7 @@ func _reset_generation():
 	for tile in placed:
 		tile.queue_free()
 	placed = []
-	generation(generation_mode)
+	generation(Global.generation_mode)
 #endregion
 
 #region Terrain population
@@ -148,7 +148,7 @@ func get_random_tile() -> BaseTile:
 #endregion
 
 #region Partial classes
-func generation(_gen_mode: GenerationMode) -> void:
+func generation(_gen_mode: GenerationMode.Mode) -> void:
 	assert(false, "Function 'generation' not implemented")
 #endregion
 

@@ -75,27 +75,27 @@ func _fill_world_with_rules_and_rotation_2(n_iterations: int):
 					break
 
 
-func generation(gen_mode: GenerationMode) -> void:
-	generation_mode = gen_mode
+func generation(gen_mode: GenerationMode.Mode) -> void:
+	Global.generation_mode = gen_mode
 	
-	if (gen_mode == GenerationMode.DEBUG):
+	if (gen_mode == GenerationMode.Mode.DEBUG):
 		_fill_world_with_debug()
-	elif (gen_mode == GenerationMode.RANDOM):
+	elif (gen_mode == GenerationMode.Mode.RANDOM):
 		_fill_world_random()
-	elif (gen_mode == GenerationMode.RULED):
+	elif (gen_mode == GenerationMode.Mode.RULED):
 		_fill_world_with_rules(10) # Best
-	elif (gen_mode == GenerationMode.RULED_RANDOM):
+	elif (gen_mode == GenerationMode.Mode.RULED_RANDOM):
 		_fill_world_random_with_rules()
-	elif (gen_mode == GenerationMode.RULED_RANDOM_ROTATION):
+	elif (gen_mode == GenerationMode.Mode.RULED_RANDOM_ROTATION):
 		_fill_world_with_rules_and_rotation()
-	elif (gen_mode == GenerationMode.BETTER_RULED_RANDOM_ROTATION):
+	elif (gen_mode == GenerationMode.Mode.BETTER_RULED_RANDOM_ROTATION):
 		_fill_world_with_rules_and_rotation_2(3) # New Best
-	elif (gen_mode == GenerationMode.ERROR):
-		assert(false, "GenerationMode.ERROR")
+	elif (gen_mode == GenerationMode.Mode.ERROR):
+		assert(false, "GenerationMode.Mode.ERROR")
 	else:
 		assert(false, "Generation random type not found")
 
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.BETTER_RULED_RANDOM_ROTATION)
+	generation(GenerationMode.Mode.BETTER_RULED_RANDOM_ROTATION)

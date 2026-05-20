@@ -20,6 +20,11 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.21176471, 0.22745098, 0.30980393, 1)
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cdr2gcjmlwqp"
+GenerationMode="*uid://cl1vuyg47ne3d"
+
 [display]
 
 window/size/viewport_width=1920
