@@ -9,6 +9,7 @@ radius = 25.0
 
 [node name="ProtoController" type="CharacterBody3D" unique_id=431487583]
 script = ExtResource("1_ucva2")
+has_gravity = false
 can_jump = false
 can_sprint = false
 can_freefly = false

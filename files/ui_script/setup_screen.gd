@@ -21,7 +21,7 @@ func _update_world_size(num: int):
 	
 	Global.world_size = num
 	_update_freq_text()
-	_fix_slow_gen_button(num)
+	#_fix_slow_gen_button(num)
 
 func _update_freq_text():
 	var freq: float = 1.0 / (Global.world_size / 2.0)
@@ -41,7 +41,7 @@ func _setup_gen_mode(gm: GenerationMode.Mode):
 func _update_seed(num: int):
 	Global.world_seed = num
 
-
+# DEPRECATED
 func _fix_slow_gen_button(num: int):
 	if (num > 16): # If it's lower than 16, the player will fall off the map
 		slow_gen_cb.disabled = true
