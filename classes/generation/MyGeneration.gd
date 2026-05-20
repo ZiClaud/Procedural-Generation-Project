@@ -28,6 +28,7 @@ const ROADS_RIVERS_TILES_SCENE: Array[PackedScene] = [
 	preload("res://tiles/road_river_b_tile.tscn")
 	]
 
+
 enum GenerationMode {
 	ERROR,
 	DEBUG,

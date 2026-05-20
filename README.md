@@ -44,9 +44,9 @@
 - Get Cursor: `Esc`
 - Move camera Up: `Spacebar`
 - Move camera down: `Shift`
-<!-- - Enable FreeFly: `F` -->
 - Re-Generate World: `F1`
 - Toggle Debug Mode: `F3`
+- Toggle Hints: `H`
 
 ---
 

@@ -13,8 +13,8 @@ var placed: Array[BaseTile] = []
 
 @onready var player: CharacterBody3D = %ProtoController
 
-var reset_key: String = "F1"
-var debug_key: String = "F3"
+const RESET_KEY: String = "F1"
+const DEBUG_KEY: String = "F3"
 
 #region Debug
 func _toggle_debug_mode():
@@ -167,7 +167,7 @@ func _ready():
 
 
 func _process(_delta):
-	if(Input.is_action_just_pressed(reset_key)):
+	if(Input.is_action_just_pressed(RESET_KEY)):
 		_reset_generation()
-	if(Input.is_action_just_pressed(debug_key)):
+	if(Input.is_action_just_pressed(DEBUG_KEY)):
 		_toggle_debug_mode()
