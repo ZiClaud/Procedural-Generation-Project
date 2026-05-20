@@ -16,26 +16,13 @@ var placed: Array[BaseTile] = []
 var reset_key: String = "F1"
 var debug_key: String = "F3"
 
-func _reset_generation():
-	for tile in placed:
-		tile.queue_free()
-	placed = []
-	generation(generation_mode)
-
-
+#region Debug
 func _toggle_debug_mode():
 	for tile in placed:
 		tile.toggle_debug_mode()
 
-func add_on_map(tile: BaseTile) -> void:
-	if (generation_time > 0):
-		await get_tree().create_timer(generation_time).timeout
-	self.add_child(tile)
-
-
 func print_total_palced():
 	print("Placed: ", placed.size(), "/", world_size * world_size)
-
 
 func _add_ui_debug_tile(tile: DebugTile, text: String):
 	# TODO assert(tile.is_class("DebugTile"))
@@ -46,7 +33,21 @@ func _add_ui_debug_tile(tile: DebugTile, text: String):
 		", z = ", String.num_int64(tile.position.z),
 		"\n", text,
 	])
+#endregion
 
+#region Terrain generation
+func _reset_generation():
+	for tile in placed:
+		tile.queue_free()
+	placed = []
+	generation(generation_mode)
+#endregion
+
+#region Terrain population
+func add_on_map(tile: BaseTile) -> void:
+	if (generation_time > 0):
+		await get_tree().create_timer(generation_time).timeout
+	self.add_child(tile)
 
 func set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 	tile.matrix_pos = pos
@@ -61,7 +62,6 @@ func set_tile_pos(tile: BaseTile, pos: Vector2i) -> BaseTile:
 		tile.position.x = col * 2 + 1
 		tile.position.z = row * 1.75
 	return tile
-
 
 func set_tile_pos_3d(tile: BaseTile, pos: Vector2i, height: float) -> BaseTile:
 	tile.matrix_pos = pos
@@ -78,7 +78,6 @@ func set_tile_pos_3d(tile: BaseTile, pos: Vector2i, height: float) -> BaseTile:
 	tile.position.y = height
 	return tile
 
-
 func add_tile_to_map_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
 	for curr_rotation in 5: # 1 for each hexagon side
 		set_tile_pos(tile, pos)
@@ -88,8 +87,16 @@ func add_tile_to_map_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
 			return true
 		tile.increase_my_rotation()
 	return false
+#endregion
 
+#region Player
+func place_player():
+	player.position.x = world_middle * 2
+	player.position.z = world_middle * 1.75
+	#player.position.y = world_size
+#endregion
 
+#region Utils
 ### Returns the tile if it was found, null otherwise
 func _does_list_have_pos(tiles: Array[BaseTile], pos: Vector2i) -> BaseTile:
 	for tile in tiles:
@@ -135,29 +142,23 @@ func can_tile_be_placed(placed_tiles: Array[BaseTile], tile: BaseTile) -> bool:
 	
 	return true
 
-
 func get_random_tile() -> BaseTile:
 	var rand_id = randi() % all_tiles_ps.size()
 	return all_tiles_ps[rand_id].instantiate()
+#endregion
 
-
-
-func place_player():
-	player.position.x = world_middle * 2
-	player.position.z = world_middle * 1.75
-	#player.position.y = world_size
-
-
+#region Partial classes
 func generation(_gen_mode: GenerationMode) -> void:
 	assert(false, "Function 'generation' not implemented")
+#endregion
 
 
 func _fill_all_tiles_ps():
 	all_tiles_ps.append_array([GRASS_TILE_SCENE, WATER_TILE_SCENE, DECORATION_TILE_SCENE])
-	all_tiles_ps.append_array(ROADS_TILES_SCENE)
+	#all_tiles_ps.append_array(ROADS_TILES_SCENE)
 	all_tiles_ps.append_array(COASTS_TILES_SCENE)
-	all_tiles_ps.append_array(RIVERS_TILES_SCENE)
-	all_tiles_ps.append_array(ROADS_RIVERS_TILES_SCENE)
+	#all_tiles_ps.append_array(RIVERS_TILES_SCENE)
+	#all_tiles_ps.append_array(ROADS_RIVERS_TILES_SCENE)
 
 
 func _ready():
