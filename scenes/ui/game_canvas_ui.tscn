@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ctra6nf8crf38" path="res://files/ui_script/game_canvas_ui.gd" id="1_arx2u"]
 [ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_b0d8k"]
+[ext_resource type="Texture2D" uid="uid://c0fd72gicllql" path="res://assets/crosshair001.png" id="3_pokix"]
 
 [node name="GameCanvas" type="CanvasLayer" unique_id=1966679783]
 follow_viewport_enabled = true
 script = ExtResource("1_arx2u")
 
-[node name="Control" type="Control" parent="." unique_id=2035279623]
-layout_mode = 3
+[node name="TextureRect" type="TextureRect" parent="." unique_id=406560867]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,18 +17,10 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_b0d8k")
+texture = ExtResource("3_pokix")
+stretch_mode = 3
 
-[node name="Panel" type="Panel" parent="Control" unique_id=187760488]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 0
-offset_left = 957.0
-offset_top = 537.0
-offset_right = 962.0
-offset_bottom = 542.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HintLabel" type="Label" parent="Control" unique_id=2064978864]
+[node name="HintLabel" type="Label" parent="TextureRect" unique_id=2064978864]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
