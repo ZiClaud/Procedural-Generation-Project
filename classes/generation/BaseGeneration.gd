@@ -9,8 +9,6 @@ var placed: Array[BaseTile] = []
 var world_size = Global.world_size
 var world_middle: float = world_size / 2
 
-var generation_time = Global.generation_time
-
 @onready var player: CharacterBody3D = %ProtoController
 
 const RESET_KEY: String = "F1"
@@ -45,7 +43,8 @@ func _reset_generation():
 
 #region Terrain population
 func add_on_map(tile: BaseTile) -> void:
-	if (generation_time > 0):
+	var generation_time: float = 0.01
+	if (Global.is_slow_generation):
 		await get_tree().create_timer(generation_time).timeout
 	self.add_child(tile)
 

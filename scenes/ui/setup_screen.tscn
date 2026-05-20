@@ -45,34 +45,55 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer" unique_id=1481086186]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer" unique_id=384760643]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer" unique_id=1481086186]
 layout_mode = 2
 text = "World Size"
+horizontal_alignment = 1
 
 [node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer" unique_id=828981794]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="GenerationModeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer" unique_id=1147364996]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer" unique_id=1466111624]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="WorldSizeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer2" unique_id=1147364996]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = " 2, 4, 8, 16, 32, 64..."
+alignment = 1
 
 [node name="FreqHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2013860722]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1090255438]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1659566287]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer" unique_id=1090255438]
 layout_mode = 2
 text = "Freq"
+horizontal_alignment = 1
 
 [node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1635101898]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="FreqLabel" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=256938721]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1591231052]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="FreqLabel" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer2" unique_id=256938721]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 text = "1/world size = x"
 
 [node name="GenModeHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=89213344]
@@ -80,54 +101,83 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer" unique_id=690160223]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer" unique_id=150568629]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer/MarginContainer" unique_id=690160223]
 layout_mode = 2
 text = "Generation Mode"
+horizontal_alignment = 1
 
 [node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer" unique_id=535421299]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="GenerationModeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer" unique_id=1526302395]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer" unique_id=49611090]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="GenModeOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/GenModeHBoxContainer/MarginContainer2" unique_id=37613280]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = " Change to dropdown"
+alignment = 1
 
 [node name="SeedHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1269374687]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SeedHBoxContainer" unique_id=799398579]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/SeedHBoxContainer" unique_id=1100332698]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/SeedHBoxContainer/MarginContainer" unique_id=799398579]
 layout_mode = 2
 text = "Seed"
+horizontal_alignment = 1
 
 [node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/SeedHBoxContainer" unique_id=255171942]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="SeedLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/SeedHBoxContainer" unique_id=1578494637]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/SeedHBoxContainer" unique_id=192524806]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="SeedLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/SeedHBoxContainer/MarginContainer2" unique_id=1578494637]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = " 0-999999"
+placeholder_text = " 0-9999999999"
+alignment = 1
 
 [node name="GenSpeedHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=443128665]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer" unique_id=518697782]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer" unique_id=1498742908]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer/MarginContainer" unique_id=518697782]
 layout_mode = 2
 text = "Slow Generation"
+horizontal_alignment = 1
 
 [node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer" unique_id=582393592]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="GenerationTimeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer" unique_id=1167307268]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer" unique_id=1270579982]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="SlowGenCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/GenSpeedHBoxContainer/MarginContainer2" unique_id=259113211]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = " Changeto checkmarck"
+text = "Activate"
+alignment = 1
 
 [node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=360976504]
 custom_minimum_size = Vector2(100, 100)
@@ -144,4 +194,6 @@ text = "Start"
 layout_mode = 2
 size_flags_vertical = 3
 
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer2/WorldSizeLineEdit" to="." method="_on_world_size_line_edit_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GenSpeedHBoxContainer/MarginContainer2/SlowGenCheckBox" to="." method="_on_slow_gen_check_box_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
