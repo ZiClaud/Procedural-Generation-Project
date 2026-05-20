@@ -45,6 +45,6 @@ Get Cursor: `Esc`
 Move camera Up: `Spacebar`
 Move camera down: `Shift`
 Re-Generate World: `F1`
-Toggle Debug Mode: `F3`
+Toggle Debug Mode (for world size max 16): `F3`
 Toggle Hints: `H`"
 horizontal_alignment = 2

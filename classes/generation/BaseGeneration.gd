@@ -16,6 +16,9 @@ const DEBUG_KEY: String = "F3"
 
 #region Debug
 func _toggle_debug_mode():
+	if (Global.world_size > 16):
+		return
+	
 	for tile in placed:
 		tile.toggle_debug_mode()
 
@@ -38,7 +41,7 @@ func _reset_generation():
 	for tile in placed:
 		tile.queue_free()
 	placed = []
-	generation(Global.generation_mode)
+	generation()
 #endregion
 
 #region Terrain population
@@ -147,7 +150,7 @@ func get_random_tile() -> BaseTile:
 #endregion
 
 #region Partial classes
-func generation(_gen_mode: GenerationMode.Mode) -> void:
+func generation() -> void:
 	assert(false, "Function 'generation' not implemented")
 #endregion
 

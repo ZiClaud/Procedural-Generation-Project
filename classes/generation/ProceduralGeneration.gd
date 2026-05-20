@@ -124,8 +124,8 @@ func _fill_world_perlin_noise_ruled() -> void:
 	print_total_palced()
 
 
-func generation(gen_mode: GenerationMode.Mode) -> void:
-	Global.generation_mode = gen_mode
+func generation() -> void:
+	var gen_mode: GenerationMode.Mode = Global.generation_mode
 	
 	if (gen_mode == GenerationMode.Mode.PERLIN):
 		_fill_world_perlin_noise() # Best
@@ -143,4 +143,4 @@ func generation(gen_mode: GenerationMode.Mode) -> void:
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.Mode.PERLIN_POSITIVE_HEIGHTS)
+	generation()

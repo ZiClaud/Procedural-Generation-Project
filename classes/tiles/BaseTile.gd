@@ -44,7 +44,7 @@ func _place_id_on_label(label: Label3D, i: int) -> Label3D:
 	return label
 
 
-func _add_ui():
+func _add_ui() -> void:
 	var i: int = 0
 	for id in tile_edges_ids:
 		var label: Label3D = _create_3d_label()
@@ -95,7 +95,6 @@ func toggle_debug_mode():
 	if(_debug_mode):
 		_add_ui()
 	else:
-	
 		_remove_ui()
 
 

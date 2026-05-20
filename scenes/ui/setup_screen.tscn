@@ -65,7 +65,7 @@ layout_mode = 2
 [node name="WorldSizeLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer2" unique_id=1147364996]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = " 2, 4, 8, 16, 32, 64..."
+placeholder_text = " 2, 4, 8, 16, 32, 64, 128"
 alignment = 1
 
 [node name="FreqHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2013860722]
@@ -94,7 +94,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "1/world size = x"
+text = "1/(world size/2) = x"
 
 [node name="GenModeHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=89213344]
 layout_mode = 2

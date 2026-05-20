@@ -75,8 +75,8 @@ func _fill_world_with_rules_and_rotation_2(n_iterations: int):
 					break
 
 
-func generation(gen_mode: GenerationMode.Mode) -> void:
-	Global.generation_mode = gen_mode
+func generation() -> void:
+	var gen_mode: GenerationMode.Mode = Global.generation_mode
 	
 	if (gen_mode == GenerationMode.Mode.DEBUG):
 		_fill_world_with_debug()
@@ -98,4 +98,4 @@ func generation(gen_mode: GenerationMode.Mode) -> void:
 
 func _ready():
 	super._ready()
-	generation(GenerationMode.Mode.BETTER_RULED_RANDOM_ROTATION)
+	generation() # GenerationMode.Mode.BETTER_RULED_RANDOM_ROTATION

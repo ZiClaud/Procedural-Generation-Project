@@ -15,12 +15,16 @@ func _setup_world_size(ws: int):
 	_update_world_size(ws)
 
 func _update_world_size(num: int):
+	if (num > 128):
+		num = 128
+		world_size_le.text = String.num_int64(num)
+	
 	Global.world_size = num
 	_update_freq_text()
 	_fix_slow_gen_button(num)
 
 func _update_freq_text():
-	var freq: float = 1.0 / Global.world_size
+	var freq: float = 1.0 / (Global.world_size / 2.0)
 	freq_label.text = String.num_scientific(freq)
 
 
@@ -31,7 +35,7 @@ func _setup_gen_mode(gm: GenerationMode.Mode):
 	for gen in GenerationMode.Mode:
 		gen_mode_ob.add_item(gen)
 	_update_gen_mode(gm)
-	gen_mode_ob.select(Global.generation_mode)
+	gen_mode_ob.select(gm)
 
 
 func _update_seed(num: int):
