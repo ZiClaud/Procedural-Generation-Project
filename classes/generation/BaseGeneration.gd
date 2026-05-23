@@ -95,7 +95,7 @@ func add_tile_to_map_or_rotate_it(tile: BaseTile, pos: Vector2i) -> bool:
 func place_player():
 	player.position.x = world_middle * 2
 	player.position.z = world_middle * 1.75
-	#player.position.y = world_size
+	player.position.y = world_middle / 2
 #endregion
 
 #region Utils

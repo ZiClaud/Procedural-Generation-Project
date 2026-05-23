@@ -1,6 +1,8 @@
 class_name MyGeneration
 extends Node3D
 
+const MESH_TILE_SCENE: PackedScene = preload("res://tiles/improved_tiles/mesh_tile.tscn")
+
 const DEBUG_TILE_SCENE: PackedScene = preload("res://tiles/debug_tile.tscn")
 const GRASS_TILE_SCENE: PackedScene = preload("res://tiles/grass_tile.tscn")
 const WATER_TILE_SCENE: PackedScene = preload("res://tiles/water_tile.tscn")

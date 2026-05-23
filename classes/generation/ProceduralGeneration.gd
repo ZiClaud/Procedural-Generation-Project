@@ -33,6 +33,15 @@ func get_perlin_tile(row: int, col: int) -> BaseTile:
 		return WATER_TILE_SCENE.instantiate()
 
 
+func get_perlin_tile_lowres(row: int, col: int) -> BaseTile:
+	var noise_val : float = get_perlin_height(Vector2i(row, col))
+	var mesh_tile: MeshTile = MESH_TILE_SCENE.instantiate()
+	
+	mesh_tile.color_self_height(noise_val)
+	
+	return mesh_tile
+
+
 func _fill_world_not_perlin_noise() -> void:
 	for col in world_size:
 		for row in world_size:
@@ -78,29 +87,32 @@ func _try_to_place_coast(pos: Vector2i) -> bool:
 	return false
 
 
-func _fill_world_perlin_noise_heights(height_multiplier: float) -> void:
+func _fill_world_perlin_noise_heights(height_multiplier: float, lowres: bool = false) -> void:
 	setup_noise()
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_perlin_tile(row, col)
+			if (lowres):
+				tile = get_perlin_tile_lowres(row, col)
 			var height: float = get_perlin_height(Vector2i(row, col)) * height_multiplier
 			set_tile_pos_3d(tile, Vector2i(row, col), height)
 			placed.append(tile)
 			await add_on_map(tile)
 
 
-func _fill_world_perlin_noise_positive_heights(height_multiplier: float) -> void:
+func _fill_world_perlin_noise_positive_heights(height_multiplier: float, lowres: bool = false) -> void:
 	setup_noise()
 	for col in world_size:
 		for row in world_size:
 			var tile: BaseTile = get_perlin_tile(row, col)
+			if (lowres):
+				tile = get_perlin_tile_lowres(row, col)
 			var height: float = get_perlin_height(Vector2i(row, col)) * height_multiplier
 			if (height < 0):
 				height = 0
 			set_tile_pos_3d(tile, Vector2i(row, col), height)
 			placed.append(tile)
 			await add_on_map(tile)
-
 
 func _try_to_place_coast_in_world() -> void:
 	for col in world_size:
@@ -135,6 +147,10 @@ func generation() -> void:
 		_fill_world_perlin_noise_heights(2.5)
 	elif (gen_mode == GenerationMode.Mode.PERLIN_POSITIVE_HEIGHTS):
 		_fill_world_perlin_noise_positive_heights(5) # New best
+	elif (gen_mode == GenerationMode.Mode.LOWRES_PERLIN_ALL_HEIGHTS):
+		_fill_world_perlin_noise_heights(25, true)
+	elif (gen_mode == GenerationMode.Mode.LOWRES_PERLIN_POSITIVE_HEIGHTS):
+		_fill_world_perlin_noise_positive_heights(25, true)
 	elif (gen_mode == GenerationMode.Mode.ERROR):
 		assert(false, "GenerationMode.ERROR")
 	elif (gen_mode != GenerationMode.Mode.PERLIN):

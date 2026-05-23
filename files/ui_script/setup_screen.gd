@@ -87,4 +87,4 @@ func _on_start_button_pressed() -> void:
 
 
 func _ready() -> void:
-	setup_all(128, GenerationMode.Mode.PERLIN_POSITIVE_HEIGHTS)
+	setup_all(64, GenerationMode.Mode.LOWRES_PERLIN_POSITIVE_HEIGHTS)

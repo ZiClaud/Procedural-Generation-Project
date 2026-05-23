@@ -5,6 +5,8 @@
 
 [sub_resource type="SystemFont" id="SystemFont_ag65a"]
 
+[sub_resource type="SystemFont" id="SystemFont_ehq15"]
+
 [sub_resource type="SystemFont" id="SystemFont_0ref1"]
 
 [sub_resource type="SystemFont" id="SystemFont_ni34w"]
@@ -32,6 +34,24 @@ Button/fonts/font = SubResource("SystemFont_ag65a")
 Button/styles/hover = ExtResource("1_0ref1")
 Button/styles/normal = ExtResource("2_xul1n")
 Button/styles/pressed = ExtResource("2_xul1n")
+CheckBox/colors/checkbox_checked_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/checkbox_unchecked_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/font_focus_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/font_hover_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/font_outline_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/font_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckBox/colors/icon_disabled_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/icon_focus_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/icon_hover_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/icon_hover_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/icon_normal_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/colors/icon_pressed_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
+CheckBox/font_sizes/font_size = 24
+CheckBox/fonts/font = SubResource("SystemFont_ehq15")
+CheckBox/styles/hover = ExtResource("1_0ref1")
+CheckBox/styles/normal = ExtResource("2_xul1n")
 Label/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
 Label/colors/font_outline_color = Color(0.06666667, 0.06666667, 0.105882354, 1)
 Label/font_sizes/font_size = 24

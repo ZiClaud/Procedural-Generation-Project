@@ -66,6 +66,7 @@
 [ext_resource type="PackedScene" uid="uid://cgm5byfjjhakh" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_A_big.gltf" id="59_rrafa"]
 [ext_resource type="PackedScene" uid="uid://cjndtr0mtwqgf" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_B_small.gltf" id="60_ulucg"]
 [ext_resource type="PackedScene" uid="uid://di4jhfo4ergbi" path="res://assets/kaykit_medieval_hexagon_gltf/decoration/props/crate_long_A.gltf" id="61_4kxis"]
+[ext_resource type="PackedScene" uid="uid://bn35n5pjm0kww" path="res://tiles/improved_tiles/mesh_tile.tscn" id="67_seyfv"]
 
 [node name="Node3D" type="Node3D" unique_id=1112670612]
 
@@ -278,3 +279,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7305307, 0, 1.715409)
 
 [node name="crate_long_A2" parent="." unique_id=461864874 instance=ExtResource("61_4kxis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4558187, 0, -0.82787275)
+
+[node name="MeshTile" parent="." unique_id=99544327 instance=ExtResource("67_seyfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.236905, 0, 9.748706)
+
+[node name="Camera3D" type="Camera3D" parent="MeshTile" unique_id=313632123]
+transform = Transform3D(1, 0, 0, 0, 0.17333874, 0.98486227, 0, -0.98486227, 0.17333874, 0, 5.287278, 0)

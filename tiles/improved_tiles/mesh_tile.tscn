@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bn35n5pjm0kww"]
+
+[ext_resource type="Script" uid="uid://i48eiq2qw2fr" path="res://classes/tiles/MeshTile.gd" id="1_fjjjc"]
+[ext_resource type="Material" uid="uid://bpv4ron1bcswj" path="res://tiles/improved_tiles/new_standard_material_3d.tres" id="2_51pd3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_51pd3"]
+size = Vector3(2, 3, 1.2)
+
+[node name="MeshTile" type="Node3D" unique_id=99544327]
+script = ExtResource("1_fjjjc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=61991449]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4998412, 0)
+mesh = SubResource("BoxMesh_51pd3")
+surface_material_override/0 = ExtResource("2_51pd3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2020329366]
+unique_name_in_owner = true
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0, -1.4998412, 0)
+mesh = SubResource("BoxMesh_51pd3")
+surface_material_override/0 = ExtResource("2_51pd3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1503793978]
+unique_name_in_owner = true
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0, -1.4998412, 0)
+mesh = SubResource("BoxMesh_51pd3")
+surface_material_override/0 = ExtResource("2_51pd3")
