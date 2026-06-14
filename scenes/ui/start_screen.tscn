@@ -45,7 +45,9 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Procedural Generation Project"
+text = "Procedural Generation
+Hexagonal Template
+Demo"
 label_settings = ExtResource("3_1t1qp")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -63,19 +65,8 @@ custom_minimum_size = Vector2(450, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Procedural Generation"
-
-[node name="SmallSeparator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=262328152]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="RGButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=352546206]
-custom_minimum_size = Vector2(450, 125)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-disabled = true
-text = "Random Generation"
+text = "Start
+"
 
 [node name="BigSeparator2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=281559846]
 layout_mode = 2
@@ -90,4 +81,3 @@ horizontal_alignment = 2
 vertical_alignment = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PGButton" to="." method="_on_pg_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RGButton" to="." method="_on_rg_button_pressed"]

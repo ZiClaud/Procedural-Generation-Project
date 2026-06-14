@@ -2,7 +2,7 @@
 
 <img alt="Logo" width="150" src="icon.svg?raw=true">
 
-<h1>Procedural Generation Project</h1>
+<h1>Procedural Generation Hexagonal Template</h1>
 
 #### Procedural Generation with Hexagonal 3D Tiles
 #### [**Run it on Itch.io**](https://ziclaud.itch.io/procedural-generation-project)

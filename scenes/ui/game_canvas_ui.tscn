@@ -40,3 +40,10 @@ Re-Generate World: `F1`
 Toggle Debug Mode (for world size max 16): `F3`
 Toggle Hints: `H`"
 horizontal_alignment = 2
+
+[node name="FPSLabel" type="Label" parent="TextureRect" unique_id=1674361986]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 1.0
+offset_bottom = 34.0
+text = "FPS: XX"

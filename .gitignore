@@ -5,6 +5,7 @@
 .import/
 export.cfg
 export_presets.cfg
+*.uid
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -17,3 +18,4 @@ assets/idea.png
 assets/*.import
 *.import
 assets/kaykit_medieval_hexagon_gltf/tiles/base/hexagons_medieval-v2.png
+test/*.png
