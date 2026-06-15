@@ -1,3 +1,4 @@
+class_name Chunk
 extends Node3D
 
 @onready var ChunkX1 : MeshInstance3D = %XChunkMeshInstance3D

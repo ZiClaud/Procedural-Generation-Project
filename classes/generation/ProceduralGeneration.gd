@@ -8,6 +8,7 @@ const HEIGHT_MULTIPLIER : int = 24
 
 var all_tiles_ps: Array[PackedScene] = []
 var placed: Array[MeshTile] = []
+var placed_chunk: Array[Chunk] = []
 
 @onready var player: CharacterBody3D = %ProtoController
 
@@ -161,7 +162,7 @@ func generate_chuk():
 			var pos : Vector2i = Vector2i(z, x)
 			add_tile_if_new(pos)
 
-func _on_chunk_area_exited(area: Area3D) -> void:
+func _on_chunk_with_gen_area_exited(area: Area3D) -> void:
 	generate_chuk()
 #endregion
 
