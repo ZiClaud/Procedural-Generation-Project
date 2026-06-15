@@ -22,6 +22,7 @@ func _does_list_have_pos(pos: Vector2i) -> bool:
 
 #region Terrain population
 func add_on_map(tile: MeshTile) -> void:
+	placed.append(tile)
 	self.add_child(tile)
 
 func set_tile_pos(tile: MeshTile, pos: Vector2i) -> bool:
@@ -138,10 +139,9 @@ func add_tile_if_new(pos: Vector2i) -> void:
 		if(set_tile_pos_3d_if_new(tile, pos, height)):
 			add_on_map(tile)
 		else:
-			print("Tile not added 2")
+			assert(false, "Tile not added for some reason")
 		return
-	# TODO: Add print for debug - it should never go here
-	print("Tile not added")
+	#print("Tile not added")
 #endregion
 
 #region Start
