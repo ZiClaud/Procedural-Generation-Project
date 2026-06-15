@@ -39,13 +39,12 @@
 
 ## Key Bindings:
 
+- Get Cursor: `Esc`
 - Movement: `WASD`
 - Sprint: `Ctrl`
-- Get Cursor: `Esc`
 - Move camera Up: `Spacebar`
 - Move camera down: `Shift`
-- Re-Generate World: `F1`
-- Toggle Debug Mode: `F3`
+- Debug Mode: `F3`
 - Toggle Hints: `H`
 
 ---
