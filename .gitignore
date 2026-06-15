@@ -19,3 +19,4 @@ assets/*.import
 *.import
 assets/kaykit_medieval_hexagon_gltf/tiles/base/hexagons_medieval-v2.png
 test/*.png
+build/*

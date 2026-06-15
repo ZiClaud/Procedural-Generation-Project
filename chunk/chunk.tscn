@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cnmrrsjdxnl2j"]
+
+[ext_resource type="Script" uid="uid://dwxassdu7eqrg" path="res://classes/chunk/chunk.gd" id="1_otqo0"]
+[ext_resource type="PackedScene" uid="uid://bo71l5qo87705" path="res://chunk/chunk_mesh_instance_3d.tscn" id="1_yof0q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_otqo0"]
+size = Vector3(32, 256, 32)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_otqo0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_otqo0"]
+
+[node name="Chunk" type="Area3D" unique_id=60889619]
+script = ExtResource("1_otqo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2032750342]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_otqo0")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1935403233]
+
+[node name="CenterMeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=440156130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+mesh = SubResource("CylinderMesh_otqo0")
+
+[node name="XChunkMeshInstance3D" parent="Node3D" unique_id=1248956778 instance=ExtResource("1_yof0q")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 16, 0)
+
+[node name="XChunkMeshInstance3D2" parent="Node3D" unique_id=333841125 instance=ExtResource("1_yof0q")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16, 16, 0)
+
+[node name="ZChunkMeshInstance3D" parent="Node3D" unique_id=30769021 instance=ExtResource("1_yof0q")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 16)
+
+[node name="ZChunkMeshInstance3D2" parent="Node3D" unique_id=593021010 instance=ExtResource("1_yof0q")]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 16, -16)
+
+[node name="TopMeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=746280589]
+transform = Transform3D(32, 0, 0, 0, 0.1, 0, 0, 0, 32, 0, 128, 0)
+mesh = SubResource("BoxMesh_otqo0")

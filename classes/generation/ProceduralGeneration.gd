@@ -3,7 +3,7 @@ extends Node3D
 const DEBUG_KEY: String = "F3"
 
 const CHUNK_SIZE : int = 16
-const CHUNK_SHOWN: int = 2 	# 1=1, 2=9, 3=16, 4=25, 5=49 (Nice pattern lol)
+const CHUNK_SHOWN: int = 1 	# 1=1, 2=9, 3=16, 4=25, 5=49 (Nice pattern lol)
 const HEIGHT_MULTIPLIER : int = 24
 
 var all_tiles_ps: Array[PackedScene] = []
@@ -21,9 +21,6 @@ func _does_list_have_pos(pos: Vector2i) -> bool:
 #endregion
 
 #region Terrain population
-const TILE_SIZE_X: float = 2.0
-const TILE_SIZE_Z: float = 1.75
-
 func add_on_map(tile: MeshTile) -> void:
 	self.add_child(tile)
 
@@ -34,11 +31,11 @@ func set_tile_pos(tile: MeshTile, pos: Vector2i) -> bool:
 	var col: int = pos.y
 	
 	if (row % 2):
-		tile.position.x = col * TILE_SIZE_X
-		tile.position.z = row * TILE_SIZE_Z
+		tile.position.x = col * Constants.TILE_SIZE_X
+		tile.position.z = row * Constants.TILE_SIZE_Z
 	else:
-		tile.position.x = col * TILE_SIZE_X + 1
-		tile.position.z = row * TILE_SIZE_Z
+		tile.position.x = col * Constants.TILE_SIZE_X + 1
+		tile.position.z = row * Constants.TILE_SIZE_Z
 	return true
 
 func set_tile_pos_3d(tile: MeshTile, pos: Vector2i, height: float) -> bool:
@@ -67,8 +64,10 @@ func set_tile_pos_3d_if_new(tile: MeshTile, pos: Vector2i, height: float) -> boo
 
 #region Chunks
 func show_chunk():
-	var wx := CHUNK_SIZE * TILE_SIZE_X
-	var wz := CHUNK_SIZE * TILE_SIZE_Z
+	var wx := CHUNK_SIZE * Constants.TILE_SIZE_X
+	var wz := CHUNK_SIZE * Constants.TILE_SIZE_Z
+	
+	
 	
 	print("TODO")
 
@@ -87,9 +86,9 @@ func generation() -> void:
 func generate_from_player_position():
 	var _SIZE : int = CHUNK_SIZE * CHUNK_SHOWN
 	for x in range(_SIZE * 2):
-		x += (player.position.x / TILE_SIZE_X - _SIZE)
+		x += (player.position.x / Constants.TILE_SIZE_X - _SIZE)
 		for z in range(_SIZE * 2):
-			z += (player.position.z / TILE_SIZE_Z - _SIZE)
+			z += (player.position.z / Constants.TILE_SIZE_Z - _SIZE)
 			var pos : Vector2i = Vector2i(z, x)
 			add_tile_if_new(pos)
 #endregion
@@ -150,9 +149,21 @@ func _process(delta: float) -> void:
 	# TODO: Debug
 	if(Input.is_action_just_pressed(DEBUG_KEY)):
 		generate_from_player_position()
-
-	#generate_from_player_position()
 	pass
+
+#region Chunk
+func generate_chuk():
+	var _SIZE : int = CHUNK_SIZE * CHUNK_SHOWN
+	for x in range(_SIZE * 2):
+		x += (player.position.x / Constants.TILE_SIZE_X - _SIZE)
+		for z in range(_SIZE * 2):
+			z += (player.position.z / Constants.TILE_SIZE_Z - _SIZE)
+			var pos : Vector2i = Vector2i(z, x)
+			add_tile_if_new(pos)
+
+func _on_chunk_area_exited(area: Area3D) -> void:
+	generate_chuk()
+#endregion
 
 func _ready() -> void:
 	setup_noise()

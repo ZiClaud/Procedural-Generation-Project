@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://docus42ykom00" path="res://files/world-look/world_environment.gd" id="1_467po"]
 [ext_resource type="Script" uid="uid://ctx8xfqa46cah" path="res://classes/generation/ProceduralGeneration.gd" id="1_eomc2"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="2_lva87"]
+[ext_resource type="PackedScene" uid="uid://cnmrrsjdxnl2j" path="res://chunk/chunk.tscn" id="4_va72m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kivd"]
 sky_top_color = Color(0.21176471, 0.22745098, 0.30980393, 1)
@@ -33,3 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 can_sprint = true
+
+[node name="Chunk" parent="." unique_id=1680293184 instance=ExtResource("4_va72m")]
+
+[connection signal="area_exited" from="Chunk" to="." method="_on_chunk_area_exited"]
