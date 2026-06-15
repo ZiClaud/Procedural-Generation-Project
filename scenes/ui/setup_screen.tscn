@@ -69,34 +69,6 @@ layout_mode = 2
 placeholder_text = "8, 16, 32, 64"
 alignment = 1
 
-[node name="FreqHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2013860722]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1659566287]
-custom_minimum_size = Vector2(450, 75)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer" unique_id=1090255438]
-layout_mode = 2
-text = "Freq"
-horizontal_alignment = 1
-
-[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1635101898]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1591231052]
-custom_minimum_size = Vector2(450, 75)
-layout_mode = 2
-
-[node name="FreqLabel" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer2" unique_id=256938721]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-text = "1/(world size/2) = x"
-
 [node name="SeedHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1269374687]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -125,6 +97,63 @@ layout_mode = 2
 placeholder_text = " 0-9999999999"
 alignment = 1
 
+[node name="FreqHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2013860722]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1659566287]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer" unique_id=1090255438]
+layout_mode = 2
+text = "Freq Divider"
+horizontal_alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=1635101898]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqHBoxContainer" unique_id=564861691]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="FreqLineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer3" unique_id=1378067058]
+unique_name_in_owner = true
+layout_mode = 2
+text = "64"
+placeholder_text = "32, 64, 128"
+alignment = 1
+
+[node name="FreqInfoHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1916872957]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqInfoHBoxContainer" unique_id=511424216]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FreqInfoHBoxContainer/MarginContainer" unique_id=816736933]
+layout_mode = 2
+text = "Freq"
+horizontal_alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/FreqInfoHBoxContainer" unique_id=1402519721]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/FreqInfoHBoxContainer" unique_id=1440290791]
+custom_minimum_size = Vector2(450, 75)
+layout_mode = 2
+
+[node name="FreqLabel" type="Label" parent="MarginContainer/VBoxContainer/FreqInfoHBoxContainer/MarginContainer2" unique_id=1767012486]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1/(world size/2) = x"
+
 [node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=360976504]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -143,4 +172,5 @@ size_flags_vertical = 3
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/WorldSizeHBoxContainer/MarginContainer2/ChunkSizeLineEdit" to="." method="_on_world_size_line_edit_text_changed"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/SeedHBoxContainer/MarginContainer2/SeedLineEdit" to="." method="_on_seed_line_edit_text_changed"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/FreqHBoxContainer/MarginContainer3/FreqLineEdit" to="." method="_on_freq_line_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

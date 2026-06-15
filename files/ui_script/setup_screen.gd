@@ -3,6 +3,7 @@ extends Control
 const PROCEDURAL_SCENE = preload("res://scenes/world-generation/procedural_gen_world.tscn")
 
 @onready var freq_label: Label = %FreqLabel
+@onready var freq_le: LineEdit = %FreqLineEdit
 @onready var seed_le: LineEdit = %SeedLineEdit
 @onready var start_btn: Button = %StartButton
 
@@ -20,23 +21,33 @@ const PROCEDURAL_SCENE = preload("res://scenes/world-generation/procedural_gen_w
 #	Global.world_size = num
 #	_update_freq_text()
 
+func _update_seed(num: int):
+	Global.WORLD_SEED = num
+
+func _update_freq(num: float):
+	Global.FREQ_DIVIDER = num
+
 func _update_freq_text():
-	var freq: float = 1.0 / (Global.world_size / 2.0)
+	var freq: float = 1.0 / (Global.FREQ_DIVIDER)
 	freq_label.text = String.num_scientific(freq)
 
-
-func _update_seed(num: int):
-	Global.world_seed = num
+func _update_freq_line_edit_value():
+	freq_le.text = String.num_scientific(Global.FREQ_DIVIDER)
 
 #func setup_all(cs: int):
 #	_setup_chunk_size(cs)
 func setup_all():
+	_update_freq_line_edit_value()
 	_update_freq_text()
 #endregion
 
 #region Buttons
 func _on_seed_line_edit_text_changed(new_text: String) -> void:
 	_update_seed(int(new_text))
+
+func _on_freq_line_edit_text_changed(new_text: String) -> void:
+	_update_freq(float(new_text))
+	_update_freq_text()
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(PROCEDURAL_SCENE)

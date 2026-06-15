@@ -4,7 +4,6 @@ const DEBUG_KEY: String = "F3"
 
 const CHUNK_SIZE : int = 16
 const CHUNK_SHOWN: int = 2 	# 1=1, 2=9, 3=16, 4=25, 5=49 (Nice pattern lol)
-const FREQ_DIVIDER: float = 32.0 # TODO: Test 128 and 64 too
 const HEIGHT_MULTIPLIER : int = 24
 
 var all_tiles_ps: Array[PackedScene] = []
@@ -72,7 +71,6 @@ func show_chunk():
 	var wz := CHUNK_SIZE * TILE_SIZE_Z
 	
 	print("TODO")
-	pass
 
 func idk():
 	# Place an Area2D, when the player is in, it will generate the next area
@@ -101,12 +99,12 @@ var noise: FastNoiseLite
 
 func setup_noise():
 	var world_seed: int = randi()
-	if (Global.world_seed > 0):
-		world_seed = Global.world_seed
+	if (Global.WORLD_SEED > 0):
+		world_seed = Global.WORLD_SEED
 
 	print("Seed: ", world_seed)
 	
-	var freq: float = 1 / FREQ_DIVIDER
+	var freq: float = 1 / Global.FREQ_DIVIDER
 	print("Freq: ", freq)
 
 	noise = FastNoiseLite.new()

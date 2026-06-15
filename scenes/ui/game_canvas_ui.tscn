@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctra6nf8crf38" path="res://files/ui_script/game_canvas_ui.gd" id="1_arx2u"]
 [ext_resource type="Theme" uid="uid://b78afd2d1w4r0" path="res://theme/default_theme.tres" id="1_b0d8k"]
-[ext_resource type="Texture2D" uid="uid://c0fd72gicllql" path="res://assets/crosshair001.png" id="3_pokix"]
+[ext_resource type="Texture2D" uid="uid://slqu55vham6m" path="res://assets/crosshair001.png" id="3_pokix"]
 
 [node name="GameCanvas" type="CanvasLayer" unique_id=1966679783]
 follow_viewport_enabled = true
@@ -31,13 +31,12 @@ offset_bottom = 34.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-text = "Movement: `WASD`
+text = "Get Cursor: `Esc`
+Movement: `WASD`
 Sprint: `Ctrl`
-Get Cursor: `Esc`
 Move camera Up: `Spacebar`
 Move camera down: `Shift`
-Re-Generate World: `F1`
-Toggle Debug Mode (for world size max 16): `F3`
+Debug Mode: `F3`
 Toggle Hints: `H`"
 horizontal_alignment = 2
 
