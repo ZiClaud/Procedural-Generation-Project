@@ -7,7 +7,7 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="icon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="0.81344901"
-     inkscape:cx="173.336"
-     inkscape:cy="220.66534"
+     inkscape:cx="173.95067"
+     inkscape:cy="221.89467"
      inkscape:window-width="1536"
      inkscape:window-height="798"
      inkscape:window-x="0"
@@ -42,12 +42,12 @@
        id="g3"
        inkscape:label="Hexagons">
       <path
-         style="display:inline;opacity:0.99;fill:#45475a;stroke:#313244;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:0.99;fill:#478cbf;stroke:#ffffff;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
          d="M 256.00066,56 422.66733,156 V 356 L 256.00066,456 89.334,356 V 156 L 256.00066,56"
          id="path2"
          sodipodi:nodetypes="ccccccc" />
       <path
-         style="display:inline;opacity:0.99;fill:#45475a;stroke:#313244;stroke-width:16;stroke-linecap:round;stroke-linejoin:round"
+         style="display:inline;opacity:0.99;fill:#478cbf;stroke:#ffffff;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1"
          d="m 159.99993,96 h 192.0001 l 96.00008,160.00008 -96.00008,160.00009 H 159.99993 L 63.999867,256.00008 159.99993,96"
          id="path3"
          sodipodi:nodetypes="ccccccc" />
