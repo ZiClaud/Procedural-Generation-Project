@@ -2,9 +2,9 @@
 
 <img alt="Logo" width="150" src="icon.svg?raw=true">
 
-<h1>Procedural Generation Hexagonal Template</h1>
+# Procedural Generation Hexagonal Template
 
-#### Procedural Generation with Hexagonal 3D Tiles
+#### Procedural Generation with Hexagonal 3D Tiles Made for Godot
 #### [**Run it on Itch.io**](https://ziclaud.itch.io/procedural-generation-project)
 
 </div>
@@ -13,27 +13,12 @@
 
 ## Types of generation
 
-### Perlin Positive Heights:
+### Perlin Noise - Only Positives:
 <img alt="PerlinPositiveHeightsGeneration" width="500" src="https://i.imgur.com/BVKoLgH.png?raw=true">
-
-### Perlin Noise:
-<img alt="PerlinNoiseGeneration" width="500" src="https://i.imgur.com/iHPWJNv.png?raw=true">
 
 ---
 
 ## Tiles system
-
-### Tile Edges IDs, read clock-wise, starting from the top (12 o'clock)
-- 0 = grass
-- 1 = water
-- 2 = road
-- 3 = river
-- 4 = coast (grass - coast)
-- 4 = coast (coast - grass)
-
-### Example: [0, 0, 0, 2, 2, 0]
-
-<img alt="Example1" width="500" src="https://i.imgur.com/ylU33Dl.png?raw=true">
 
 ---
 

@@ -1,75 +1,57 @@
 extends Node3D
 
-const DEBUG_KEY: String = "F3"
-
-const CHUNK_SIZE : int = 16
-const CHUNK_SHOWN: int = 1 	# 1=1, 2=9, 3=16, 4=25, 5=49 (Nice pattern lol)
-const HEIGHT_MULTIPLIER : int = 24
-
-var all_tiles_ps: Array[PackedScene] = []
-var placed: Array[MeshTile] = []
-var placed_chunk: Array[Chunk] = []
-
 @onready var player: CharacterBody3D = %ProtoController
 
-#region Utils
-### Returns the true if it was found, false otherwise
-func _does_list_have_pos(pos: Vector2i) -> bool:
-	for tile in placed:
-		if(tile.matrix_pos == pos):
-			return true
-	return false
-#endregion
 
-#region Terrain population
-func add_on_map(tile: MeshTile) -> void:
-	placed.append(tile)
-	self.add_child(tile)
+func get_chunk() -> Chunk:
+	return Scenes.CHUNK_SCENE.instantiate()
 
-func set_tile_pos(tile: MeshTile, pos: Vector2i) -> bool:
-	tile.matrix_pos = pos
-	
-	var row: int = pos.x
-	var col: int = pos.y
-	
-	if (row % 2):
-		tile.position.x = col * Constants.TILE_SIZE_X
-		tile.position.z = row * Constants.TILE_SIZE_Z
-	else:
-		tile.position.x = col * Constants.TILE_SIZE_X + 1
-		tile.position.z = row * Constants.TILE_SIZE_Z
-	return true
 
-func set_tile_pos_3d(tile: MeshTile, pos: Vector2i, height: float) -> bool:
-	tile.matrix_pos = pos
+func add_chunk_on_map(chunk: Chunk) -> void:
+	Global.placed_chunk.append(chunk)
+	self.add_child(chunk)
+
+func set_chunk_pos(chunk: Chunk, pos: Vector2i) -> bool:
+	chunk.matrix_pos = pos
 	
-	var row: int = pos.x
-	var col: int = pos.y
+	var row: int = pos.x * Constants.CHUNK_SIZE
+	var col: int = pos.y * Constants.CHUNK_SIZE
 	
-	if (row % 2):
-		tile.position.x = col * 2
-		tile.position.z = row * 1.75
-	else:
-		tile.position.x = col * 2 + 1
-		tile.position.z = row * 1.75
-	tile.position.y = height * HEIGHT_MULTIPLIER
-	if (height < 0):
-		tile.position.y = 0
+	chunk.position.x = col * 2
+	chunk.position.z = row * 1.75
 	return true
 
 # Returns new true if it was created, false otherwise
-func set_tile_pos_3d_if_new(tile: MeshTile, pos: Vector2i, height: float) -> bool:
-	if _does_list_have_pos(pos) == false:
-		return set_tile_pos_3d(tile, pos, height)
+func set_chunk_pos_if_new(chunk: Chunk, pos: Vector2i) -> bool:
+	if Global._does_chunk_list_have_pos(pos) == false:
+		return set_chunk_pos(chunk, pos)
 	return false
+
+#region Adding on the map
+func add_chunk_if_new(pos: Vector2i) -> void:
+	if (Global._does_chunk_list_have_pos(pos) == false):
+		var chunk: Chunk = get_chunk()
+
+		if(set_chunk_pos_if_new(chunk, pos)):
+			add_chunk_on_map(chunk)
+		else:
+			assert(false, "Tile not added for some reason")
+		return
+	#print("Tile not added")
 #endregion
 
+
 #region Chunks
+
+
 func show_chunk():
-	var wx := CHUNK_SIZE * Constants.TILE_SIZE_X
-	var wz := CHUNK_SIZE * Constants.TILE_SIZE_Z
-	
-	
+	for x in range(Constants.CHUNK_SHOWN * 2):
+		x += (player.position.x / Constants.CHUNK_SIZE_X - Constants.CHUNK_SHOWN)
+		for z in range(Constants.CHUNK_SHOWN * 2):
+			z += (player.position.z / Constants.CHUNK_SIZE_Z - Constants.CHUNK_SHOWN)
+			var pos : Vector2i = Vector2i(z, x)
+			add_chunk_if_new(pos)
+			print("add_chunk_if_new(pos)")
 	
 	print("TODO")
 
@@ -85,89 +67,41 @@ func generation() -> void:
 #func generate_from_player_position():
 #	assert(false, "Function 'generate_from_player_position' not implemented")
 
-func generate_from_player_position():
-	var _SIZE : int = CHUNK_SIZE * CHUNK_SHOWN
-	for x in range(_SIZE * 2):
-		x += (player.position.x / Constants.TILE_SIZE_X - _SIZE)
-		for z in range(_SIZE * 2):
-			z += (player.position.z / Constants.TILE_SIZE_Z - _SIZE)
-			var pos : Vector2i = Vector2i(z, x)
-			add_tile_if_new(pos)
+#func generate_from_player_position():
+	#var _SIZE : int = Constants.CHUNK_SIZE * Constants.CHUNK_SHOWN
+	#for x in range(_SIZE * 2):
+		#x += (player.position.x / Constants.TILE_SIZE_X - _SIZE)
+		#for z in range(_SIZE * 2):
+			#z += (player.position.z / Constants.TILE_SIZE_Z - _SIZE)
+			#var pos : Vector2i = Vector2i(z, x)
+			##add_tile_if_new(pos)
 #endregion
-
-#region Perlin Noise
-var noise: FastNoiseLite
-
-func setup_noise():
-	var world_seed: int = randi()
-	if (Global.WORLD_SEED > 0):
-		world_seed = Global.WORLD_SEED
-
-	print("Seed: ", world_seed)
-	
-	var freq: float = 1 / Global.FREQ_DIVIDER
-	print("Freq: ", freq)
-
-	noise = FastNoiseLite.new()
-
-	noise.noise_type = FastNoiseLite.TYPE_PERLIN
-	noise.fractal_type = FastNoiseLite.FRACTAL_FBM
-	noise.seed = world_seed
-	noise.frequency = freq
-#endregion
-
-#region Tile
-func get_perlin_height(pos: Vector2i) -> float:
-	return noise.get_noise_2dv(pos)
-
-func get_tile_colored(pos: Vector2i, height) -> MeshTile:
-	var mesh_tile: MeshTile = _get_tile(pos)
-	
-	mesh_tile.color_self_height(height)
-	
-	return mesh_tile
-
-func _get_tile(pos: Vector2i) -> MeshTile:
-	return Scenes.MESH_TILE_SCENE.instantiate()
-#endregion
-
-#region Adding on the map
-func add_tile_if_new(pos: Vector2i) -> void:
-	if (_does_list_have_pos(pos) == false):
-		var height: float = get_perlin_height(pos)
-		var tile: MeshTile = get_tile_colored(pos, height)
-		#print("Tile added")
-		if(set_tile_pos_3d_if_new(tile, pos, height)):
-			add_on_map(tile)
-		else:
-			assert(false, "Tile not added for some reason")
-		return
-	#print("Tile not added")
-#endregion
-
-#region Start
-func _process(delta: float) -> void:
-	# TODO: Debug
-	if(Input.is_action_just_pressed(DEBUG_KEY)):
-		generate_from_player_position()
-	pass
 
 #region Chunk
 func generate_chuk():
-	var _SIZE : int = CHUNK_SIZE * CHUNK_SHOWN
-	for x in range(_SIZE * 2):
-		x += (player.position.x / Constants.TILE_SIZE_X - _SIZE)
-		for z in range(_SIZE * 2):
-			z += (player.position.z / Constants.TILE_SIZE_Z - _SIZE)
+	var _SIZE : int = Constants.CHUNK_SIZE * Constants.CHUNK_SHOWN
+	for x in range(Constants.CHUNK_SHOWN * 2):
+		x += (player.position.x / Constants.CHUNK_SIZE_X - Constants.CHUNK_SHOWN)
+		for z in range(Constants.CHUNK_SHOWN * 2):
+			z += (player.position.z / Constants.CHUNK_SIZE_Z - Constants.CHUNK_SHOWN)
 			var pos : Vector2i = Vector2i(z, x)
-			add_tile_if_new(pos)
+			add_chunk_if_new(pos)
 
 func _on_chunk_with_gen_area_exited(area: Area3D) -> void:
 	generate_chuk()
 #endregion
 
+
+#region Start
+func _process(delta: float) -> void:
+	# TODO: Debug
+	if(Input.is_action_just_pressed(Keybindings.DEBUG_KEY)):
+		generate_chuk()
+	pass
+
 func _ready() -> void:
-	setup_noise()
-	generate_from_player_position()
-	show_chunk()
+	if (PerlinNoise.noise == null):
+		PerlinNoise.setup_noise()
+	generate_chuk()
+	#show_chunk()
 #endregion

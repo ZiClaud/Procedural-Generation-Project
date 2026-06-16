@@ -1,7 +1,5 @@
 extends Control
 
-const PROCEDURAL_SCENE = preload("res://scenes/world-generation/procedural_gen_world.tscn")
-
 @onready var freq_label: Label = %FreqLabel
 @onready var freq_le: LineEdit = %FreqLineEdit
 @onready var seed_le: LineEdit = %SeedLineEdit
@@ -50,7 +48,7 @@ func _on_freq_line_edit_text_changed(new_text: String) -> void:
 	_update_freq_text()
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(PROCEDURAL_SCENE)
+	get_tree().change_scene_to_packed(Scenes.PROCEDURAL_SCENE)
 #endregion
 
 
