@@ -3,22 +3,21 @@ extends Node3D
 @onready var player: CharacterBody3D = %ProtoController
 
 
-func get_chunk() -> Chunk:
-	return Scenes.CHUNK_SCENE.instantiate()
+func get_chunk() -> ChunkWithGen:
+	return Scenes.CHUNK_WITH_GEN_SCENE.instantiate()
 
 
-func add_chunk_on_map(chunk: Chunk) -> void:
-	Global.placed_chunk.append(chunk)
-	self.add_child(chunk)
+func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
+	Global.placed_chunk[pos] = chunk
+	self.add_child.call_deferred(chunk)
+	chunk.area_exited.connect(_on_chunk_with_gen_area_exited)
 
 func set_chunk_pos(chunk: Chunk, pos: Vector2i) -> bool:
-	chunk.matrix_pos = pos
+	var row: int = pos.x * Constants.CHUNK_SIZE_Z
+	var col: int = pos.y * Constants.CHUNK_SIZE_X
 	
-	var row: int = pos.x * Constants.CHUNK_SIZE
-	var col: int = pos.y * Constants.CHUNK_SIZE
-	
-	chunk.position.x = col * 2
-	chunk.position.z = row * 1.75
+	chunk.position.x = col
+	chunk.position.z = row
 	return true
 
 # Returns new true if it was created, false otherwise
@@ -33,7 +32,7 @@ func add_chunk_if_new(pos: Vector2i) -> void:
 		var chunk: Chunk = get_chunk()
 
 		if(set_chunk_pos_if_new(chunk, pos)):
-			add_chunk_on_map(chunk)
+			add_chunk_on_map(chunk, pos)
 		else:
 			assert(false, "Tile not added for some reason")
 		return

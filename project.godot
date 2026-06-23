@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Procedural-Generation-Hexagonal-Template"
 run/main_scene="uid://dfdw88s0qf7u4"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0.21176471, 0.22745098, 0.30980393, 1)
 config/icon="res://icon.svg"
 

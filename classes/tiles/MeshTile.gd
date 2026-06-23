@@ -1,21 +1,6 @@
 #@icon("res://icon.svg")
 class_name MeshTile
-extends Node3D
-
-#region Base
-var matrix_pos: Vector2i
-
-func print() -> void:
-	print(self)
-	print("Matrix Pos:", matrix_pos)
-
-#func log() -> String:
-	#var log: String = ""
-	#print(self)
-	#print(["Tile Edges IDs", tile_edges_ids])
-	#print(["Matrix Pos:", matrix_pos])
-	#return log
-#endregion
+extends Placable
 
 enum types {
 	WATER,
