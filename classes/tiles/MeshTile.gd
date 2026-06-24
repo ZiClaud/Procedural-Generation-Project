@@ -51,6 +51,15 @@ func color_self_height(height: float):
 		color_self_type(types.SNOW)
 #endregion
 
+#region optimization
+func _setup_lod() -> void:
+	for mesh_instance in mesh_instances:
+		mesh_instance.visibility_range_begin = 0.0
+		mesh_instance.visibility_range_end = 128.0
+		mesh_instance.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
+#endregion
+
 
 func _ready() -> void:
 	color_self_height(self.position.y)
+	_setup_lod()
