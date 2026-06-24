@@ -9,6 +9,8 @@ func get_chunk() -> ChunkWithGen:
 
 func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
 	Global.placed_chunk[pos] = chunk
+	chunk.set_process(false)
+	chunk.set_physics_process(false)
 	self.add_child.call_deferred(chunk)
 	chunk.area_exited.connect(_on_chunk_with_gen_area_exited)
 

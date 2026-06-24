@@ -4,6 +4,8 @@ extends Chunk
 #region Terrain population
 func add_on_map(tile: Placable, pos: Vector2i) -> void:
 	Global.placed_tile[pos] = tile
+	tile.set_process(false)
+	tile.set_physics_process(false)
 	# TODO: self.add_child(tile) ?
 	get_parent().add_child(tile)
 
