@@ -11,8 +11,9 @@ var all_tiles: int = 0
 
 func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
 	Global.placed_chunk[pos] = chunk
-	chunk.set_process(false)
-	chunk.set_physics_process(false)
+	if (Global.CODE_IMP_A_OPT):
+		chunk.set_process(false)
+		chunk.set_physics_process(false)
 	self.add_child.call_deferred(chunk)
 	chunk.area_exited.connect(_on_chunk_with_gen_area_exited)
 	all_chunks += 1
@@ -113,6 +114,37 @@ func _on_chunk_with_gen_area_exited(area: Area3D) -> void:
 	generate_chunk()
 #endregion
 
+#region Threaded Gen
+var generation_thread: Thread
+
+func generate_chunk_threaded(player_pos: Vector3):
+	var tick_start := Time.get_ticks_usec()
+	
+	var player_chunk_x : int = int(player_pos.x / Constants.CHUNK_SIZE_X)
+	var player_chunk_z : int = int(player_pos.z / Constants.CHUNK_SIZE_Z)
+	
+	var half : int = Constants.CHUNK_SHOWN / 2
+	var chunks_to_add = []
+	
+	for x in range(-half, half + 1):
+		for z in range(-half, half + 1):
+			var pos : Vector2i = Vector2i(
+				player_chunk_z + z,
+				player_chunk_x + x,
+			)
+			chunks_to_add.append(pos)
+	
+	# Defer adding chunks back to main thread
+	call_deferred("_add_chunks_main_thread", chunks_to_add, tick_start)
+
+func _add_chunks_main_thread(chunks_to_add: Array, tick_start: int):
+	for pos in chunks_to_add:
+		add_chunk_if_new(pos)
+	
+	var tick_end := Time.get_ticks_usec()
+	var gen_time := (tick_end - tick_start) / 1000000.0
+	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+#endregion
 
 #region Start
 #func _process(delta: float) -> void:
@@ -128,15 +160,22 @@ func _ready() -> void:
 	Performance.add_custom_monitor("game/placed_chunks", func(): return Global.placed_chunk.size())
 	Performance.add_custom_monitor("game/tiles", func(): return all_tiles)
 	
-	var tick_start := Time.get_ticks_usec()
-	
 	if (PerlinNoise.noise == null):
 		PerlinNoise.setup_noise()
-	generate_chunk()
 	
+	
+	if (Global.MULTI_THREAD_OPT):
+		# Multi thread
+		generation_thread = Thread.new()
+		var pos := player.position
+		generation_thread.start(generate_chunk_threaded.bind(pos))
+	else:
+		# Single thread
+		generate_chunk()
+	
+	
+	var tick_start := Time.get_ticks_usec()
 	var tick_end := Time.get_ticks_usec()
 	var gen_time := (tick_end - tick_start) / 1000000.0
 	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
-
-
 #endregion

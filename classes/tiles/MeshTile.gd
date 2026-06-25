@@ -51,7 +51,7 @@ func color_self_height(height: float):
 		color_self_type(types.SNOW)
 #endregion
 
-#region optimization
+#region LOD Optimization
 func _setup_lod() -> void:
 	var visibility_range_end: float = max(Constants.CHUNK_SHOWN * Constants.CHUNK_SIZE, 2.5 * Constants.CHUNK_SIZE)
 	for mesh_instance in mesh_instances:
@@ -63,4 +63,5 @@ func _setup_lod() -> void:
 
 func _ready() -> void:
 	color_self_height(self.position.y)
-	_setup_lod()
+	if (Global.LOD_OPT):
+		_setup_lod()
