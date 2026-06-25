@@ -4,6 +4,7 @@ extends Chunk
 #region Terrain population
 func add_on_map(tile: Placable, pos: Vector2i) -> void:
 	Global.placed_tile[pos] = tile
+	Global.n_tiles += 1
 	tile.set_process(false)
 	tile.set_physics_process(false)
 	# TODO: self.add_child(tile) ?
@@ -76,7 +77,16 @@ func add_tile_if_new(pos: Vector2i) -> void:
 
 func _ready() -> void:
 	#PerlinNoise.setup_noise()
+	
+	var tick_start := Time.get_ticks_usec()
+	
 	for x in range(self.position.x, self.position.x + Constants.CHUNK_SIZE):
 		for z in range(self.position.z, self.position.z + Constants.CHUNK_SIZE):
 			add_tile_if_new(Vector2i(z, x))
 	super._ready()
+	
+	var tick_end := Time.get_ticks_usec()
+	var gen_time := (tick_end - tick_start) / 1000000.0
+	Global.all_gen_times.append(gen_time)
+	Global.print_average_gen_time()
+	# print_debug("--- ChunkWithGen ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])

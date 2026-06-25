@@ -11,7 +11,6 @@ var all_tiles: int = 0
 
 func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
 	Global.placed_chunk[pos] = chunk
-	print("Global.placed_chunk: ", Global.placed_chunk)
 	chunk.set_process(false)
 	chunk.set_physics_process(false)
 	self.add_child.call_deferred(chunk)
@@ -123,11 +122,21 @@ func _on_chunk_with_gen_area_exited(area: Area3D) -> void:
 	#pass
 
 func _ready() -> void:
+	print_debug("----- Chunk Sizes -----\nCHUNK_SIZE: %s\nCHUNK_SHOWN: %s" % [Constants.CHUNK_SIZE, Constants.CHUNK_SHOWN])
+	
 	Performance.add_custom_monitor("game/chunks", func(): return all_chunks)
 	Performance.add_custom_monitor("game/placed_chunks", func(): return Global.placed_chunk.size())
 	Performance.add_custom_monitor("game/tiles", func(): return all_tiles)
+	
+	var tick_start := Time.get_ticks_usec()
+	
 	if (PerlinNoise.noise == null):
 		PerlinNoise.setup_noise()
 	generate_chunk()
-	#show_chunk()
+	
+	var tick_end := Time.get_ticks_usec()
+	var gen_time := (tick_end - tick_start) / 1000000.0
+	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+
+
 #endregion

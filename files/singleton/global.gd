@@ -20,3 +20,16 @@ func _does_tile_list_have_pos(pos: Vector2i) -> bool:
 func _does_chunk_list_have_pos(pos: Vector2i) -> bool:
 	return Global.placed_chunk.has(pos)
 #endregion
+
+#region Debug
+var n_tiles: int = 0
+
+var all_gen_times: Array[float] = []
+
+func print_average_gen_time():
+	var sum : float = 0
+	for gen_time in all_gen_times:
+		sum += gen_time
+	
+	print("Average gen time per chunk: %.9f; \tplaced tiles: %s" % [sum/all_gen_times.size(), n_tiles])
+#endregion
