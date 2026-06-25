@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bptrtj6vkxtj8"]
 
 [ext_resource type="Script" uid="uid://dxns7mke30mcn" path="res://classes/chunk/ChunkWithGen.gd" id="1_71v06"]
-[ext_resource type="PackedScene" uid="uid://bo71l5qo87705" path="res://chunk/chunk_mesh_instance_3d.tscn" id="2_ftukn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_otqo0"]
 size = Vector3(32, 256, 32)
@@ -19,11 +18,6 @@ transform_format = 1
 use_colors = true
 mesh = SubResource("CylinderMesh_71v06")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_otqo0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_otqo0"]
-size = Vector3(31.9, 0.1, 27.9)
-
 [node name="ChunkWithGen" type="Area3D" unique_id=60889619]
 script = ExtResource("1_71v06")
 
@@ -34,30 +28,3 @@ shape = SubResource("BoxShape3D_otqo0")
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1065771327]
 unique_name_in_owner = true
 multimesh = SubResource("MultiMesh_71v06")
-
-[node name="DEBUG-REMOVE-Node3D" type="Node3D" parent="." unique_id=1935403233]
-visible = false
-
-[node name="CenterMeshInstance3D" type="MeshInstance3D" parent="DEBUG-REMOVE-Node3D" unique_id=440156130]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 0)
-mesh = SubResource("CylinderMesh_otqo0")
-
-[node name="XChunkMeshInstance3D" parent="DEBUG-REMOVE-Node3D" unique_id=1248956778 instance=ExtResource("2_ftukn")]
-unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 16, 0)
-
-[node name="XChunkMeshInstance3D2" parent="DEBUG-REMOVE-Node3D" unique_id=333841125 instance=ExtResource("2_ftukn")]
-unique_name_in_owner = true
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16, 16, 0)
-
-[node name="ZChunkMeshInstance3D" parent="DEBUG-REMOVE-Node3D" unique_id=30769021 instance=ExtResource("2_ftukn")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 16)
-
-[node name="ZChunkMeshInstance3D2" parent="DEBUG-REMOVE-Node3D" unique_id=593021010 instance=ExtResource("2_ftukn")]
-unique_name_in_owner = true
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 16, -16)
-
-[node name="TopMeshInstance3D" type="MeshInstance3D" parent="DEBUG-REMOVE-Node3D" unique_id=746280589]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 98, 0)
-mesh = SubResource("BoxMesh_otqo0")

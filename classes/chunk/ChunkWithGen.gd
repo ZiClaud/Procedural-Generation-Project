@@ -15,11 +15,11 @@ func set_tile_pos(tile: MeshTile, pos: Vector2i) -> bool:
 	var col: int = pos.y
 	
 	if (row % 2):
-		tile.position.x = col * Constants.TILE_SIZE_X
-		tile.position.z = row * Constants.TILE_SIZE_Z
+		tile.position.x = row * Constants.TILE_SIZE_X
+		tile.position.z = col * Constants.TILE_SIZE_Z
 	else:
-		tile.position.x = col * Constants.TILE_SIZE_X + 1
-		tile.position.z = row * Constants.TILE_SIZE_Z
+		tile.position.x = row * Constants.TILE_SIZE_X + 1
+		tile.position.z = col * Constants.TILE_SIZE_Z
 	return true
 
 func set_tile_pos_3d(tile: MeshTile, pos: Vector2i, height: float) -> bool:
@@ -27,11 +27,11 @@ func set_tile_pos_3d(tile: MeshTile, pos: Vector2i, height: float) -> bool:
 	var col: int = pos.y
 	
 	if (row % 2):
-		tile.position.x = col * Constants.TILE_SIZE_X
-		tile.position.z = row * Constants.TILE_SIZE_Z
+		tile.position.x = row * Constants.TILE_SIZE_X
+		tile.position.z = col * Constants.TILE_SIZE_Z
 	else:
-		tile.position.x = col * Constants.TILE_SIZE_X + (Constants.TILE_SIZE_X / 2)
-		tile.position.z = row * Constants.TILE_SIZE_Z
+		tile.position.x = row * Constants.TILE_SIZE_X + (Constants.TILE_SIZE_X / 2)
+		tile.position.z = col * Constants.TILE_SIZE_Z
 	tile.position.y = height
 	if (height < 0):
 		tile.position.y = 0
@@ -99,9 +99,9 @@ func _ready() -> void:
 	for x in range(self.position.x, self.position.x + Constants.CHUNK_SIZE):
 		for z in range(self.position.z, self.position.z + Constants.CHUNK_SIZE):
 			if (Global.CODE_IMP_B_OPT):
-				add_tile_if_new_optimized(Vector2i(z, x))
+				add_tile_if_new_optimized(Vector2i(x, z))
 			else:
-				add_tile_if_new(Vector2i(z, x))
+				add_tile_if_new(Vector2i(x, z))
 	super._ready()
 	
 	var tick_end := Time.get_ticks_usec()
@@ -115,13 +115,10 @@ func _ready() -> void:
 	multi_mesh_instance.multimesh.instance_count = data.size()
 	
 	for i in range(data.size()):
-		data[i].x = data[i].x - self.position.x # / Constants.CHUNK_SIZE_X
-		data[i].z = data[i].z - self.position.z # / Constants.CHUNK_SIZE_X
+		data[i].x = data[i].x - self.position.x
+		data[i].z = data[i].z - self.position.z
 		if (data[i].y < 0):
 			data[i].y = 0
-	var v: Vector3
-	for i in range(multi_mesh_instance.multimesh.instance_count):
-		v = Vector3(data[i].z, data[i].y, data[i].x)
-		
+	for i in range(multi_mesh_instance.multimesh.instance_count):		
 		multi_mesh_instance.multimesh.set_instance_transform(i, Transform3D(Basis(), data[i]))
 		multi_mesh_instance.multimesh.set_instance_color(i, Global.get_color_from_height(data[i].y))

@@ -20,11 +20,11 @@ func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
 	all_tiles += 256
 
 func set_chunk_pos(chunk: Chunk, pos: Vector2i) -> bool:
-	var row: int = pos.x * Constants.CHUNK_SIZE_Z
-	var col: int = pos.y * Constants.CHUNK_SIZE_X
+	var row: int = pos.x * Constants.CHUNK_SIZE_X
+	var col: int = pos.y * Constants.CHUNK_SIZE_Z
 	
-	chunk.position.x = col
-	chunk.position.z = row
+	chunk.position.x = row
+	chunk.position.z = col
 	return true
 
 # Returns new true if it was created, false otherwise

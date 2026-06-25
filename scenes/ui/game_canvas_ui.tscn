@@ -46,3 +46,14 @@ layout_mode = 1
 offset_right = 1.0
 offset_bottom = 34.0
 text = "FPS: XX"
+
+[node name="PosLabel" type="Label" parent="TextureRect" unique_id=670728299]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 84.0
+grow_vertical = 0
+text = "Pos: XX"
