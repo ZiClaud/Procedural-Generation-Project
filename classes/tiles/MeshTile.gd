@@ -2,13 +2,6 @@
 class_name MeshTile
 extends Placable
 
-enum types {
-	WATER,
-	GRASS,
-	SNOW,
-	SAND,
-}
-
 @onready var mesh_instances: Array[MeshInstance3D] = [
 	%MeshInstance3D,
 	%MeshInstance3D2,
@@ -28,27 +21,27 @@ func _set_mesh_colour(color: Color, opacity: float = 1.0):
 
 
 #region Public functions
-func color_self_type(type: types):
-	if (type == types.WATER):
+func color_self_type(type: Global.types):
+	if (type == Global.types.WATER):
 		_set_mesh_colour(Color("#89dceb"), 0.8)
-	elif (type == types.GRASS):
+	elif (type == Global.types.GRASS):
 		_set_mesh_colour(Color("#a6e3a1"))
-	elif (type == types.SNOW):
+	elif (type == Global.types.SNOW):
 		_set_mesh_colour(Color("#cdd6f4"))
-	elif (type == types.SAND):
+	elif (type == Global.types.SAND):
 		_set_mesh_colour(Color("#f9e2af"))
 	else:
 		assert(false, "Not colour type fround")
 
 func color_self_height(height: float):
 	if (height <= 0):
-		color_self_type(types.WATER)
+		color_self_type(Global.types.WATER)
 	elif (height < 0.5):
-		color_self_type(types.SAND)
+		color_self_type(Global.types.SAND)
 	elif (height < 7.5):
-		color_self_type(types.GRASS)
+		color_self_type(Global.types.GRASS)
 	else:
-		color_self_type(types.SNOW)
+		color_self_type(Global.types.SNOW)
 #endregion
 
 #region LOD Optimization

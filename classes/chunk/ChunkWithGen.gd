@@ -32,7 +32,7 @@ func set_tile_pos_3d(tile: MeshTile, pos: Vector2i, height: float) -> bool:
 	else:
 		tile.position.x = col * Constants.TILE_SIZE_X + (Constants.TILE_SIZE_X / 2)
 		tile.position.z = row * Constants.TILE_SIZE_Z
-	tile.position.y = height * Constants.HEIGHT_MULTIPLIER
+	tile.position.y = height
 	if (height < 0):
 		tile.position.y = 0
 	return true
@@ -48,7 +48,14 @@ func set_tile_pos_3d_if_new(tile: MeshTile, pos: Vector2i, height: float) -> boo
 func get_perlin_height(pos: Vector2i) -> float:
 	if (PerlinNoise.noise == null):
 		assert(false, "PerlinNoise.noise == null")
-	return PerlinNoise.noise.get_noise_2dv(pos)
+	return PerlinNoise.noise.get_noise_2dv(pos) * Constants.HEIGHT_MULTIPLIER
+
+func get_perlin_height_optimized(pos: Vector2i) -> float:
+	if (PerlinNoise.noise == null):
+		assert(false, "PerlinNoise.noise == null")
+	
+	var world_pos = Vector2i(pos.x + self.position.x, pos.y + self.position.z)
+	return PerlinNoise.noise.get_noise_2dv(world_pos) * Constants.HEIGHT_MULTIPLIER
 
 func get_tile_colored(height) -> MeshTile:
 	var mesh_tile: MeshTile = _get_tile()
@@ -73,6 +80,16 @@ func add_tile_if_new(pos: Vector2i) -> void:
 			assert(false, "Tile not added for some reason")
 		return
 	#print("Tile not added")
+
+
+var data: Array[Vector3] = []
+
+func add_tile_if_new_optimized(pos: Vector2i) -> void:
+	if (Global._does_tile_list_have_pos(pos) == false):
+		var height: float = get_perlin_height_optimized(pos)
+		data.append(Vector3(pos.x, height, pos.y))
+		#TODO Global.placed_tile_optimized[pos] = 
+		Global.n_tiles += 1
 #endregion
 
 func _ready() -> void:
@@ -82,7 +99,10 @@ func _ready() -> void:
 	
 	for x in range(self.position.x, self.position.x + Constants.CHUNK_SIZE):
 		for z in range(self.position.z, self.position.z + Constants.CHUNK_SIZE):
-			add_tile_if_new(Vector2i(z, x))
+			if (Global.CODE_IMP_B_OPT):
+				add_tile_if_new_optimized(Vector2i(z, x))
+			else:
+				add_tile_if_new(Vector2i(z, x))
 	super._ready()
 	
 	var tick_end := Time.get_ticks_usec()
@@ -90,3 +110,11 @@ func _ready() -> void:
 	Global.all_gen_times.append(gen_time)
 	Global.print_average_gen_time()
 	# print_debug("--- ChunkWithGen ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+
+	var multi_mesh_instance: MultiMeshInstance3D = %MultiMeshInstance3D
+	multi_mesh_instance.multimesh = multi_mesh_instance.multimesh.duplicate()
+	multi_mesh_instance.multimesh.instance_count = data.size()
+	
+	for i in range(multi_mesh_instance.multimesh.instance_count):
+		multi_mesh_instance.multimesh.set_instance_transform(i, Transform3D(Basis(), data[i]))
+		multi_mesh_instance.multimesh.set_instance_color(i, Global.get_color_from_height(data[i].y))

@@ -13,7 +13,7 @@ const HEIGHT_MULTIPLIER : int = 24
 
 #region Chunk
 const CHUNK_SIZE : int = 16
-const CHUNK_SHOWN: int = 4 # 1=1, 2=9, 3=25, 4=49 (Nice pattern lol)
+const CHUNK_SHOWN: int = 2 # 1=1, 2=9, 3=25, 4=49 (Nice pattern lol)
 
 const CHUNK_SIZE_X: float = TILE_SIZE_X * CHUNK_SIZE
 const CHUNK_SIZE_Z: float = TILE_SIZE_Z * CHUNK_SIZE

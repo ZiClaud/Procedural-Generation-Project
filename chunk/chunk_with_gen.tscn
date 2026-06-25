@@ -6,6 +6,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_otqo0"]
 size = Vector3(32, 256, 32)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71v06"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_71v06"]
+material = SubResource("StandardMaterial3D_71v06")
+top_radius = 1.0
+bottom_radius = 1.0
+
+[sub_resource type="MultiMesh" id="MultiMesh_71v06"]
+transform_format = 1
+use_colors = true
+mesh = SubResource("CylinderMesh_71v06")
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_otqo0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_otqo0"]
@@ -17,6 +30,10 @@ script = ExtResource("1_71v06")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2032750342]
 unique_name_in_owner = true
 shape = SubResource("BoxShape3D_otqo0")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1065771327]
+unique_name_in_owner = true
+multimesh = SubResource("MultiMesh_71v06")
 
 [node name="DEBUG-REMOVE-Node3D" type="Node3D" parent="." unique_id=1935403233]
 visible = false
