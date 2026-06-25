@@ -53,9 +53,10 @@ func color_self_height(height: float):
 
 #region optimization
 func _setup_lod() -> void:
+	var visibility_range_end: float = max(Constants.CHUNK_SHOWN * Constants.CHUNK_SIZE, 2.5 * Constants.CHUNK_SIZE)
 	for mesh_instance in mesh_instances:
 		mesh_instance.visibility_range_begin = 0.0
-		mesh_instance.visibility_range_end = 128.0
+		mesh_instance.visibility_range_end = visibility_range_end
 		mesh_instance.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
 #endregion
 
