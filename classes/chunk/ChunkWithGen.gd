@@ -7,7 +7,7 @@ func add_on_map(tile: Placable, pos: Vector2i) -> void:
 	Global.n_tiles += 1
 	tile.set_process(false)
 	tile.set_physics_process(false)
-	# TODO: self.add_child(tile) ?
+	#self.add_child(tile) # TODO: Check this out, important
 	get_parent().add_child(tile)
 
 func set_tile_pos(tile: MeshTile, pos: Vector2i) -> bool:
@@ -54,8 +54,7 @@ func get_perlin_height_optimized(pos: Vector2i) -> float:
 	if (PerlinNoise.noise == null):
 		assert(false, "PerlinNoise.noise == null")
 	
-	var world_pos = Vector2i(pos.x + self.position.x, pos.y + self.position.z)
-	return PerlinNoise.noise.get_noise_2dv(world_pos) * Constants.HEIGHT_MULTIPLIER
+	return PerlinNoise.noise.get_noise_2dv(pos) * Constants.HEIGHT_MULTIPLIER
 
 func get_tile_colored(height) -> MeshTile:
 	var mesh_tile: MeshTile = _get_tile()
@@ -115,6 +114,14 @@ func _ready() -> void:
 	multi_mesh_instance.multimesh = multi_mesh_instance.multimesh.duplicate()
 	multi_mesh_instance.multimesh.instance_count = data.size()
 	
+	for i in range(data.size()):
+		data[i].x = data[i].x - self.position.x # / Constants.CHUNK_SIZE_X
+		data[i].z = data[i].z - self.position.z # / Constants.CHUNK_SIZE_X
+		if (data[i].y < 0):
+			data[i].y = 0
+	var v: Vector3
 	for i in range(multi_mesh_instance.multimesh.instance_count):
+		v = Vector3(data[i].z, data[i].y, data[i].x)
+		
 		multi_mesh_instance.multimesh.set_instance_transform(i, Transform3D(Basis(), data[i]))
 		multi_mesh_instance.multimesh.set_instance_color(i, Global.get_color_from_height(data[i].y))
