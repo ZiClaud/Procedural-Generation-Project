@@ -11,7 +11,7 @@ var all_tiles: int = 0
 
 func add_chunk_on_map(chunk: Chunk, pos: Vector2i) -> void:
 	Global.placed_chunk[pos] = chunk
-	if (Global.CODE_IMP_A_OPT):
+	if (Global.REMOVE_TILE_PROCESS_OPT):
 		chunk.set_process(false)
 		chunk.set_physics_process(false)
 	self.add_child.call_deferred(chunk)
@@ -146,6 +146,61 @@ func _add_chunks_main_thread(chunks_to_add: Array, tick_start: int):
 	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
 #endregion
 
+#region Threaded Gen (4 threads)
+var generation_threads: Array[Thread] = []
+
+func generate_chunk_4_threaded() -> void:
+	var player_pos := player.position
+	var player_chunk_x := int(player_pos.x / Constants.CHUNK_SIZE_X)
+	var player_chunk_z := int(player_pos.z / Constants.CHUNK_SIZE_Z)
+	var half := Constants.CHUNK_SHOWN / 2
+	
+	# Build the full list of positions
+	var all_positions: Array[Vector2i] = []
+	for x in range(-half, half + 1):
+		for z in range(-half, half + 1):
+			all_positions.append(Vector2i(
+				player_chunk_z + z,
+				player_chunk_x + x,
+			))
+	
+	# Split into 4 buckets
+	var buckets: Array = [[], [], [], []]
+	for i in range(all_positions.size()):
+		buckets[i % 4].append(all_positions[i])
+	
+	var tick_start := Time.get_ticks_usec()
+	var results_mutex := Mutex.new()
+	var merged_results: Array[Vector2i] = []
+	var threads_done := 0
+	var done_mutex := Mutex.new()
+	
+	for i in range(4):
+		var t := Thread.new()
+		generation_threads.append(t)
+		t.start(_worker_thread.bind(buckets[i], results_mutex, merged_results))
+	
+	# Poll until all threads finish, then flush to main thread
+	# (use a timer or _process to avoid blocking)
+	_wait_and_flush(tick_start, merged_results)
+
+func _worker_thread(positions: Array, mtx: Mutex, results: Array) -> void:
+	# Pure data work only — NO Godot scene/node calls here
+	var local: Array[Vector2i] = []
+	for pos in positions:
+		if not Global._does_chunk_list_have_pos(pos):
+			local.append(pos)
+	mtx.lock()
+	results.append_array(local)
+	mtx.unlock()
+
+func _wait_and_flush(tick_start: int, results: Array[Vector2i]) -> void:
+	for t in generation_threads:
+		t.wait_to_finish()   # blocks briefly, but threads are nearly done
+	generation_threads.clear()
+	_add_chunks_main_thread(results, tick_start)
+#endregion
+
 #region Start
 #func _process(delta: float) -> void:
 	## TODO: Debug
@@ -165,10 +220,11 @@ func _ready() -> void:
 	
 	
 	if (Global.MULTI_THREAD_OPT):
-		# Multi thread
-		generation_thread = Thread.new()
-		var pos := player.position
-		generation_thread.start(generate_chunk_threaded.bind(pos))
+		# Multi thread - 4
+		generate_chunk_4_threaded()
+		#generation_thread = Thread.new()
+		#var pos := player.position
+		#generation_thread.start(generate_chunk_threaded.bind(pos))
 	else:
 		# Single thread
 		generate_chunk()

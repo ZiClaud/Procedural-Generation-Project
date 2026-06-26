@@ -1,4 +1,4 @@
-class_name Chunk
+@abstract class_name Chunk
 extends Placable
 
 @onready var AreaCollisionShape : CollisionShape3D = %CollisionShape3D

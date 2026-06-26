@@ -59,16 +59,15 @@ func get_color_from_height(height: float):
 
 #region Debug
 # Generation optimazions
-const CODE_IMP_A_OPT: bool = true
-const CODE_IMP_B_OPT: bool = true
-const HASHMAP_OPT: bool = true # Using dictioanries
+const REMOVE_TILE_PROCESS_OPT: bool = true
+# const HASHMAP_OPT: bool = true # Using dictioanries
 const MULTI_THREAD_OPT: bool = true
 const MULTI_MESH_OPT : bool = true
 # const MESH_POOLING_OPT : bool = true - too difficult to implement alongside with MULTI_MESH_OPT
 
 # Runtime optimations
 const LOD_OPT: bool = true # & Visibility Range
-const OCCLUSION_CULLING_OPT : bool = true
+# const OCCLUSION_CULLING_OPT : bool = false
 
 var n_tiles: int = 0
 

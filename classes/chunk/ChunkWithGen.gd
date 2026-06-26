@@ -72,13 +72,11 @@ func add_tile_if_new(pos: Vector2i) -> void:
 	if (Global._does_tile_list_have_pos(pos) == false):
 		var height: float = get_perlin_height(pos)
 		var tile: MeshTile = get_tile_colored(height)
-		#print("Tile added")
 		if(set_tile_pos_3d_if_new(tile, pos, height)):
 			add_on_map(tile, pos)
 		else:
 			assert(false, "Tile not added for some reason")
 		return
-	#print("Tile not added")
 
 
 var data: Array[Vector3] = []
@@ -93,12 +91,17 @@ func add_tile_if_new_optimized(pos: Vector2i) -> void:
 
 func _ready() -> void:
 	#PerlinNoise.setup_noise()
+	var logger = ChunkManagerLogger.new()
+	logger.state = ChunkManagerLogger.State.MESH  # or BOTH, FPS, NONE
+	logger.enable_logging(self)  # Pass 'self' as the Node parent
+	
+	logger.start_time_log()
 	
 	var tick_start := Time.get_ticks_usec()
 	
 	for x in range(self.position.x, self.position.x + Constants.CHUNK_SIZE):
 		for z in range(self.position.z, self.position.z + Constants.CHUNK_SIZE):
-			if (Global.CODE_IMP_B_OPT):
+			if (Global.MULTI_MESH_OPT):
 				add_tile_if_new_optimized(Vector2i(x, z))
 			else:
 				add_tile_if_new(Vector2i(x, z))
@@ -107,8 +110,7 @@ func _ready() -> void:
 	var tick_end := Time.get_ticks_usec()
 	var gen_time := (tick_end - tick_start) / 1000000.0
 	Global.all_gen_times.append(gen_time)
-	Global.print_average_gen_time()
-	# print_debug("--- ChunkWithGen ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+	#Global.print_average_gen_time() # TODO - Comment
 
 	var multi_mesh_instance: MultiMeshInstance3D = %MultiMeshInstance3D
 	multi_mesh_instance.multimesh = multi_mesh_instance.multimesh.duplicate()
@@ -122,3 +124,5 @@ func _ready() -> void:
 	for i in range(multi_mesh_instance.multimesh.instance_count):		
 		multi_mesh_instance.multimesh.set_instance_transform(i, Transform3D(Basis(), data[i]))
 		multi_mesh_instance.multimesh.set_instance_color(i, Global.get_color_from_height(data[i].y))
+	
+	logger.end_time_log(self, self.position)
