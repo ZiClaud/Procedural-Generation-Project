@@ -64,7 +64,7 @@ func get_color_from_height(height: float):
 # Generation optimazions
 const REMOVE_TILE_PROCESS_OPT: bool = true
 # const HASHMAP_OPT: bool = true # Using dictioanries
-const MULTI_THREAD_OPT: bool = true
+const MULTI_THREAD_OPT: bool = false
 const MULTI_MESH_OPT : bool = true
 # const MESH_POOLING_OPT : bool = true - too difficult to implement alongside with MULTI_MESH_OPT
 

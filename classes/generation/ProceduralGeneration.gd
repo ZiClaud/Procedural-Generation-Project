@@ -105,8 +105,8 @@ func generate_chunk():
 	for x in range(-half, half + 1):
 		for z in range(-half, half + 1):
 			var pos : Vector2i = Vector2i(
-				player_chunk_z + z,
 				player_chunk_x + x,
+				player_chunk_z + z,
 			)
 			add_chunk_if_new(pos)
 
