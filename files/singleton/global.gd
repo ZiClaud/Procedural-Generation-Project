@@ -12,6 +12,9 @@ var placed_tile: Dictionary[Vector2i, MeshTile] = {}
 var placed_tile_optimized: Dictionary[Vector2i, Color] = {}
 var placed_chunk: Dictionary[Vector2i, Chunk] = {}
 
+
+var facing_direction: String = "N/A"
+
 #region Utils
 ### Returns the true if it was found, false otherwise
 func _does_tile_list_have_pos(pos: Vector2i) -> bool:
@@ -66,7 +69,7 @@ const MULTI_MESH_OPT : bool = true
 # const MESH_POOLING_OPT : bool = true - too difficult to implement alongside with MULTI_MESH_OPT
 
 # Runtime optimations
-const LOD_OPT: bool = true # & Visibility Range
+const LOD_OPT: bool = false # & Visibility Range
 # const OCCLUSION_CULLING_OPT : bool = false
 
 var n_tiles: int = 0

@@ -129,8 +129,8 @@ func _ready() -> void:
 		_setup_lod()
 	
 	for i in range(data.size()):
-		data[i].x = data[i].x - self.position.x
-		data[i].z = data[i].z - self.position.z
+		data[i].x = (data[i].x - self.position.x) * Constants.TILE_SIZE_X
+		data[i].z = (data[i].z - self.position.z) * Constants.TILE_SIZE_Z
 		if (data[i].y < 0):
 			data[i].y = 0
 	for i in range(multi_mesh_instance.multimesh.instance_count):		

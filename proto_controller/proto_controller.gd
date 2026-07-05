@@ -127,6 +127,23 @@ func _physics_process(delta: float) -> void:
 	# Use velocity to actually move
 	move_and_slide()
 
+func setup_facing(look_rotationy: float):
+	var facing: float = rad_to_deg(look_rotationy)
+	
+	while (abs(facing) > 180):
+		if (facing > 0):
+			facing -= 360
+		else:
+			facing += 360
+	
+	if (facing < 45 && facing > -45):
+		Global.facing_direction = "North"
+	elif (facing < -45 && facing > -135):
+		Global.facing_direction = "West"
+	elif (facing < 135 && facing > 45):
+		Global.facing_direction = "East"
+	else:
+		Global.facing_direction = "South"
 
 ## Rotate us to look around.
 ## Base of controller rotates around y (left/right). camera rotates around x (up/down).
@@ -139,6 +156,8 @@ func rotate_look(rot_input: Vector2):
 	rotate_y(look_rotation.y)
 	camera.transform.basis = Basis()
 	camera.rotate_x(look_rotation.x)
+	
+	setup_facing(look_rotation.y)
 
 
 func enable_freefly():
