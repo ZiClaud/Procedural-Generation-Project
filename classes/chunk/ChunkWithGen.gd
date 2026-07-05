@@ -89,13 +89,22 @@ func add_tile_if_new_optimized(pos: Vector2i) -> void:
 		Global.n_tiles += 1
 #endregion
 
+#region LOD Optimization
+func _setup_lod() -> void:
+	var visibility_range_end: float = max(Constants.CHUNK_SHOWN * Constants.CHUNK_SIZE, 2.5 * Constants.CHUNK_SIZE)
+	var multi_mesh_instance: MultiMeshInstance3D = %MultiMeshInstance3D
+	multi_mesh_instance.visibility_range_begin = 0.0
+	multi_mesh_instance.visibility_range_end = visibility_range_end
+	multi_mesh_instance.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
+#endregion
+
 func _ready() -> void:
 	#PerlinNoise.setup_noise()
-	var logger = ChunkManagerLogger.new()
-	logger.state = ChunkManagerLogger.State.MESH  # or BOTH, FPS, NONE
-	logger.enable_logging(self)  # Pass 'self' as the Node parent
+	#var logger = ChunkManagerLogger.new()
+	#logger.state = ChunkManagerLogger.State.MESH  # or BOTH, FPS, NONE
+	#logger.enable_logging(self)  # Pass 'self' as the Node parent
 	
-	logger.start_time_log()
+	#logger.start_time_log()
 	
 	var tick_start := Time.get_ticks_usec()
 	
@@ -115,6 +124,9 @@ func _ready() -> void:
 	var multi_mesh_instance: MultiMeshInstance3D = %MultiMeshInstance3D
 	multi_mesh_instance.multimesh = multi_mesh_instance.multimesh.duplicate()
 	multi_mesh_instance.multimesh.instance_count = data.size()
+
+	if (Global.LOD_OPT):
+		_setup_lod()
 	
 	for i in range(data.size()):
 		data[i].x = data[i].x - self.position.x
@@ -125,4 +137,4 @@ func _ready() -> void:
 		multi_mesh_instance.multimesh.set_instance_transform(i, Transform3D(Basis(), data[i]))
 		multi_mesh_instance.multimesh.set_instance_color(i, Global.get_color_from_height(data[i].y))
 	
-	logger.end_time_log(self, self.position)
+	#logger.end_time_log(self, self.position)

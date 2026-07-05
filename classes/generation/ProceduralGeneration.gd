@@ -143,7 +143,7 @@ func _add_chunks_main_thread(chunks_to_add: Array, tick_start: int):
 	
 	var tick_end := Time.get_ticks_usec()
 	var gen_time := (tick_end - tick_start) / 1000000.0
-	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+	#print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
 #endregion
 
 #region Threaded Gen (4 threads)
@@ -209,7 +209,7 @@ func _wait_and_flush(tick_start: int, results: Array[Vector2i]) -> void:
 	#pass
 
 func _ready() -> void:
-	print_debug("----- Chunk Sizes -----\nCHUNK_SIZE: %s\nCHUNK_SHOWN: %s" % [Constants.CHUNK_SIZE, Constants.CHUNK_SHOWN])
+	#print_debug("----- Chunk Sizes -----\nCHUNK_SIZE: %s\nCHUNK_SHOWN: %s" % [Constants.CHUNK_SIZE, Constants.CHUNK_SHOWN])
 	
 	Performance.add_custom_monitor("game/chunks", func(): return all_chunks)
 	Performance.add_custom_monitor("game/placed_chunks", func(): return Global.placed_chunk.size())
@@ -233,5 +233,5 @@ func _ready() -> void:
 	var tick_start := Time.get_ticks_usec()
 	var tick_end := Time.get_ticks_usec()
 	var gen_time := (tick_end - tick_start) / 1000000.0
-	print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
+	#print_debug("--- ProceduralGenWorld ---\nBlocks: %s\nGen Time: %s" % [Global.n_tiles, gen_time])
 #endregion
