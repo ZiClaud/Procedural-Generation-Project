@@ -69,7 +69,7 @@ const MULTI_MESH_OPT : bool = true
 # const MESH_POOLING_OPT : bool = true - too difficult to implement alongside with MULTI_MESH_OPT
 
 # Runtime optimations
-const LOD_OPT: bool = false # & Visibility Range
+const LOD_OPT: bool = true # & Visibility Range
 # const OCCLUSION_CULLING_OPT : bool = false
 
 var n_tiles: int = 0
